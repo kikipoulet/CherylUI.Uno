@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary Source="Colors/Light.xaml" x:Key="Light"></ResourceDictionary>
+        <ResourceDictionary Source="Colors/Dark.xaml" x:Key="Dark"></ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ButtonStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="ToggleSwitchStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="GroupBoxStyles.xaml"></ResourceDictionary>
+         <ResourceDictionary Source="InteractiveContainerStyles.xaml"></ResourceDictionary>
+         <ResourceDictionary Source="TextBlockStyles.xaml"></ResourceDictionary>
+         <ResourceDictionary Source="BorderStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="SplitViewStyles.xaml"></ResourceDictionary>
+         <ResourceDictionary Source="NavigationViewStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="SliverPageStyles.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

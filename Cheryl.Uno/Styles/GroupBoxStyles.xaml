@@ -1,0 +1,27 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls1="clr-namespace:Cheryl.Uno.Controls">
+
+  <Style TargetType="controls1:GroupBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls1:GroupBox">
+                    <StackPanel>
+                        <TextBlock
+                            x:Name="HeaderTextBlock"
+                            Margin="15,0,0,10" FontFamily="{StaticResource QuicksandRegular}"
+                            FontSize="14" FontWeight="DemiBold" Foreground="{ThemeResource SecondaryText}"
+                            Text="{TemplateBinding Header}" />
+
+                        <Border Style="{StaticResource GlassBorderStyle}">
+                            <Grid >
+                                <ContentPresenter Content="{TemplateBinding Content}" />
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

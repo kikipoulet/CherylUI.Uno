@@ -1,0 +1,47 @@
+<Page x:Class="CherylUI.Uno.Demo.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:CherylUI.Uno.Demo"
+      xmlns:controls="clr-namespace:CherylUI.Uno.Demo.Controls"
+      xmlns:converters="clr-namespace:CherylUI.Uno.Demo.Converters"
+      xmlns:uno="clr-namespace:Material.Icons.UNO;assembly=Material.Icons.UNO"
+      xmlns:winUi="clr-namespace:FluentIcons.WinUI;assembly=FluentIcons.WinUI"
+      xmlns:animations="clr-namespace:CherylUI.Uno.Demo.Helpers.Animations"
+      xmlns:controls1="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <controls1:InteractiveContainer>
+        <NavigationView  >
+            <NavigationView.PaneHeader>
+                <StackPanel Spacing="12" Margin="-50,35,0,30">
+                <Ellipse HorizontalAlignment="Center" VerticalAlignment="Center"  Width="130" Height="130">
+                    <Ellipse.Fill>
+                        <ImageBrush Stretch="UniformToFill" ImageSource="Assets/calico.jpg"/>
+                    </Ellipse.Fill>
+                </Ellipse><TextBlock Text="CherylUI" FontFamily="{StaticResource QuicksandBold}" HorizontalAlignment="Center" FontSize="20"></TextBlock>
+                </StackPanel>
+            </NavigationView.PaneHeader>
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home">
+                    <NavigationViewItem.Icon>
+                        <winUi:FluentIcon IconSize="Size48" Icon="Home" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem PointerReleased="GoToButtons" Content="Buttons">
+                    <NavigationViewItem.Icon>
+                        <winUi:FluentIcon IconSize="Size48" Icon="RectangleLandscape" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem PointerReleased="GoToSettings" Content="Settings Design">
+                    <NavigationViewItem.Icon>
+                        <winUi:FluentIcon IconSize="Size48" Icon="Settings" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <Frame Background="Transparent" x:Name="ContentFrame"/>
+        </NavigationView>
+
+    </controls1:InteractiveContainer>
+</Page>

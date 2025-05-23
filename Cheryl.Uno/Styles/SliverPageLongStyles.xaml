@@ -1,0 +1,62 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CherylUI.Controls"
+    xmlns:media="using:CommunityToolkit.WinUI.Media"
+
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls"
+    xmlns:winUi="clr-namespace:FluentIcons.WinUI;assembly=FluentIcons.WinUI">
+
+    <Style TargetType="controls:SliverPageLong">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:SliverPageLong">
+                    <Grid >
+                        <Grid.Resources>
+                            <controls:OffsetToHeightConverterLong x:Key="HeightConverter" />
+                            <controls:OffsetToOpacityConverterLong x:Key="OpacityConverter" />
+                            <controls:OffsetToFontSizeConverterLong x:Key="FontSizeConverter" />
+                            <controls:OffsetToInvertOpacityConverterLong x:Key="OpacityInvertConverter" />
+                        </Grid.Resources>
+
+                        <ScrollViewer
+                            x:Name="scrollView"
+                            VerticalScrollBarVisibility="Hidden">
+                            <StackPanel>
+                                <Grid Height="357" />
+                                <ContentPresenter
+                                    Content="{TemplateBinding Content}"
+                                    Margin="14,25,14,0" />
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <Border
+                            BorderThickness="0"
+                            Height="{Binding VerticalOffset, ElementName=scrollView, Converter={StaticResource HeightConverter}}"
+                            VerticalAlignment="Top">
+
+                            <Grid>
+
+
+                                <Border Opacity="{Binding VerticalOffset, ElementName=scrollView, Converter={StaticResource OpacityConverter}}" Margin="-150,-150,-150,0">
+                                    <Border.Background>
+                                        <AcrylicBrush TintLuminosityOpacity="0" TintOpacity="0" TintColor="Transparent"></AcrylicBrush>
+                                    </Border.Background>
+                                </Border>
+
+                                <TextBlock
+                                    FontSize="{Binding VerticalOffset, ElementName=scrollView, Converter={StaticResource FontSizeConverter}}"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,20,0,-10" FontFamily="{StaticResource QuicksandRegular}"
+                                    Text="{TemplateBinding Header}"
+                                    VerticalAlignment="Center" />
+
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

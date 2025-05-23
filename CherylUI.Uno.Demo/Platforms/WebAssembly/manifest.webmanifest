@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "CherylUI.Uno.Demo",
+  "display": "standalone",
+  "name": "CherylUI.Uno.Demo",
+  "short_name": "CherylUI.Uno.Demo",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

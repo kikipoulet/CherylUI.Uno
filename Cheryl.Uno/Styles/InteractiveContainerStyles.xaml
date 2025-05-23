@@ -1,0 +1,82 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CherylUI.Controls"
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls">
+
+   <Style TargetType="controls:InteractiveContainer">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:InteractiveContainer">
+                    <Grid>
+                        <controls:CherylBackgroundWinUI3 />
+
+
+                                <ContentPresenter x:Name="MainContent" Content="{TemplateBinding Content}" />
+
+                        <Grid x:Name="BlackPanel"  Background="Black" Opacity="0" IsHitTestVisible="False"></Grid>
+
+                        <Border x:Name="ToastBorder"
+                                Background="{ThemeResource DialogBackground}"
+                                BorderBrush="{ThemeResource ComponentBackground}"
+                                CornerRadius="30"
+                                HorizontalAlignment="Center"
+                                Margin="0,125,0,0"
+                                VerticalAlignment="Top"
+                                IsHitTestVisible="False"
+                                Opacity="0">
+                            <ContentPresenter x:Name="ToastContent" Margin="15,7" />
+                        </Border>
+
+
+                        <Border  Opacity="0"   HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5"
+                                 VerticalAlignment="Center"
+                                 IsHitTestVisible="False"  x:Name="DialogBorder">
+                            <Border.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </Border.RenderTransform>
+                            <Grid>
+                                <Border CornerRadius="20"  >
+                                    <Border.Background>
+                                        <AcrylicBrush TintColor="{ThemeResource GlassCardBackground}" TintOpacity="{ThemeResource GlassOpacity}" />
+                                    </Border.Background>
+
+
+                                </Border>
+                                <ContentPresenter Margin="15" x:Name="DialogContent" />
+                            </Grid>
+
+                        </Border>
+
+                        <Border  Opacity="0"   HorizontalAlignment="Stretch" RenderTransformOrigin="0.5,0.5"
+                                 VerticalAlignment="Bottom"
+                                 IsHitTestVisible="False"  x:Name="BottomBorder">
+                            <Border.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </Border.RenderTransform>
+                            <Grid>
+                                <Border  CornerRadius="25,25,0,0"  >
+                                    <Border.Background>
+                                        <AcrylicBrush  TintColor="{ThemeResource GlassCardBackground}" TintOpacity="{ThemeResource GlassOpacity}" />
+                                    </Border.Background>
+                                </Border>
+
+                                <Border Background="White" Opacity="0.03"  CornerRadius="25,25,0,0"  >
+
+                                </Border>
+
+                                <ContentPresenter Margin="15" x:Name="BottomContent" />
+                                <Border Opacity="0.1" CornerRadius="3" Height="6" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Background="{ThemeResource SecondaryText}" />
+                            </Grid>
+
+                        </Border>
+
+
+                    </Grid>
+
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

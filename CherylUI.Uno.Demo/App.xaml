@@ -1,0 +1,21 @@
+<Application x:Class="CherylUI.Uno.Demo.App"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <!-- Load WinUI resources -->
+        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+
+        <ResourceDictionary Source="ms-appx:///Cheryl.Uno/Styles/Index.xaml" />
+
+      </ResourceDictionary.MergedDictionaries>
+
+      <!-- Add resources here -->
+
+    </ResourceDictionary>
+  </Application.Resources>
+
+</Application>
