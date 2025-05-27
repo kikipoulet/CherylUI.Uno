@@ -9,11 +9,14 @@ namespace CherylUI.Uno.Demo;
 
 public sealed partial class MainPage : Page
 {
+
+    public static Frame GlobalContentFrame;
     public MainPage()
     {
         this.InitializeComponent();
         
-    
+        ContentFrame.Navigate(typeof(HomePage));
+        GlobalContentFrame = ContentFrame;
     }
 
     private void ShosAThing(object sender, RoutedEventArgs e)
@@ -57,5 +60,30 @@ public sealed partial class MainPage : Page
     {
         ContentFrame.Navigate(typeof(ButtonsDemo));
         
+    }
+
+    private void gotosliders(object sender, PointerRoutedEventArgs e)
+    {
+        ContentFrame.Navigate(typeof(Sliders));
+    }
+
+    private void gotohome(object sender, PointerRoutedEventArgs e)
+    {
+        ContentFrame.Navigate(typeof(HomePage));
+    }
+
+    private void GoToToggles(object sender, PointerRoutedEventArgs e)
+    {
+        ContentFrame.Navigate(typeof(TogglesPage));
+    }
+    
+    private void GoToDialogs(object sender, PointerRoutedEventArgs e)
+    {
+        ContentFrame.Navigate(typeof(DialogsPage));
+    }
+    
+    private void GoToSquishy(object sender, PointerRoutedEventArgs e)
+    {
+        ContentFrame.Navigate(typeof(SquishyBehaviorPage));
     }
 }

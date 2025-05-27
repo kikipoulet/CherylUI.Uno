@@ -33,6 +33,10 @@
         <DependentUpon>GroupBox.xaml</DependentUpon>
         <IsDefaultItem>true</IsDefaultItem>
       </Compile>
+      <Compile Update="Pages\UIExamples\SettingsPage.xaml.cs">
+        <DependentUpon>SettingsPage.xaml</DependentUpon>
+        <IsDefaultItem>true</IsDefaultItem>
+      </Compile>
     </ItemGroup>
     <ItemGroup>
       <UnoImage Remove="Assets\Icons\chevron_right.svg" />

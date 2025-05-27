@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Cheryl.Uno.Controls;
+using Cheryl.Uno.Helpers.Animations;
 using Microsoft.UI.Text;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -27,6 +28,7 @@ public sealed partial class SettingsPage : Page
     public SettingsPage()
     {
         this.InitializeComponent();
+       
     }
     
     private void ShosAThing(object sender, RoutedEventArgs e)
@@ -59,5 +61,7 @@ public sealed partial class SettingsPage : Page
         //g.Children.Add(b);
         InteractiveContainer.ShowBottomSheet(new ConfirmationControl());
     }
+
+
 }
 

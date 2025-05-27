@@ -15,6 +15,7 @@
         <ResourceDictionary Source="SplitViewStyles.xaml"></ResourceDictionary>
          <ResourceDictionary Source="NavigationViewStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="SliverPageStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="SliderStyles.xaml"></ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

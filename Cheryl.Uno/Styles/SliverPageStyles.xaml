@@ -32,7 +32,7 @@
                             <Grid>
 
 
-                                <Border Opacity="{Binding VerticalOffset, ElementName=scrollView, Converter={StaticResource OpacityInvertConverter}}" Margin="-150,-150,-150,0">
+                                <Border Opacity="{Binding VerticalOffset, ElementName=scrollView, Converter={StaticResource OpacityInvertConverter}}" >
                                     <Border.Background>
                                         <AcrylicBrush TintLuminosityOpacity="0" TintOpacity="0" TintColor="Transparent"></AcrylicBrush>
                                     </Border.Background>

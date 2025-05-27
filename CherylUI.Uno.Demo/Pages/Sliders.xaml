@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="CherylUI.Uno.Demo.Pages.Sliders"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CherylUI.Uno.Demo.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
+    xmlns:interactivity="clr-namespace:Microsoft.Xaml.Interactivity;assembly=Microsoft.Xaml.Interactivity"
+    xmlns:global="clr-namespace:;assembly=Cheryl.Uno"
+    Background="Transparent">
+
+
+    <controls:SliverPage Header="Sliders">
+        <StackPanel Spacing="25">
+            <controls:GroupBox Header="Default">
+                <Slider Minimum="0" Maximum="100" Value="40" />
+            </controls:GroupBox>
+
+            <controls:GroupBox Header="Big Slider">
+                <Slider Style="{StaticResource BigSliderStyle}" Minimum="0" Maximum="100" Value="40" />
+            </controls:GroupBox>
+            <controls:GroupBox Header="Big Slider Vertical">
+                <Slider Orientation="Vertical" Height="130" HorizontalAlignment="Center" Style="{StaticResource BigSliderStyle}" Minimum="0" Maximum="100" Value="40" />
+            </controls:GroupBox>
+
+            <Border Margin="0,15" Height="1" Background="#77777777" />
+
+            <TextBlock FontFamily="{StaticResource QuicksandRegular}" TextWrapping="Wrap" Text="Tip : Use the squishy behavior with ScaleBasedOnAxisDisplacement for immersive feeling. "></TextBlock>
+            <controls:GroupBox Header="Squishy Sliders">
+                <StackPanel Spacing="12">
+                    <Slider Margin="10,0" Minimum="0" Maximum="100" Value="40"  Style="{StaticResource BigSliderStyle}" >
+                        <interactivity:Interaction.Behaviors>
+                            <global:SquishyDragBehavior EnableY="False" ScaleBasedOnAxisDisplacement="True"  />
+                        </interactivity:Interaction.Behaviors>
+                    </Slider>
+
+                    <Slider HorizontalAlignment="Center" Height="130" Orientation="Vertical" Minimum="0" Maximum="100" Value="40"  Style="{StaticResource BigSliderStyle}" >
+                        <interactivity:Interaction.Behaviors>
+                            <global:SquishyDragBehavior EnableX="False" ScaleBasedOnAxisDisplacement="True"  />
+                        </interactivity:Interaction.Behaviors>
+                    </Slider>
+                </StackPanel>
+            </controls:GroupBox>
+
+            <Border Height="50"></Border>
+            </StackPanel>
+        </controls:SliverPage>
+
+</Page>
+

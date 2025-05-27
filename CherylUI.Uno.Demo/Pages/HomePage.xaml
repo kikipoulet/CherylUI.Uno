@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="CherylUI.Uno.Demo.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CherylUI.Uno.Demo.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+
+    <controls:SliverPage Header="Design Samples">
+        <StackPanel Spacing="25">
+
+
+            <Grid PointerReleased="GoToSettings">
+                <Border Margin="30,0,0,0" Style="{StaticResource GlassBorderStyle}">
+                    <StackPanel Margin="15,0,0,0" Spacing="9">
+                        <TextBlock FontFamily="{StaticResource QuicksandBold}" FontSize="16"   Text="Settings Page"></TextBlock>
+                        <TextBlock FontSize="13"  FontFamily="{StaticResource QuicksandRegular}" Foreground="{ThemeResource SecondaryText}" TextWrapping="Wrap" Text="SliverPage / Input Controls"></TextBlock>
+
+                    </StackPanel>
+                </Border>
+                <Image HorizontalAlignment="Left" VerticalAlignment="Center" Height="48" Width="48" Source="/Assets/icons8-services-48.png"></Image>
+
+            </Grid>
+        </StackPanel>
+        </controls:SliverPage>
+</Page>
+

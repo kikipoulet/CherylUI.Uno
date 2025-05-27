@@ -47,6 +47,7 @@ namespace Cheryl.Uno.Controls;
             BlackPanel.PointerPressed += (sender, args) =>
             {
                 CloseBottomSheet();
+               
             };
         }
 

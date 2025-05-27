@@ -13,8 +13,8 @@
 
 
     <Color x:Key="Accent">#317AF7</Color>
-    <Color x:Key="ContraryAccent">#317AF7</Color>
-    <Color x:Key="SelectedAccent">#317AF7</Color>
+    <Color x:Key="ContraryAccent">#55317AF7</Color>
+    <Color x:Key="SelectedAccent">#55317AF7</Color>
     <Color x:Key="LightAccent">#250A59F7</Color>
     <Color x:Key="ComponentBackground">#44ffffff</Color>
     <Color x:Key="Separator">#33ffffff</Color>

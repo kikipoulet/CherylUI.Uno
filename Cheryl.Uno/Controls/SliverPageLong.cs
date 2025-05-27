@@ -54,9 +54,11 @@ public class OffsetToHeightConverterLong : IValueConverter
     public object Convert(object value, Type targetType, object parameter, string language)
     {
         double offset = (double)value;
-        double height = 370 - offset;
 
-        return height < 90 ? 90 : height;
+        if (offset >= 280) 
+            return 90;
+
+        return 370 - offset;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, string language)
@@ -110,9 +112,10 @@ public class OffsetToFontSizeConverterLong : IValueConverter
 
     public object Convert(object value, Type targetType, object parameter, string language)
     {
+        if ((double)value >= 345)
+            return 22;
+        
         double Offset =  ((double)value) / 15;
-
-         
 
         double fontsize = 45 - (Offset );
 

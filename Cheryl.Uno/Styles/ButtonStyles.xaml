@@ -101,6 +101,17 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Button" x:Key="MiniButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
+        <Setter Property="Padding" Value="18,7" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="CornerRadius" Value="7" />
+    </Style>
+    <Style TargetType="Button" x:Key="SmallButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
+        <Setter Property="Padding" Value="20,8" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="CornerRadius" Value="8" />
+    </Style>
+
     <!-- Small Button Style -->
     <Style TargetType="Button" x:Key="BigButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
         <Setter Property="Padding" Value="30,12" />

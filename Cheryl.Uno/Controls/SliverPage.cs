@@ -46,9 +46,8 @@ public class OffsetToHeightConverter: IValueConverter
     public object Convert(object value, Type targetType, object parameter, string language)
     {
         double offset = (double)value;
-        double height = 250 - offset;
 
-        return height < 90 ? 90 : height;
+        return offset > 160 ? 90 : 250 - offset;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, string language)
@@ -63,11 +62,10 @@ public class OffsetToOpacityConverter : IValueConverter
 
     public object Convert(object value, Type targetType, object parameter, string language)
     {
-        var x = 1 - (((double)value) / 80);
-        if (x < 0)
-            x = 0;
-
-        return x;
+        if ((double)value > 80)
+            return 0;
+        
+        return 1 - (((double)value) / 80);
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, string language)
@@ -83,14 +81,14 @@ public class OffsetToInvertOpacityConverter : IValueConverter
    
     public object Convert(object value, Type targetType, object parameter, string language)
     {
-        var x = -1.6 + (((double)value) / 100);
+        if ((double) value > 270)
+            return 1;
+        
+        if ((double) value < 160)
+            return 0;
+        
+        return -1.6 + (((double)value) / 100);
 
-        if (x < 0)
-            x = 0;
-        if (x > 1)
-            x = 1;
-
-        return x;
     }
 
 
