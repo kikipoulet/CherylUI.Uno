@@ -8,7 +8,7 @@
       xmlns:winUi="clr-namespace:FluentIcons.WinUI;assembly=FluentIcons.WinUI"
       xmlns:animations="clr-namespace:CherylUI.Uno.Demo.Helpers.Animations"
       xmlns:controls1="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
-      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      Background="Transparent">
     <controls1:InteractiveContainer>
         <NavigationView  >
             <NavigationView.PaneHeader>
@@ -51,6 +51,11 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem Content="Squishy Behavior" PointerReleased="GoToSquishy">
+                    <NavigationViewItem.Icon>
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Custom Easing" PointerReleased="GoToEasing">
                     <NavigationViewItem.Icon>
                         <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
                     </NavigationViewItem.Icon>

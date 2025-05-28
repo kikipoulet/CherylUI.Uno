@@ -86,4 +86,9 @@ public sealed partial class MainPage : Page
     {
         ContentFrame.Navigate(typeof(SquishyBehaviorPage));
     }
+
+    private void GoToEasing(object sender, PointerRoutedEventArgs e)
+    {
+        ContentFrame.Navigate(typeof(CustomEasingPage));
+    }
 }

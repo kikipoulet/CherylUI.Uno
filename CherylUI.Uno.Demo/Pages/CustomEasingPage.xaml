@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="CherylUI.Uno.Demo.Pages.CustomEasingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CherylUI.Uno.Demo.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winUi="clr-namespace:LiveChartsCore.SkiaSharpView.WinUI;assembly=LiveChartsCore.SkiaSharpView.Uno.WinUI"
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+        <controls:SliverPage Header="Custom Easing">
+        <StackPanel Spacing="25">
+
+            <Border Style="{StaticResource GlassBorderStyle}">
+                <winUi:CartesianChart x:Name="MyChart" Height="250" Margin="0,-20" />
+            </Border>
+
+            <!-- GlassCard replacement with Border and AcrylicBrush -->
+            <Border  Style="{StaticResource GlassBorderStyle}">
+                <StackPanel Spacing="12">
+
+                    <StackPanel Spacing="3">
+                        <TextBlock Text="Mass" FontFamily="{StaticResource QuicksandBold}"  FontWeight="SemiBold"  />
+                        <Slider x:Name="MassBox" Minimum="0" Maximum="10"  Value="1" ValueChanged="ParametersChanged" />
+                    </StackPanel>
+
+                    <StackPanel Spacing="3">
+                        <TextBlock Text="Damping" FontFamily="{StaticResource QuicksandBold}"  FontWeight="SemiBold"  />
+                        <Slider x:Name="DampingBox" Minimum="0" Maximum="50"  Value="10" ValueChanged="ParametersChanged" />
+                    </StackPanel>
+
+                    <StackPanel Spacing="3">
+                        <TextBlock Text="Stiffness" FontFamily="{StaticResource QuicksandBold}"  FontWeight="SemiBold"  />
+                        <Slider x:Name="StiffnessBox" Minimum="0" Maximum="100"  Value="50" ValueChanged="ParametersChanged" />
+                    </StackPanel>
+
+                    <!-- Buttons -->
+                    <StackPanel Orientation="Horizontal" Spacing="15">
+                        <Button Content="Base" Click="SetBase" />
+                        <Button Content="Smooth" Click="SetSmooth" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+</StackPanel>
+
+
+
+    </controls:SliverPage>
+</Page>
+

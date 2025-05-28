@@ -45,6 +45,7 @@
     <ItemGroup>
       <PackageReference Include="FluentIcons.Uno" />
       <PackageReference Include="FluentIcons.WinUI" />
+      <PackageReference Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Cheryl.Uno\Cheryl.Uno.csproj" />

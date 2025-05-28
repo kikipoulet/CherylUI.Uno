@@ -15,18 +15,20 @@
         <StackPanel Spacing="25">
 
             <controls:GroupBox Header="Squishy Border">
-                <Border Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Border Padding="35" IsHitTestVisible="True" Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <interactivity:Interaction.Behaviors>
-                        <global:SquishyDragBehavior Intensity="2"  />
+                        <global:SquishyDragBehavior Intensity="3"  />
                     </interactivity:Interaction.Behaviors>
-                    <TextBlock Margin="35" Text="Drag Me !!" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
+
+                    <TextBlock Text="Drag Me !!" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
                 </Border>
             </controls:GroupBox>
 
             <controls:GroupBox Header="Tilt Enabled">
                 <Border Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <interactivity:Interaction.Behaviors>
-                        <global:SquishyDragBehavior EnableTilt="True" Intensity="2"  />
+                        <global:SquishyDragBehavior EnableTilt="True" Intensity="3"  />
                     </interactivity:Interaction.Behaviors>
                     <TextBlock Margin="35" Text="I can Tilt !" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
                 </Border>
@@ -35,7 +37,7 @@
             <controls:GroupBox Header="X Axis Disabled">
                 <Border Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <interactivity:Interaction.Behaviors>
-                        <global:SquishyDragBehavior EnableX="False" Intensity="2"  />
+                        <global:SquishyDragBehavior EnableX="False" Intensity="3"  />
                     </interactivity:Interaction.Behaviors>
                     <TextBlock Margin="35" Text="I'm locked on X axis!" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
                 </Border>
@@ -44,7 +46,7 @@
             <controls:GroupBox Header="X Axis Disabled">
                 <Border Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <interactivity:Interaction.Behaviors>
-                        <global:SquishyDragBehavior ScaleBasedOnAxisDisplacement="True" Intensity="2"  />
+                        <global:SquishyDragBehavior ScaleBasedOnAxisDisplacement="True" Intensity="3"  />
                     </interactivity:Interaction.Behaviors>
                     <TextBlock Margin="35" Text="I change with Axises !" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
                 </Border>

@@ -2,7 +2,7 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
-using Microsoft.Xaml.Interactivity; // Nécessaire pour Behavior<T>
+using Microsoft.Xaml.Interactivity; 
 using System;
 using System.Diagnostics;
 using Windows.Foundation;
@@ -13,13 +13,12 @@ public class SquishyDragBehavior : Behavior<UIElement>
         private Point? _startPoint;
         private CompositeTransform _compositeTransform;
         private DispatcherTimer _animationTimer;
-
-        // Pour stocker les valeurs de transformation au début de l'animation de relâchement
+        
         private double _releaseStartSkewX, _releaseStartSkewY;
         private double _releaseStartTranslateX, _releaseStartTranslateY;
         private double _releaseStartScaleX, _releaseStartScaleY;
         private DateTime _releaseAnimationStartTime;
-        private const double RELEASE_ANIMATION_DURATION_MS = 700; // Durée de l'animation de retour
+        private const double RELEASE_ANIMATION_DURATION_MS = 700; 
 
         #region Dependency Properties (Configuration)
 
@@ -67,8 +66,7 @@ public class SquishyDragBehavior : Behavior<UIElement>
             get => (bool)GetValue(EnableYProperty);
             set => SetValue(EnableYProperty, value);
         }
-
-        // Correspond à ScaleByXY dans le code Avalonia
+        
         public static readonly DependencyProperty ScaleBasedOnAxisDisplacementProperty =
             DependencyProperty.Register(nameof(ScaleBasedOnAxisDisplacement), typeof(bool), typeof(SquishyDragBehavior), new PropertyMetadata(false));
 
@@ -79,7 +77,8 @@ public class SquishyDragBehavior : Behavior<UIElement>
         }
 
         #endregion
-
+        
+        
         protected override void OnAttached()
         {
             base.OnAttached();
@@ -87,7 +86,7 @@ public class SquishyDragBehavior : Behavior<UIElement>
             {
                 _compositeTransform = this.AssociatedObject.RenderTransform as CompositeTransform ?? new CompositeTransform();
                 this.AssociatedObject.RenderTransform = _compositeTransform;
-                this.AssociatedObject.RenderTransformOrigin = new Point(0.5, 0.5); // Transformer par rapport au centre
+                this.AssociatedObject.RenderTransformOrigin = new Point(0.5, 0.5);
 
                 this.AssociatedObject.PointerPressed += AssociatedObject_PointerPressed;
                 this.AssociatedObject.PointerMoved += AssociatedObject_PointerMoved;
@@ -102,8 +101,10 @@ public class SquishyDragBehavior : Behavior<UIElement>
 
           
                 
-                _animationTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) }; // ~60 FPS
+                _animationTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) }; 
                 _animationTimer.Tick += AnimationTimer_Tick;
+                
+               
             }
         }
 
@@ -127,28 +128,22 @@ public class SquishyDragBehavior : Behavior<UIElement>
                 _animationTimer = null;
             }
 
-            // Optionnel : réinitialiser la transformation à la suppression du behavior
-            // if (this.AssociatedObject != null && this.AssociatedObject.RenderTransform == _compositeTransform)
-            // {
-            //     this.AssociatedObject.RenderTransform = null; 
-            // }
             _compositeTransform = null;
         }
 
         private void AssociatedObject_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
             if (AssociatedObject == null) return;
-
-            // Obtenir le point de contact relatif à l'élément
+            
             PointerPoint pointerPoint = e.GetCurrentPoint(AssociatedObject);
             if (pointerPoint.Properties.IsLeftButtonPressed)
             {
                 _startPoint = pointerPoint.Position;
-                _animationTimer?.Stop(); // Arrêter toute animation de relâchement en cours
+                _animationTimer?.Stop(); 
                 
                 AssociatedObject.CapturePointer(e.Pointer);
             }
-          //  e.Handled = true; // Peut être utile pour éviter que d'autres éléments gèrent l'événement
+            e.Handled = true;
         }
 
         private void AssociatedObject_PointerMoved(object sender, PointerRoutedEventArgs e)
@@ -157,7 +152,7 @@ public class SquishyDragBehavior : Behavior<UIElement>
 
             PointerPoint pointerPoint = e.GetCurrentPoint(AssociatedObject);
            
-            if (pointerPoint.IsInContact) // S'assurer que le pointeur est toujours en contact (bouton pressé)
+            if (pointerPoint.IsInContact) 
             {
                 Point currentPosition = pointerPoint.Position;
                 double dx = currentPosition.X - _startPoint.Value.X;
@@ -167,7 +162,7 @@ public class SquishyDragBehavior : Behavior<UIElement>
                 double translateFactor = 0.018 * Intensity;
                 double scaleFactor = 0.00007 * Intensity;
 
-                // --- Inclinaison (Tilt / Skew) ---
+
                 if (EnableTilt)
                 {
                     
@@ -194,7 +189,7 @@ public class SquishyDragBehavior : Behavior<UIElement>
                     _compositeTransform.SkewY = 0;
                 }
 
-                // --- Translation ---
+
                 if (EnableX)
                     _compositeTransform.TranslateX = dx * translateFactor;
                 else
@@ -205,29 +200,30 @@ public class SquishyDragBehavior : Behavior<UIElement>
                 else
                     _compositeTransform.TranslateY = 0;
 
-                // --- Échelle (Scale) ---
+
                 double targetScaleX = 1.0;
                 double targetScaleY = 1.0;
 
-                if (ScaleBasedOnAxisDisplacement) // Corresponds to ScaleByXY = true
+                if (ScaleBasedOnAxisDisplacement) 
                 {
                     if (EnableX)
-                        targetScaleX = 1.0 + dx * scaleFactor * 1.5; // Doit être < 1 pour "squish"
+                        targetScaleX = 1.0 + dx * scaleFactor * 1.5; 
                     if (EnableY)
                         targetScaleY = 1.0 - dy * scaleFactor * 1.5;
                 }
-                else // Corresponds to ScaleByXY = false (scale uniformément basé sur la magnitude du plus grand déplacement)
+                else
                 {
                     double displacementMagnitude = Math.Sqrt(dx * dx + dy * dy);
                     double commonScaleFactor = 1.0 - (displacementMagnitude * scaleFactor);
                     if (EnableX) targetScaleX = commonScaleFactor;
                     if (EnableY) targetScaleY = commonScaleFactor;
                 }
-                // Empêcher une échelle trop petite ou inversée
+
         
                 _compositeTransform.ScaleX = Math.Max(0.2, targetScaleX);
                 _compositeTransform.ScaleY = Math.Max(0.2, targetScaleY);
             }
+            e.Handled = true;
         }
 
         private void AssociatedObject_PointerReleased(object sender, PointerRoutedEventArgs e)
@@ -242,25 +238,16 @@ public class SquishyDragBehavior : Behavior<UIElement>
         
         private void AssociatedObject_PointerExitedOrCanceled(object sender, PointerRoutedEventArgs e)
         {
-           /* if (!AssociatedObject.PointerCaptures?.Any(p => p.PointerId == e.Pointer.PointerId) ?? true)
-                return;
-            // Si le pointeur sort pendant qu'il est pressé (et capturé)
-            if (AssociatedObject == null || _startPoint == null) return;
-           //  if (e.Pointer.PointerId == AssociatedObject.PointerCaptures?.FirstOrDefault()?.PointerId)
-           // {
-                StartReleaseAnimation();
-                AssociatedObject.ReleasePointerCapture(e.Pointer);
-                _startPoint = null;
-           // }*/
+           
         }
         
         private void AssociatedObject_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
         {
-            // Si la capture est perdue pour une autre raison
+            
             if (AssociatedObject == null || _startPoint == null) return;
 
             StartReleaseAnimation();
-            _startPoint = null; // Pas besoin de ReleasePointerCapture ici, c'est déjà perdu
+            _startPoint = null; 
         }
 
 
@@ -311,7 +298,7 @@ public class SquishyDragBehavior : Behavior<UIElement>
             if (progress >= 1.0)
             {
                 _animationTimer.Stop();
-                // S'assurer que les valeurs finales sont exactes
+
                 _compositeTransform.SkewX = 0;
                 _compositeTransform.SkewY = 0;
                 _compositeTransform.TranslateX = 0;
