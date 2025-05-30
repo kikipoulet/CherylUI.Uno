@@ -16,6 +16,9 @@
          <ResourceDictionary Source="NavigationViewStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="SliverPageStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="SliderStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="ComboBox.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="SegmentedControlStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="SegmentedItemStyles.xaml"></ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

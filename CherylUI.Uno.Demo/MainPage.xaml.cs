@@ -91,4 +91,10 @@ public sealed partial class MainPage : Page
     {
         ContentFrame.Navigate(typeof(CustomEasingPage));
     }
+
+    private void GoToLayouts(object sender, PointerRoutedEventArgs e)
+    {
+        ContentFrame.Navigate(typeof(LayoutsPage));
+        
+    }
 }

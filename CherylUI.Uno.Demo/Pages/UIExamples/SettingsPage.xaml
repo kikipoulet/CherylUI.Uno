@@ -10,6 +10,8 @@
     xmlns:animations="clr-namespace:Cheryl.Uno.Helpers.Animations;assembly=Cheryl.Uno"
     xmlns:interactivity="clr-namespace:Microsoft.Xaml.Interactivity;assembly=Microsoft.Xaml.Interactivity"
     xmlns:global="clr-namespace:;assembly=Cheryl.Uno"
+    xmlns:controls="clr-namespace:CommunityToolkit.WinUI.Controls;assembly=CommunityToolkit.WinUI.Controls.Segmented"
+    xmlns:segmented="clr-namespace:Cheryl.Uno.Controls.Segmented;assembly=Cheryl.Uno"
     mc:Ignorable="d"
     Background="Transparent">
 
@@ -72,6 +74,30 @@
                     </StackPanel>
 
                 </controls1:GroupBox>
+
+                <controls1:GroupBox Header="Screen">
+                    <StackPanel Margin="2,1" Spacing="14">
+                        <Grid>
+                            <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Refresh Rate"></TextBlock>
+                            <Grid Width="140" Margin="-2,-4" HorizontalAlignment="Right">
+                                <controls:Segmented HorizontalAlignment="Right" Margin="0"
+                                                     SelectedIndex="0"
+                                                     SelectionMode="Single">
+                                    <controls:SegmentedItem Content="60hz"
+                                    />
+                                    <controls:SegmentedItem Content="120hz"
+                                    />
+
+                                </controls:Segmented>
+
+                            </Grid>
+
+                        </Grid>
+
+                    </StackPanel>
+                </controls1:GroupBox>
+
+
 
                 <controls1:GroupBox Header="Volume">
                     <Grid Margin="0,10,0,5">

@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="CherylUI.Uno.Demo.Pages.LayoutsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CherylUI.Uno.Demo.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
+    xmlns:uiExamples="clr-namespace:CherylUI.Uno.Demo.Pages.UIExamples"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <controls:SliverPage Header="Layouts">
+        <StackPanel Spacing="8">
+            <TextBlock Text="BottomTab" Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandRegular}" Margin="0,70,0,0"></TextBlock>
+            <Border Margin="0,0" Height="550" BorderThickness="1.5" BorderBrush="Gray">
+                <Grid>
+                <controls:CherylBackgroundWinUI3></controls:CherylBackgroundWinUI3>
+                    <controls:BottomTabControl x:Name="MyTabs">
+
+                        <controls:BottomTabItem Label="Home" IconGlyph="&#xE80F;">
+                            <controls:BottomTabItem.PageContent>
+                                <uiExamples:LoremIpsum />
+                            </controls:BottomTabItem.PageContent>
+                        </controls:BottomTabItem>
+
+                        <controls:BottomTabItem Label="Favorites" IconGlyph="&#xEB51;">
+                            <controls:BottomTabItem.PageContent>
+                                <uiExamples:LoremIpsum />
+                            </controls:BottomTabItem.PageContent>
+                        </controls:BottomTabItem>
+
+                        <controls:BottomTabItem Label="Profile" IconGlyph="&#xE77B;">
+                            <controls:BottomTabItem.PageContent>
+                                <uiExamples:LoremIpsum />
+                            </controls:BottomTabItem.PageContent>
+                        </controls:BottomTabItem>
+
+                        <controls:BottomTabItem Label="Settings" IconGlyph="&#xE713;">
+                            <controls:BottomTabItem.PageContent>
+                                <uiExamples:LoremIpsum />
+                            </controls:BottomTabItem.PageContent>
+                        </controls:BottomTabItem>
+
+                    </controls:BottomTabControl>
+                    </Grid>
+            </Border>
+
+
+            <TextBlock Text="Sliver Page" Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandRegular}" Margin="0,70,0,0"></TextBlock>
+            <Border Margin="0,0" Height="550" BorderThickness="1.5" BorderBrush="Gray">
+                <controls:SliverPage Header="Sliver Page">
+                    <uiExamples:LoremIpsum></uiExamples:LoremIpsum>
+                </controls:SliverPage>
+            </Border>
+
+            <TextBlock Text="Sliver PageLong" Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandRegular}" Margin="0,70,0,0"></TextBlock>
+            <Border Margin="0,0" Height="550" BorderThickness="1.5" BorderBrush="Gray">
+                <controls:SliverPageLong Header="Sliver Long">
+                    <uiExamples:LoremIpsum></uiExamples:LoremIpsum>
+                </controls:SliverPageLong>
+            </Border>
+
+            <Border Height="200" />
+        </StackPanel>
+    </controls:SliverPage>
+</Page>
+

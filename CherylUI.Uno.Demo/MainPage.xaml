@@ -50,6 +50,11 @@
                         <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem Content="Layouts" PointerReleased="GoToLayouts">
+                    <NavigationViewItem.Icon>
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <NavigationViewItem Content="Squishy Behavior" PointerReleased="GoToSquishy">
                     <NavigationViewItem.Icon>
                         <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
