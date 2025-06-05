@@ -8,11 +8,9 @@
     xmlns:media="clr-namespace:Uno.Media;assembly=Uno.UI"
     xmlns:winUi="clr-namespace:FluentIcons.WinUI;assembly=FluentIcons.WinUI"
     xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
-    mc:Ignorable="d" Loaded="ChatPage_OnLoaded"
+    mc:Ignorable="d"
     Background="Transparent">
-    <Page.DataContext>
-        <local:ChatPageVM></local:ChatPageVM>
-    </Page.DataContext>
+
 
     <Grid>
         <Grid.Resources>
@@ -22,7 +20,7 @@
 
         <ScrollViewer Name="MySV" VerticalScrollBarVisibility="Hidden">
         <StackPanel>
-            <ItemsControl  ItemsSource="{Binding Messages}">
+            <ItemsControl  ItemsSource="{x:Bind Messages}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate x:DataType="local:ChatMessage">
                         <Border Margin="10,6" Padding="10" CornerRadius="12" MaxWidth="250" Style="{StaticResource GlassBorderStyle}" HorizontalAlignment="{x:Bind Sent, Mode=OneWay, Converter={StaticResource BoolToAlignmentConverter}}">
@@ -62,10 +60,10 @@
                         <GradientStop Color="#aab37feb" Offset="1.0" />
                     </LinearGradientBrush>
                     </Border.BorderBrush>
-                    <TextBox />
+                    <TextBox Margin="10,3,0,0" Name="TB" PlaceholderText="Type your message .." />
                 </Border>
 
-                <Button Grid.Column="1" Padding="0" Margin="15,0,0,0" Height="44" Width="44" CornerRadius="22"  >
+                <Button Click="SendMessage" Grid.Column="1" Padding="0" Margin="15,0,0,0" Height="44" Width="44" CornerRadius="22"  >
                     <Button.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                             <GradientStop Color="{ThemeResource Accent}" Offset="0" />

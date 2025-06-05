@@ -26,6 +26,7 @@
         <ResourceDictionary Source="RadioButtonStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="MobilePickerStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="ListViewItemStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="NumberBoxStyles.xaml"></ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

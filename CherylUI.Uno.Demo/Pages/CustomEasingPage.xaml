@@ -16,6 +16,13 @@
             <Border Style="{StaticResource GlassBorderStyle}">
                 <winUi:CartesianChart x:Name="MyChart" Height="250" Margin="0,-20" />
             </Border>
+            <Border  Style="{StaticResource GlassBorderStyle}">
+                <Grid>
+                <Border CornerRadius="10" PointerReleased="EB_OnPointerReleased" HorizontalAlignment="Left" Name="EB" Style="{StaticResource GlassBorderStyle}" Height="50" Width="90">
+                    <TextBlock FontFamily="{StaticResource QuicksandRegular}" Text="Click Me !" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                </Border>
+                    </Grid>
+            </Border>
 
             <!-- GlassCard replacement with Border and AcrylicBrush -->
             <Border  Style="{StaticResource GlassBorderStyle}">

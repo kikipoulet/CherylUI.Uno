@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Cheryl.Uno.Helpers.Animations;
 using Cheryl.Uno.Helpers.Easings;
 using LiveChartsCore;
 using LiveChartsCore.Defaults;
@@ -151,6 +152,33 @@ public sealed partial class CustomEasingPage : Page
             (this.FindName("StiffnessBox") as Slider).Value = 30;
         }
 
- 
+
+        private bool flag = false;
+        private void EB_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+     
+            if (flag)
+            {
+                EB.AnimateTranslation("X", 200, 0, 700, new CherylEasing.CherylSpringEase
+                {
+                    Damping = (this.FindName("DampingBox") as Slider)?.Value ?? 10,
+                    Mass = (this.FindName("MassBox") as Slider)?.Value ?? 1,
+                    Stiffness = (this.FindName("StiffnessBox") as Slider)?.Value ?? 50
+                });
+                
+            }
+            else
+            {
+                EB.AnimateTranslation("X", 0, 200, 700, new CherylEasing.CherylSpringEase
+                {
+                    Damping = (this.FindName("DampingBox") as Slider)?.Value ?? 10,
+                    Mass = (this.FindName("MassBox") as Slider)?.Value ?? 1,
+                    Stiffness = (this.FindName("StiffnessBox") as Slider)?.Value ?? 50
+                });
+               
+            }
+            
+            flag = !flag;
+        }
 }
 

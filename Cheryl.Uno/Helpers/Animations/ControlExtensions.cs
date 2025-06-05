@@ -5,7 +5,7 @@ namespace Cheryl.Uno.Helpers.Animations;
 
 public static class ControlExtensions
 {
-    public static CancellationTokenSource AnimateDouble(this UIElement element, string property, double from, double to, int durationMs = 500, EasingFunctionBase? easing = null)
+    public static CancellationTokenSource AnimateDouble(this UIElement element, string property, double from, double to, int durationMs = 500, IEasingFunction easing = null)
     {
         var tcs = new TaskCompletionSource<bool>();
         var tokenSource = new CancellationTokenSource();
@@ -43,7 +43,7 @@ public static class ControlExtensions
         double from,
         double to,
         int durationMs = 500,
-        EasingFunctionBase? easing = null)
+        IEasingFunction easing = null)
     {
         if (axis != "X" && axis != "Y")
             throw new ArgumentException("L’axe doit être \"X\" ou \"Y\".", nameof(axis));
@@ -90,7 +90,7 @@ public static class ControlExtensions
         return tokenSource;
     }
     
-    public static CancellationTokenSource AnimateScale(this UIElement element, double from, double to, int durationMs = 500, EasingFunctionBase? easing = null)
+    public static CancellationTokenSource AnimateScale(this UIElement element, double from, double to, int durationMs = 500, IEasingFunction easing = null)
     {
         var tokenSource = new CancellationTokenSource();
         var tcs = new TaskCompletionSource<bool>();
