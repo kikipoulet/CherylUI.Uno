@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -30,6 +31,9 @@ public sealed partial class SettingsPage : Page
         this.InitializeComponent();
        
     }
+    
+    public ObservableCollection<string> Fonts { get; set; }=  new ObservableCollection<string>(){"Thin", "Regular",  "Bold"};
+    public string SelectedFont { get; set; }=  "Bold";
     
     private void ShosAThing(object sender, RoutedEventArgs e)
     {

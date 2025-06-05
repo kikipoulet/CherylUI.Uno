@@ -1,0 +1,75 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls">
+
+    <Style TargetType="ProgressRing">
+        <Setter Property="Foreground" Value="{ThemeResource Accent}"></Setter>
+    </Style>
+
+    <Style TargetType="controls:BusyArea">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:BusyArea">
+                    <Grid x:Name="RootGrid">
+                        <!-- Contenu normal -->
+                        <ContentPresenter x:Name="ContentPresenter"
+                                          Content="{TemplateBinding Content}"
+                                          Opacity="1" />
+
+
+                            <StackPanel HorizontalAlignment="Center" Opacity="0" x:Name="RingPart"
+                                        VerticalAlignment="Center" IsHitTestVisible="False"
+                                        Spacing="10">
+                                <ProgressRing IsActive="True"
+                                              Width="40" Value="{TemplateBinding Value}"
+                                              Height="40"
+                                              IsIndeterminate="{TemplateBinding IsIndeterminate}" />
+                                <TextBlock Text="{TemplateBinding BusyText}"
+                                           Foreground="White"
+                                           FontSize="14" FontFamily="{StaticResource QuicksandBold}"
+                                           HorizontalAlignment="Center"/>
+                            </StackPanel>
+
+
+                        <!-- États visuels -->
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="BusyStates">
+                                <VisualState x:Name="Idle">
+                                    <Storyboard>
+
+                                        <DoubleAnimation Storyboard.TargetName="ContentPresenter"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         Duration="0:0:0.4"/>
+
+                                        <DoubleAnimation Storyboard.TargetName="RingPart"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0"
+                                                         Duration="0:0:0.25"/>
+                                    </Storyboard>
+                                </VisualState>
+
+                                <VisualState x:Name="Busy">
+                                    <Storyboard>
+
+                                        <DoubleAnimation Storyboard.TargetName="ContentPresenter"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.2"
+                                                         Duration="0:0:0.25"/>
+
+                                        <DoubleAnimation Storyboard.TargetName="RingPart"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         Duration="0:0:0.4"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+

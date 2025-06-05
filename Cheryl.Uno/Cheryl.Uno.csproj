@@ -44,9 +44,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="CommunityToolkit.WinUI.Behaviors" />
       <PackageReference Include="CommunityToolkit.WinUI.Controls.Segmented" />
       <PackageReference Include="FluentIcons.WinUI" />
-      <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Media" />
     </ItemGroup>
 
    

@@ -10,11 +10,13 @@
     xmlns:ui="clr-namespace:CommunityToolkit.WinUI.UI;assembly=CommunityToolkit.WinUI.UI"
     xmlns:controls1="clr-namespace:CommunityToolkit.WinUI.Controls;assembly=CommunityToolkit.WinUI.Controls.Segmented"
     xmlns:uiExamples="clr-namespace:CherylUI.Uno.Demo.Pages.UIExamples"
+    xmlns:mobilePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobilePicker;assembly=Cheryl.Uno"
     mc:Ignorable="d"
     Background="Transparent">
 
     <controls:SliverPage Header="Design Samples">
         <StackPanel Spacing="25">
+
 
 
             <Grid PointerReleased="GoToSettings">
@@ -26,6 +28,18 @@
                     </StackPanel>
                 </Border>
                 <Image HorizontalAlignment="Left" VerticalAlignment="Center" Height="48" Width="48" Source="/Assets/icons8-services-48.png"></Image>
+
+            </Grid>
+
+            <Grid PointerReleased="GoToChat">
+                <Border Margin="30,0,0,0" Style="{StaticResource GlassBorderStyle}">
+                    <StackPanel Margin="15,0,0,0" Spacing="9">
+                        <TextBlock FontFamily="{StaticResource QuicksandBold}" FontSize="16"   Text="Chat Page"></TextBlock>
+                        <TextBlock FontSize="13"  FontFamily="{StaticResource QuicksandRegular}" Foreground="{ThemeResource SecondaryText}" TextWrapping="Wrap" Text="Glass Border/TextBox"></TextBlock>
+
+                    </StackPanel>
+                </Border>
+                <Image HorizontalAlignment="Left" VerticalAlignment="Center" Height="48" Width="48" Source="/Assets/icons8-messagerie-48.png"></Image>
 
             </Grid>
         </StackPanel>

@@ -97,4 +97,9 @@ public sealed partial class MainPage : Page
         ContentFrame.Navigate(typeof(LayoutsPage));
         
     }
+    private void GoToOthers(object sender, PointerRoutedEventArgs e)
+    {
+        ContentFrame.Navigate(typeof(OthersPage));
+        
+    }
 }

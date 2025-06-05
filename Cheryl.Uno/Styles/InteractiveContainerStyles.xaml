@@ -65,7 +65,7 @@
 
                                 </Border>
 
-                                <ContentPresenter Margin="15" x:Name="BottomContent" />
+                                <ContentPresenter HorizontalAlignment="Stretch" Margin="15" x:Name="BottomContent" />
                                 <Border Opacity="0.1" CornerRadius="3" Height="6" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Background="{ThemeResource SecondaryText}" />
                             </Grid>
 

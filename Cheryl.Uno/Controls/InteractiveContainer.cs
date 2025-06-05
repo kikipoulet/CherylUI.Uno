@@ -18,13 +18,13 @@ namespace Cheryl.Uno.Controls;
         
         
         private ContentPresenter DialogPresenter;
-        private ContentPresenter BottomPresenter;
+        public ContentPresenter BottomPresenter;
         private ContentPresenter MainContent;
         private Border BorderDialog;
         private Border BorderBottom;
         private Grid BlackPanel;
 
-        private static InteractiveContainer Instance;
+        public static InteractiveContainer Instance;
         
         public InteractiveContainer()
         {
@@ -71,41 +71,45 @@ namespace Cheryl.Uno.Controls;
             Instance.BlackPanel.AnimateDouble("Opacity", 0.3,0, 400 );
         }
         
-        public static void ShowBottomSheet(UIElement control)
+        private static TaskCompletionSource<object> _bottomSheetTcs = new TaskCompletionSource<object>();
+    
+        public static async Task<object> ShowBottomSheet(UIElement control)
         {
-        
-            
+            _bottomSheetTcs = new TaskCompletionSource<object>();
+
             Instance.BottomPresenter.Content = control;
-            
             control.UpdateLayout();
-            
-            
-            
+
             Instance.BorderBottom.IsHitTestVisible = true;
-            
-            Instance.BorderBottom.AnimateDouble("Opacity", 0,1, 500 );
-            Instance.BorderBottom.AnimateTranslation("Y", control.ActualSize.Y +30, 0, 500);
-        
+            Instance.BorderBottom.AnimateDouble("Opacity", 0, 1, 500);
+            Instance.BorderBottom.AnimateTranslation("Y", control.ActualSize.Y + 30, 0, 500);
+
             Instance.MainContent.AnimateScale(1, 0.95, 300);
-            
             Instance.MainContent.IsHitTestVisible = false;
-            Instance.BlackPanel.AnimateDouble("Opacity", 0,0.5, 300 );
-            
+
+            Instance.BlackPanel.AnimateDouble("Opacity", 0, 0.5, 300);
             Instance.BlackPanel.IsHitTestVisible = true;
+
+            return await _bottomSheetTcs.Task;
         }
         
-        public static void CloseBottomSheet()
+        
+        public static void CloseBottomSheet(object result = null)
         {
-            Instance.BorderBottom.AnimateDouble("Opacity", 1,0.5, 500 );
+            Instance.BorderBottom.AnimateDouble("Opacity", 1, 0.5, 500);
+            Instance.BorderBottom.AnimateTranslation("Y", 0, Instance.BorderBottom.ActualHeight, 500);
             Instance.BorderBottom.IsHitTestVisible = false;
-            Instance.BorderBottom.AnimateTranslation("Y", 0,Instance.BorderBottom.ActualHeight,  500);
-            
+
             Instance.MainContent.AnimateScale(0.95, 1, 400);
-            
             Instance.MainContent.IsHitTestVisible = true;
-            Instance.BlackPanel.AnimateDouble("Opacity", 0.5,0, 400 );
+
+            Instance.BlackPanel.AnimateDouble("Opacity", 0.5, 0, 400);
             Instance.BlackPanel.IsHitTestVisible = false;
+
+            _bottomSheetTcs?.TrySetResult(result);
+            _bottomSheetTcs = null;
         }
+  
 
         
     }

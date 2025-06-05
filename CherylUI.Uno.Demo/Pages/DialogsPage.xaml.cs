@@ -28,10 +28,11 @@ public sealed partial class DialogsPage : Page
         this.InitializeComponent();
     }
 
-    private void showbottom(object sender, RoutedEventArgs e)
+    private async void showbottom(object sender, RoutedEventArgs e)
     {
         
-        InteractiveContainer.ShowBottomSheet(new ConfirmationControl());
+        await InteractiveContainer.ShowBottomSheet(new ConfirmationControl());
+        Console.WriteLine();
     }
 
     private void showdialog(object sender, RoutedEventArgs e)

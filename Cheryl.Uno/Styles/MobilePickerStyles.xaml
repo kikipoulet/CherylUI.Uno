@@ -1,0 +1,118 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:YourAppNamespace.Controls"
+    xmlns:helpers="using:YourAppNamespace.Helpers"
+    xmlns:converters="using:YourAppNamespace.Converters"
+    xmlns:converters1="clr-namespace:Cheryl.Uno.Converters"
+    xmlns:mobilePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobilePicker"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+
+    <converters1:ItemDisplayConverter x:Key="ItemDisplayConverter"/>
+
+    <converters1:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter"/>
+
+    <Style TargetType="mobilePicker:MobilePicker">
+        <Setter Property="Background" Value="{ThemeResource ComboBoxBackground}" />
+        <Setter Property="Foreground" Value="{ThemeResource ComboBoxForeground}" />
+        <Setter Property="BorderBrush" Value="{ThemeResource ComboBoxBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{ThemeResource ComboBoxBorderThemeThickness}" />
+        <Setter Property="Padding" Value="12,5" /> <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="36"/> <Setter Property="UseSystemFocusVisuals" Value="True"/>
+        <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mobilePicker:MobilePicker">
+                    <Grid Margin="{TemplateBinding Margin}" x:Name="LayoutRoot" Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                     <Storyboard>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedItemTextPart" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ComboBoxForegroundDisabled}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderContentPresenter" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ComboBoxHeaderForegroundDisabled}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                   </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+
+
+                        <StackPanel IsHitTestVisible="False" VerticalAlignment="Top" Margin="{ThemeResource ComboBoxHeaderThemeMargin}">
+                             <ContentPresenter x:Name="HeaderContentPresenter"
+                                          Content="{TemplateBinding Header}"
+                                          ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                          FontWeight="Normal"
+                                          Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                          Visibility="{Binding Header, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource NotNullToVisibilityConverter}}"
+                                          x:DeferLoadStrategy="Lazy"/>
+                        </StackPanel>
+
+
+                        <Grid IsHitTestVisible="False" Padding="{TemplateBinding Padding}" VerticalAlignment="Center">
+
+                            <TextBlock x:Name="SelectedItemTextPart"
+                                   Grid.Column="0" FontSize="15" VerticalAlignment="Center"  Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandBold}"
+                                   Text="{TemplateBinding PlaceholderText}"
+
+                                   Opacity="0.6"
+                                   TextTrimming="CharacterEllipsis"
+                                   HorizontalAlignment="Left"
+                                 />
+                           </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="mobilePicker:MobilePickerPopup">
+
+        <Setter Property="Background" Value="{ThemeResource LayerFillColorDefaultBrush}"/>
+        <Setter Property="Padding" Value="16"/> <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{ThemeResource CardStrokeColorDefaultBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mobilePicker:MobilePickerPopup">
+                    <Border HorizontalAlignment="Stretch"
+
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="8,8,0,0">
+                         <StackPanel HorizontalAlignment="Stretch">
+                            <TextBlock Text="{TemplateBinding PopupTitle}" FontFamily="{StaticResource QuicksandBold}"
+                                      FontSize="20"
+                                       Margin="0,5,0,22"/>
+                            <ListView  x:Name="ItemsListViewPart"
+                                      ItemsSource="{Binding ItemsSource, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                      SelectionMode="Single" SelectedItem="{Binding CurrentSelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                      Background="Transparent"
+                                      MaxHeight="400">
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel HorizontalAlignment="Stretch" Width="Auto" Spacing="8" Orientation="Vertical"/>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+
+                            </ListView>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

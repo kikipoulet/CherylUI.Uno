@@ -1,0 +1,56 @@
+<Page
+    x:Class="CherylUI.Uno.Demo.Pages.OthersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CherylUI.Uno.Demo.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
+    xmlns:winUi="clr-namespace:FluentIcons.WinUI;assembly=FluentIcons.WinUI"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <controls:SliverPage Header="Others">
+        <StackPanel Spacing="25">
+            <controls:GroupBox Header="Context Menu">
+                <Border Padding="35" IsHitTestVisible="True" Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border.ContextFlyout>
+
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="Action 1">
+                                <MenuFlyoutItem.Icon>
+                                    <winUi:FluentIcon Icon="ChevronRight">
+                                    </winUi:FluentIcon>
+                                </MenuFlyoutItem.Icon>
+                            </MenuFlyoutItem>
+                            <MenuFlyoutItem Text="Action 2" >
+                                <MenuFlyoutItem.Icon>
+                                    <winUi:FluentIcon Icon="ChevronRight">
+                                    </winUi:FluentIcon>
+                                </MenuFlyoutItem.Icon>
+                            </MenuFlyoutItem>
+                            <MenuFlyoutSeparator/>
+                            <MenuFlyoutItem Text="Delete" Foreground="#ff9999" >
+                                <MenuFlyoutItem.Icon>
+                                    <winUi:FluentIcon Icon="Delete"  Foreground="#ff9999">
+                                    </winUi:FluentIcon>
+                                </MenuFlyoutItem.Icon>
+                            </MenuFlyoutItem>
+                        </MenuFlyout>
+                    </Border.ContextFlyout>
+                    <TextBlock Text="Context Menu" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
+                </Border>
+            </controls:GroupBox>
+
+            <controls:GroupBox Header="Busy Area">
+                <controls:BusyArea BusyText="Waiting .." Name="BA">
+                    <StackPanel Spacing="15" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="Indeterminate" Click="BAIndeterminate"></Button>
+                        <Button Content="Values" Click="BAValues"></Button>
+                    </StackPanel>
+                </controls:BusyArea>
+            </controls:GroupBox>
+            </StackPanel>
+        </controls:SliverPage>
+
+</Page>

@@ -14,6 +14,28 @@
             <controls:GroupBox Header="Switch">
                 <ToggleSwitch HorizontalAlignment="Center" IsOn="True" />
             </controls:GroupBox>
+
+            <controls:GroupBox Header="CheckBox">
+                <CheckBox HorizontalAlignment="Center" Content="Check Me !"></CheckBox>
+            </controls:GroupBox>
+
+            <controls:GroupBox Header="RadioButton">
+                <StackPanel HorizontalAlignment="Stretch" Width="Auto" Spacing="15">
+                    <RadioButton IsChecked="True">
+                        <StackPanel Margin="0,0,0,5" Spacing="7">
+                            <TextBlock Text="Premium" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
+                            <TextBlock Text="Enjoy all the functionalities !" FontSize="13" Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandRegular}"></TextBlock>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton >
+                        <StackPanel Margin="0,0,0,5" Spacing="7">
+                            <TextBlock Text="Standard" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
+                            <TextBlock Text="Discover our standard exeprience." FontSize="13" Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandRegular}"></TextBlock>
+                        </StackPanel>
+                    </RadioButton>
+                </StackPanel>
+
+            </controls:GroupBox>
             </StackPanel>
         </controls:SliverPage>
 </Page>

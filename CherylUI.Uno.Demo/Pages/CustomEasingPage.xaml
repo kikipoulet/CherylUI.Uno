@@ -37,10 +37,10 @@
                     </StackPanel>
 
                     <!-- Buttons -->
-                    <StackPanel Orientation="Horizontal" Spacing="15">
+                  <!--  <StackPanel Orientation="Horizontal" Spacing="15">
                         <Button Content="Base" Click="SetBase" />
                         <Button Content="Smooth" Click="SetSmooth" />
-                    </StackPanel>
+                    </StackPanel> -->
                 </StackPanel>
             </Border>
 </StackPanel>

@@ -19,6 +19,13 @@
         <ResourceDictionary Source="ComboBox.xaml"></ResourceDictionary>
         <ResourceDictionary Source="SegmentedControlStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="SegmentedItemStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="SimplePageHeaderStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="MenuFlyoutStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="BusyAreaStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="CheckBoxStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="RadioButtonStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="MobilePickerStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="ListViewItemStyles.xaml"></ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
