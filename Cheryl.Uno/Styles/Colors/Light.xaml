@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:winUi="clr-namespace:CommunityToolkit.WinUI;assembly=CommunityToolkit.WinUI.Extensions">
 
     <Color x:Key="Foreground">#000000</Color>
     <Color x:Key="ContraryForeground">#FFFFFF</Color>
@@ -11,7 +12,8 @@
     <Color x:Key="DialogBackground">#FFFFFF</Color>
     <Color x:Key="GridDialogBackground">#88000000</Color>
 
-    <Color x:Key="Accent">#0A59F7</Color>
+    <Color x:Key="Accent">#1677ff</Color>
+    <Color x:Key="LowerAccent">#aa1677ff</Color>
     <Color x:Key="ContraryAccent">#317AF7</Color>
     <Color x:Key="SelectedAccent">#317AF7</Color>
     <Color x:Key="LightAccent">#250A59F7</Color>
@@ -31,7 +33,12 @@
 
 
     <Color x:Key="GlassCardBackground">White</Color>
+    <Color x:Key="GlassSoftBackground">#ccffffff</Color>
+    <Color x:Key="GlassSofterBackground">White</Color>
     <Color x:Key="GlassCardOpaqueBackground">#fcfcfc</Color>
+    <Color x:Key="SliderBackground">#11666666</Color>
+
+    <winUi:AttachedDropShadow x:Key="CardShadow" Color="Red" Offset="4" />
 
 </ResourceDictionary>
 

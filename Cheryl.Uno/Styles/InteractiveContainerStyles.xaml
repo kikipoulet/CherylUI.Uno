@@ -2,7 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CherylUI.Controls"
-    xmlns:controls="clr-namespace:Cheryl.Uno.Controls">
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls"
+    xmlns:winUi="clr-namespace:CommunityToolkit.WinUI;assembly=CommunityToolkit.WinUI.Extensions">
 
    <Style TargetType="controls:InteractiveContainer">
         <Setter Property="Template">
@@ -35,11 +36,14 @@
                             <Border.RenderTransform>
                                 <ScaleTransform ScaleX="1" ScaleY="1" />
                             </Border.RenderTransform>
+
+
                             <Grid>
-                                <Border CornerRadius="20"  >
+                                <Border  CornerRadius="20"  >
                                     <Border.Background>
                                         <AcrylicBrush TintColor="{ThemeResource GlassCardBackground}" TintOpacity="{ThemeResource GlassOpacity}" />
                                     </Border.Background>
+
 
 
                                 </Border>

@@ -67,5 +67,12 @@ public sealed partial class SettingsPage : Page
     }
 
 
+    private void DarkModeToggles(object sender, RoutedEventArgs e)
+    {
+        SystemThemeHelper.SetApplicationTheme(this.XamlRoot,  App.Current.RequestedTheme == ApplicationTheme.Dark
+            ? ElementTheme.Light
+            : ElementTheme.Dark);
+           
+    }
 }
 

@@ -57,7 +57,7 @@
 
                         <Border x:Name="GlassBorder"
                                 CornerRadius="12"
-                                BorderBrush="#29656565"
+                                BorderBrush="Transparent"
                                 BorderThickness="1.5"
                                 Padding="5"
                                 HorizontalAlignment="Stretch"

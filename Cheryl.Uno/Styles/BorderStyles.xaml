@@ -3,14 +3,20 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="Border" x:Key="GlassBorderStyle">
+        <Setter Property="Shadow">
+                <Setter.Value>
+                    <ThemeShadow   />
+                </Setter.Value>
+            </Setter>
+
         <Setter Property="CornerRadius" Value="20,20,20,20"></Setter>
         <Setter Property="Padding" Value="15"></Setter>
-        <Setter Property="Background" Value="#49656565"></Setter>
+        <Setter Property="Background" Value="{ThemeResource GlassSoftBackground}"></Setter>
     </Style>
     <Style TargetType="Border" x:Key="GlassSoftBorderStyle">
         <Setter Property="CornerRadius" Value="20,20,20,20"></Setter>
         <Setter Property="Padding" Value="15"></Setter>
-        <Setter Property="Background" Value="#29656565"></Setter>
+        <Setter Property="Background" Value="{ThemeResource GlassSofterBackground}"></Setter>
     </Style>
 
     <Style TargetType="Border" x:Key="GlassFrostedBorderStyle">

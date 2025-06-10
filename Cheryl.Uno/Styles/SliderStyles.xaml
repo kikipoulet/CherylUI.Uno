@@ -414,7 +414,7 @@
                   <RowDefinition Height="Auto" />
                   <RowDefinition Height="{ThemeResource SliderPostContentMargin}" />
                 </Grid.RowDefinitions>
-                <Rectangle x:Name="HorizontalTrackRect" Fill="#55666666" Height="{ThemeResource SliderTrackThemeHeight}" Grid.Row="1" Grid.ColumnSpan="3" RadiusX="3" RadiusY="3" />
+                <Rectangle x:Name="HorizontalTrackRect" Fill="{ThemeResource SliderBackground}" Height="{ThemeResource SliderTrackThemeHeight}" Grid.Row="1" Grid.ColumnSpan="3" RadiusX="3" RadiusY="3" />
                 <Rectangle Margin="0,0,0,0" x:Name="HorizontalDecreaseRect"  Grid.Row="1" RadiusX="3" RadiusY="3" >
                     <Rectangle.Fill>
                         <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
@@ -601,13 +601,13 @@ HorizontalAlignment="Center" VerticalAlignment="Center"
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Rectangle x:Name="HorizontalTrackRect" Fill="#55666666" Height="24"  Grid.ColumnSpan="3" RadiusX="12" RadiusY="12" />
+                            <Rectangle x:Name="HorizontalTrackRect" Fill="{ThemeResource SliderBackground}" Height="24"  Grid.ColumnSpan="3" RadiusX="12" RadiusY="12" />
 
                 <Border   CornerRadius="12,0,0,12"  >
                     <Border.Background>
                         <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
-                            <GradientStop Color="#aa317AF7" Offset="0.0" />
-                            <GradientStop Color="#317AF7" Offset="1.0" />
+                            <GradientStop Color="{ThemeResource LowerAccent}" Offset="0.0" />
+                            <GradientStop Color="{ThemeResource Accent}" Offset="1.0" />
                         </LinearGradientBrush>
                     </Border.Background>
 
@@ -636,7 +636,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center"
                       <RowDefinition Height="Auto" />
                   </Grid.RowDefinitions>
 
-                  <Border Background="#55666666" CornerRadius="12" Width="52" Grid.RowSpan="3" Grid.Column="1">
+                  <Border Background="{ThemeResource SliderBackground}" CornerRadius="12" Width="52" Grid.RowSpan="3" Grid.Column="1">
                       <Grid>
                           <Grid.RowDefinitions>
                               <RowDefinition Height="*" />
@@ -647,8 +647,8 @@ HorizontalAlignment="Center" VerticalAlignment="Center"
                           <Rectangle x:Name="VerticalDecreaseRect"  Grid.Row="2"  >
                               <Rectangle.Fill>
                                   <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                      <GradientStop Color="#317AF7" Offset="0.0" />
-                                      <GradientStop Color="#aa317AF7" Offset="1.0" />
+                                      <GradientStop Color="{ThemeResource Accent}" Offset="0.0" />
+                                      <GradientStop Color="{ThemeResource LowerAccent}" Offset="1.0" />
                                   </LinearGradientBrush>
                               </Rectangle.Fill>
                           </Rectangle>

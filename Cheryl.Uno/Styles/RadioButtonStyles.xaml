@@ -53,7 +53,7 @@
 
                                 <VisualState x:Name="Unchecked">
                                     <VisualState.Setters>
-                                        <Setter Target="GlassBorder.BorderBrush" Value="#29656565" />
+                                        <Setter Target="GlassBorder.BorderBrush" Value="Transparent" />
                                     </VisualState.Setters>
                                 </VisualState>
 
@@ -63,7 +63,7 @@
 
                         </VisualStateManager.VisualStateGroups>
 
-                     <Border CornerRadius="12" BorderBrush="#29656565" BorderThickness="1.5" Padding="5" HorizontalAlignment="Stretch" Name="GlassBorder" Style="{StaticResource GlassSoftBorderStyle}">
+                     <Border CornerRadius="12" BorderBrush="Transparent" BorderThickness="1.5" Padding="5" HorizontalAlignment="Stretch" Name="GlassBorder" Style="{StaticResource GlassSoftBorderStyle}">
                          <Grid>
                          <ContentPresenter x:Name="ContentPresenter"
                                            Content="{TemplateBinding Content}"

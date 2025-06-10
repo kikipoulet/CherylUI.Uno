@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:winUi="clr-namespace:CommunityToolkit.WinUI;assembly=CommunityToolkit.WinUI.Extensions">
 
     <Color x:Key="Foreground">#fafbfc</Color>
     <Color x:Key="ContraryForeground">#e5e5e5</Color>
@@ -12,9 +13,10 @@
     <Color x:Key="GridDialogBackground">#77ffffff</Color>
 
 
-    <Color x:Key="Accent">#317AF7</Color>
-    <Color x:Key="ContraryAccent">#55317AF7</Color>
-    <Color x:Key="SelectedAccent">#55317AF7</Color>
+    <Color x:Key="Accent">#2f54eb</Color>
+    <Color x:Key="LowerAccent">#aa2f54eb</Color>
+    <Color x:Key="ContraryAccent">#552f54eb</Color>
+    <Color x:Key="SelectedAccent">#552f54eb</Color>
     <Color x:Key="LightAccent">#250A59F7</Color>
     <Color x:Key="ComponentBackground">#44ffffff</Color>
     <Color x:Key="Separator">#33ffffff</Color>
@@ -32,7 +34,14 @@
     <system:Double x:Key="GlassOpacityLight">0.57</system:Double>
 
     <Color x:Key="GlassCardBackground">#656565</Color>
+    <Color x:Key="GlassSoftBackground">#53656565</Color>
+    <Color x:Key="GlassSofterBackground">#29656565</Color>
     <Color x:Key="GlassCardOpaqueBackground">#222222</Color>
+
+    <Color x:Key="SliderBackground">#55666666</Color>
+
+    <winUi:AttachedDropShadow x:Key="CardShadow" Color="Red" Offset="4" />
+
 
 </ResourceDictionary>
 
