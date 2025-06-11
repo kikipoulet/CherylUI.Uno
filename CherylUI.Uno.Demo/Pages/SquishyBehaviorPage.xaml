@@ -8,13 +8,15 @@
     xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
     xmlns:interactivity="clr-namespace:Microsoft.Xaml.Interactivity;assembly=Microsoft.Xaml.Interactivity"
     xmlns:global="clr-namespace:;assembly=Cheryl.Uno"
+    xmlns:uiExamples="clr-namespace:CherylUI.Uno.Demo.Pages.UIExamples"
     mc:Ignorable="d"
     Background="Transparent">
 
-    <controls:SliverPage Header="Squishy Behavior">
-        <StackPanel Spacing="25">
+    <controls:BottomTabControl x:Name="MyTabs">
 
-            <controls:GroupBox Header="Squishy Border">
+        <controls:BottomTabItem Label="Squishy" IconGlyph="&#xE80F;">
+            <controls:BottomTabItem.PageContent>
+                <controls:GroupBox Margin="20,0" VerticalAlignment="Center" Header="Squishy Border">
 
                 <Border Padding="35" IsHitTestVisible="True" Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <interactivity:Interaction.Behaviors>
@@ -23,9 +25,12 @@
 
                     <TextBlock Text="Drag Me !!" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
                 </Border>
-            </controls:GroupBox>
+                </controls:GroupBox>
+            </controls:BottomTabItem.PageContent>
+        </controls:BottomTabItem>
 
-            <controls:GroupBox Header="Tilt Enabled">
+        <controls:BottomTabItem Label="Tilt" IconGlyph="&#xEB51;">
+            <controls:GroupBox Margin="20,0" VerticalAlignment="Center" Header="Tilt Enabled">
                 <Border Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <interactivity:Interaction.Behaviors>
                         <global:SquishyDragBehavior EnableTilt="True" Intensity="3"  />
@@ -33,28 +38,44 @@
                     <TextBlock Margin="35" Text="I can Tilt !" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
                 </Border>
             </controls:GroupBox>
+        </controls:BottomTabItem>
 
-            <controls:GroupBox Header="X Axis Disabled">
-                <Border Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <interactivity:Interaction.Behaviors>
-                        <global:SquishyDragBehavior EnableX="False" Intensity="3"  />
-                    </interactivity:Interaction.Behaviors>
-                    <TextBlock Margin="35" Text="I'm locked on X axis!" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
-                </Border>
-            </controls:GroupBox>
+        <controls:BottomTabItem Label="Axises" IconGlyph="&#xE77B;">
+            <controls:BottomTabItem.PageContent>
+                <StackPanel  Margin="20,0" VerticalAlignment="Center" Spacing="15">
+                <controls:GroupBox  Header="X Axis Disabled">
+                    <Border Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <interactivity:Interaction.Behaviors>
+                            <global:SquishyDragBehavior EnableX="False" Intensity="3"  />
+                        </interactivity:Interaction.Behaviors>
+                        <TextBlock Margin="35" Text="I'm locked on X axis!" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
+                    </Border>
+                </controls:GroupBox>
 
-            <controls:GroupBox Header="X Axis Disabled">
-                <Border Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <interactivity:Interaction.Behaviors>
-                        <global:SquishyDragBehavior ScaleBasedOnAxisDisplacement="True" Intensity="3"  />
-                    </interactivity:Interaction.Behaviors>
-                    <TextBlock Margin="35" Text="I change with Axises !" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
-                </Border>
-            </controls:GroupBox>
+                <controls:GroupBox  Header="X Axis Disabled">
+                    <Border Style="{StaticResource GlassBorderStyle}" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <interactivity:Interaction.Behaviors>
+                            <global:SquishyDragBehavior ScaleBasedOnAxisDisplacement="True" Intensity="3"  />
+                        </interactivity:Interaction.Behaviors>
+                        <TextBlock Margin="35" Text="I change with Axises !" FontFamily="{StaticResource QuicksandBold}"></TextBlock>
+                    </Border>
+                </controls:GroupBox>
+                </StackPanel>
+            </controls:BottomTabItem.PageContent>
+        </controls:BottomTabItem>
 
-            <Border Height="50"></Border>
+        <controls:BottomTabItem Label="Lorem" IconGlyph="&#xE713;">
+            <controls:BottomTabItem.PageContent>
+                <ScrollViewer>
+                    <controls:SliverPage Header="Lorem Ipsum">
+                    <uiExamples:LoremIpsum />
+                    </controls:SliverPage>
+                </ScrollViewer>
+            </controls:BottomTabItem.PageContent>
+        </controls:BottomTabItem>
 
-        </StackPanel>
-    </controls:SliverPage>
+    </controls:BottomTabControl>
+
+
 </Page>
 

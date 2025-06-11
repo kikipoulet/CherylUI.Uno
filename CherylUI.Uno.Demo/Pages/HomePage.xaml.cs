@@ -32,7 +32,10 @@ public sealed partial class HomePage : Page
     public HomePage()
     {
         this.InitializeComponent();
+     
     }
+    
+    public DateTime SelectedDate { get; set; }=new DateTime(2000,1,1);
     
 
     private void GoToSettings(object sender, PointerRoutedEventArgs e)
@@ -44,5 +47,7 @@ public sealed partial class HomePage : Page
     {
         MainPage.GlobalContentFrame.Navigate(typeof(ChatPage));
     }
+
+   
 }
 

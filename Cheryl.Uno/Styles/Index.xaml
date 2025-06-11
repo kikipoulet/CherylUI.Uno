@@ -1,5 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+      <Color x:Key="BackgroundFirstColor">#0a59f7</Color>
+    <Color x:Key="BackgroundSecondColor">#5900ff</Color>
+
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary Source="Colors/Light.xaml" x:Key="Light"></ResourceDictionary>
         <ResourceDictionary Source="Colors/Dark.xaml" x:Key="Dark"></ResourceDictionary>
@@ -27,6 +30,8 @@
         <ResourceDictionary Source="MobilePickerStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="ListViewItemStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="NumberBoxStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="MobileDatePickerStyles.xaml"></ResourceDictionary>
+<ResourceDictionary Source="CalendarViewStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

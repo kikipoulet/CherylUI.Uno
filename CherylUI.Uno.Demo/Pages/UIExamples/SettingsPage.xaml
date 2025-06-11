@@ -13,12 +13,28 @@
     xmlns:controls="clr-namespace:CommunityToolkit.WinUI.Controls;assembly=CommunityToolkit.WinUI.Controls.Segmented"
     xmlns:segmented="clr-namespace:Cheryl.Uno.Controls.Segmented;assembly=Cheryl.Uno"
     xmlns:mobilePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobilePicker;assembly=Cheryl.Uno"
+    xmlns:datePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.DatePicker;assembly=Cheryl.Uno"
     mc:Ignorable="d"
     Background="Transparent">
 
     <controls1:SliverPageLong Header="Settings">
 
             <StackPanel Spacing="30"  VerticalAlignment="Center">
+
+                <controls1:GroupBox Header="Informations">
+                    <StackPanel Margin="2,1" Spacing="14">
+                        <Grid>
+                            <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="First Name"></TextBlock>
+                            <TextBox MinWidth="100" HorizontalContentAlignment="Right" Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandBold}" Margin="-5,-10" Text="Billy" HorizontalAlignment="Right"></TextBox>
+                        </Grid>
+                        <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                        <Grid>
+                            <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Birthday"></TextBlock>
+                            <datePicker:MobileDatePicker Margin="-10,-10"  Date="{x:Bind SelectedDate, Mode=TwoWay}" HorizontalAlignment="Right"></datePicker:MobileDatePicker>
+                        </Grid>
+
+                    </StackPanel>
+                </controls1:GroupBox>
 
                 <controls1:GroupBox Header="Options" >
                     <StackPanel Margin="2,1" Spacing="14">
@@ -97,6 +113,8 @@
 
                     </StackPanel>
                 </controls1:GroupBox>
+
+
 
                 <controls1:GroupBox Header="Volume">
                     <Grid Margin="0,10,0,5">

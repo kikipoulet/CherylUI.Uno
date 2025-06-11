@@ -17,7 +17,7 @@
                         <ContentPresenter x:Name="ContentHostPresenter"
                                           Margin="{TemplateBinding Padding}" />
 
-                        <Border VerticalAlignment="Bottom" Padding="0,12,0,5" >
+                        <Border Name="BaseBorder" VerticalAlignment="Bottom" Padding="0,12,0,5" >
 
                                 <Border.Background>
                                 <AcrylicBrush  TintColor="{ThemeResource GlassCardBackground}" TintOpacity="{ThemeResource GlassOpacity}" />
@@ -112,8 +112,8 @@
                                       Glyph="{TemplateBinding IconGlyph}"
                                       FontSize="22"
                                       HorizontalAlignment="Center"/>
-                            <TextBlock Text="{TemplateBinding Label}"
-                                       FontSize="13" FontFamily="{StaticResource QuickSandRegular}"
+                            <TextBlock Text="{TemplateBinding Label}" x:Name="TL"
+                                       FontSize="13" Height="14" FontFamily="{StaticResource QuickSandRegular}"
                                        HorizontalAlignment="Center"
                                        Margin="0,4,0,0"/>
                         </StackPanel>

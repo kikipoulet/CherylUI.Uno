@@ -133,6 +133,246 @@
             </StackPanel>
 
         </controls:GroupBox>
+
+         <controls:GroupBox Header="Lorem Ipsum" >
+        <StackPanel Margin="2,1" Spacing="14">
+            <Grid>
+                <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                  </Grid>
+
+            <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+            <Grid>
+                <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+            </Grid>
+            <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+            <Grid>
+                <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+            </Grid>
+        </StackPanel>
+
+    </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
+
+         <controls:GroupBox Header="Lorem Ipsum" >
+        <StackPanel Margin="2,1" Spacing="14">
+            <Grid>
+                <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                  </Grid>
+
+            <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+            <Grid>
+                <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+            </Grid>
+            <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+            <Grid>
+                <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+            </Grid>
+        </StackPanel>
+
+    </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
+
+        <controls:GroupBox Header="Lorem Ipsum" >
+            <StackPanel Margin="2,1" Spacing="14">
+                <Grid>
+                    <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                </Grid>
+
+                <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+
+                </Grid>
+                <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
+                <Grid>
+                    <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
+                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                </Grid>
+            </StackPanel>
+
+        </controls:GroupBox>
         </StackPanel>
 
 </UserControl>

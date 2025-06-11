@@ -28,8 +28,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="MenuFlyoutPresenter">
 
+<Border Margin="20" Translation="0,0,50">
+    <Border.Shadow>
+        <ThemeShadow></ThemeShadow>
+    </Border.Shadow>
+    <Grid   Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
 
-                    <Grid Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
 
                         <ScrollViewer x:Name="MenuFlyoutPresenterScrollViewer"
                                       Margin="{TemplateBinding Padding}"
@@ -47,7 +51,7 @@
                         <Border x:Name="MenuFlyoutPresenterBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" />
 
                     </Grid>
-
+</Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

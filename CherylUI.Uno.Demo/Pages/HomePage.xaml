@@ -11,8 +11,10 @@
     xmlns:controls1="clr-namespace:CommunityToolkit.WinUI.Controls;assembly=CommunityToolkit.WinUI.Controls.Segmented"
     xmlns:uiExamples="clr-namespace:CherylUI.Uno.Demo.Pages.UIExamples"
     xmlns:mobilePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobilePicker;assembly=Cheryl.Uno"
+    xmlns:datePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.DatePicker;assembly=Cheryl.Uno"
     mc:Ignorable="d"
     Background="Transparent">
+
 
     <controls:SliverPage Header="Design Samples">
         <StackPanel Spacing="25">

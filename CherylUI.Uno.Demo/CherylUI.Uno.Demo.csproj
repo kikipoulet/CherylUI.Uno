@@ -43,6 +43,7 @@
       <UnoIcon Include="Assets\Icons\chevron_right.svg" />
     </ItemGroup>
     <ItemGroup>
+      <PackageReference Include="CommunityToolkit.WinUI.Converters" />
       <PackageReference Include="FluentIcons.Uno" />
       <PackageReference Include="FluentIcons.WinUI" />
       <PackageReference Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" />

@@ -8,6 +8,7 @@
     xmlns:media="clr-namespace:Uno.Media;assembly=Uno.UI"
     xmlns:winUi="clr-namespace:FluentIcons.WinUI;assembly=FluentIcons.WinUI"
     xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
+    xmlns:converters="clr-namespace:CommunityToolkit.WinUI.Converters;assembly=CommunityToolkit.WinUI.Converters"
     mc:Ignorable="d"
     Background="Transparent">
 
@@ -16,6 +17,7 @@
         <Grid.Resources>
             <local:BoolToAlignmentConverter x:Key="BoolToAlignmentConverter"/>
             <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            <converters:BoolNegationConverter x:Key="InvertedBoolConverter" />
         </Grid.Resources>
 
         <ScrollViewer Name="MySV" VerticalScrollBarVisibility="Hidden">
@@ -23,15 +25,24 @@
             <ItemsControl  ItemsSource="{x:Bind Messages}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate x:DataType="local:ChatMessage">
-                        <Border Margin="10,6" Padding="10" CornerRadius="12" MaxWidth="250" Style="{StaticResource GlassBorderStyle}" HorizontalAlignment="{x:Bind Sent, Mode=OneWay, Converter={StaticResource BoolToAlignmentConverter}}">
+                        <StackPanel HorizontalAlignment="{x:Bind Sent, Mode=OneWay, Converter={StaticResource BoolToAlignmentConverter}}" Orientation="Horizontal" >
+                            <Border Visibility="{x:Bind Sent, Converter={StaticResource InvertedBoolConverter}}" Height="30" Width="30" CornerRadius="15" Margin="10,0,0,0" VerticalAlignment="Center ">
+                                <Image Source="/Assets/suki.jpg" Stretch="Fill"></Image>
+                            </Border>
+                            <Border Margin="10,6" Padding="10" CornerRadius="12" MaxWidth="250" Style="{StaticResource GlassBorderStyle}" >
                            <Grid>
-                               <Border Background="#aab37feb" Opacity="0.2" Visibility="{x:Bind Sent, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}" Margin="-30"></Border>
-                               <TextBlock Text="{x:Bind Message}"
-                                          FontFamily="{StaticResource QuicksandRegular}"
-                                          TextWrapping="WrapWholeWords"
-                                          MaxWidth="300"/>
+                               <Grid Visibility="{x:Bind Sent, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
+                               <Border Visibility="{ThemeResource IsDark}" Background="#bbb37feb" Opacity="0.2"  Margin="-30"></Border>
+                               <Border Visibility="{ThemeResource IsLight}" Background="#22b37feb" Opacity="0.2"  Margin="-30"></Border>
+                               </Grid>
+                                   <TextBlock Text="{x:Bind Message}"
+                                              FontFamily="{StaticResource QuicksandRegular}"
+                                              TextWrapping="WrapWholeWords"
+                                              MaxWidth="300"/>
                             </Grid>
                         </Border>
+
+                        </StackPanel>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
@@ -71,7 +82,7 @@
                             <GradientStop Color="#aab37feb" Offset="1.0" />
                         </LinearGradientBrush>
                     </Button.Background>
-                    <SymbolIcon Foreground="{ThemeResource SecondaryText}" Margin="4,4,-1,4" HorizontalAlignment="Center"  Opacity="1" VerticalAlignment="Center"  Symbol="Send"></SymbolIcon>
+                    <SymbolIcon Foreground="White" Margin="4,4,-1,4" HorizontalAlignment="Center"  Opacity="1" VerticalAlignment="Center"  Symbol="Send"></SymbolIcon>
 
                 </Button>
             </Grid>

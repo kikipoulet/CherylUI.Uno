@@ -70,6 +70,9 @@ namespace Cheryl.Uno.Controls.Background;
             _themeColorUint = ConvertToUint(Color.FromArgb(255, 10, 89, 247));
             _accentColorUint = ConvertToUint(Color.FromArgb(255, 89, 0, 255));
 
+            _themeColorUint = ConvertToUint((Color)Application.Current.Resources["BackgroundFirstColor"]);
+            _accentColorUint = ConvertToUint((Color)Application.Current.Resources["BackgroundSecondColor"]);
+
             _baseColorUint = baseTheme == ElementTheme.Light
                 ? ConvertToUint(Color.FromArgb(255, 245, 245, 245)) // Light Gray
                 : ConvertToUint(Color.FromArgb(255, 0, 0, 0));     // Black

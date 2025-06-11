@@ -25,7 +25,7 @@
                             <VisualState x:Name="Normal">
                                 <Storyboard>
                                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OuterBorder" Storyboard.TargetProperty="Fill">
-                                        <DiscreteObjectKeyFrame KeyTime="0" Value="#55666666" >
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SliderBackground}" >
 
                                         </DiscreteObjectKeyFrame>
                                     </ObjectAnimationUsingKeyFrames>
@@ -46,7 +46,7 @@
                             <VisualState x:Name="PointerOver">
                                 <Storyboard>
                                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OuterBorder" Storyboard.TargetProperty="Fill">
-                                        <DiscreteObjectKeyFrame KeyTime="0" Value="#55666666" />
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SliderBackground}" />
                                     </ObjectAnimationUsingKeyFrames>
                                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnobOff" Storyboard.TargetProperty="Fill">
                                         <DiscreteObjectKeyFrame KeyTime="0" Value="#F5F5F5" />
@@ -62,7 +62,7 @@
                             <VisualState x:Name="Pressed">
                                 <Storyboard>
                                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OuterBorder" Storyboard.TargetProperty="Fill">
-                                        <DiscreteObjectKeyFrame KeyTime="0" Value="#55666666" />
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SliderBackground}" />
                                     </ObjectAnimationUsingKeyFrames>
                                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnobOff" Storyboard.TargetProperty="Fill">
                                         <DiscreteObjectKeyFrame KeyTime="0" Value="#E6E6E6" />

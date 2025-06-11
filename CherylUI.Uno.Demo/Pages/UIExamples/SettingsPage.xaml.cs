@@ -34,6 +34,7 @@ public sealed partial class SettingsPage : Page
     
     public ObservableCollection<string> Fonts { get; set; }=  new ObservableCollection<string>(){"Thin", "Regular",  "Bold"};
     public string SelectedFont { get; set; }=  "Bold";
+    public DateTimeOffset SelectedDate { get; set; }=new DateTime(2000,1,1);
     
     private void ShosAThing(object sender, RoutedEventArgs e)
     {

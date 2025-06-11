@@ -1,0 +1,102 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:YourAppNamespace.Controls"
+    xmlns:datePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.DatePicker">
+
+    <Style TargetType="datePicker:MobileDatePicker">
+        <Setter Property="Background" Value="{ThemeResource TextControlBackground}" />
+        <Setter Property="Foreground" Value="{ThemeResource SecondaryText}" />
+        <Setter Property="BorderBrush" Value="{ThemeResource TextControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{ThemeResource TextControlBorderThemeThickness}" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="36"/>
+        <Setter Property="UseSystemFocusVisuals" Value="True"/>
+        <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="datePicker:MobileDatePicker">
+                    <Grid x:Name="LayoutRoot" Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                             <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+
+
+
+
+                        <Grid Padding="{TemplateBinding Padding}" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="DateTextPart"
+                                   Grid.Column="0" FontFamily="{StaticResource QuicksandBold}"
+                                   Text="{TemplateBinding PlaceholderText}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   Opacity="0.6"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center" />
+
+                            <FontIcon Glyph="&#xE787;" Grid.Column="1"
+                                      FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                                      Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                      HorizontalAlignment="Right" VerticalAlignment="Center"
+                                      Margin="10,0,0,0"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+ <Style TargetType="datePicker:MobileDatePickerPanel">
+        <Setter Property="Background" Value="{ThemeResource LayerFillColorDefaultBrush}"/>
+        <Setter Property="Padding" Value="16"/>
+        <Setter Property="BorderThickness" Value="1,1,1,0"/>
+        <Setter Property="BorderBrush" Value="{ThemeResource CardStrokeColorDefaultBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="datePicker:MobileDatePickerPanel">
+
+                        <StackPanel Margin="-10,0,-10,-10" Padding="{TemplateBinding Padding}" Spacing="12">
+
+
+                            <CalendarView x:Name="CalendarViewPart"
+                                          SelectionMode="Single"
+                                          HorizontalAlignment="Stretch"/>
+
+
+
+
+                                <Button x:Name="AcceptButtonPart" Margin="-4,10,-4,0"
+                                        Content="Confirm"
+                                        Style="{ThemeResource BigButtonStyle}"
+                                        HorizontalAlignment="Stretch"/>
+
+                        </StackPanel>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

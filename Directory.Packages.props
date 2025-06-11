@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageVersion Include="CommunityToolkit.WinUI.Behaviors" Version="8.2.250402" />
     <PackageVersion Include="CommunityToolkit.WinUI.Controls.Segmented" Version="8.2.250402" />
+    <PackageVersion Include="CommunityToolkit.WinUI.Converters" Version="8.2.250402" />
     <PackageVersion Include="FluentIcons.Uno" Version="1.1.300" />
     <PackageVersion Include="FluentIcons.WinUI" Version="1.1.300" />
     <PackageVersion Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" Version="2.0.0-rc5.3" />

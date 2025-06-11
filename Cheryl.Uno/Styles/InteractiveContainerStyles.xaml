@@ -10,7 +10,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="controls:InteractiveContainer">
                     <Grid>
-                        <controls:CherylBackgroundWinUI3 />
+                        <controls:CherylBackgroundWinUI3 Margin="-15" />
 
 
                                 <ContentPresenter x:Name="MainContent" Content="{TemplateBinding Content}" />

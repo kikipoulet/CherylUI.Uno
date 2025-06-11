@@ -15,6 +15,13 @@
 
       <!-- Add resources here -->
 
+     <!-- <Color x:Key="BackgroundFirstColor">Red</Color>
+      <Color x:Key="BackgroundSecondColor">OrangeRed</Color>
+      <Color x:Key="Accent">Red</Color>
+      <Color x:Key="LowerAccent">IndianRed</Color>
+      <Color x:Key="ContraryAccent">IndianRed</Color>
+      <Color x:Key="SelectedAccent">IndianRed</Color> -->
+
     </ResourceDictionary>
   </Application.Resources>
 

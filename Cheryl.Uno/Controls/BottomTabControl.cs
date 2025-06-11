@@ -1,123 +1,219 @@
 ﻿using System.Collections;
 using System.Collections.ObjectModel;
+using Cheryl.Uno.Helpers.Animations;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Markup;
+using Uno.UI.Extensions;
 
 namespace Cheryl.Uno.Controls;
 
     [ContentProperty(Name = "Items")] // Permet de définir les BottomTabItem directement en XAML
-    public sealed class BottomTabControl : Control
+public sealed class BottomTabControl : Control
+{
+    private ListView _tabHeaderListView;
+    private Border _baseborder;
+    private ContentPresenter _contentHostPresenter;
+    private ScrollViewer _currentScrollViewer; // Référence au ScrollViewer actuel
+    private double _lastVerticalOffset; // Dernier offset pour déterminer la direction du défilement
+
+    public BottomTabControl()
     {
-        private ListView _tabHeaderListView;
-        private ContentPresenter _contentHostPresenter;
+        this.DefaultStyleKey = typeof(BottomTabControl);
+        Items = new ObservableCollection<BottomTabItem>();
+    }
 
-        public BottomTabControl()
+    public ObservableCollection<BottomTabItem> Items
+    {
+        get { return (ObservableCollection<BottomTabItem>)GetValue(ItemsProperty); }
+        private set { SetValue(ItemsProperty, value); }
+    }
+    public static readonly DependencyProperty ItemsProperty =
+        DependencyProperty.Register(nameof(Items), typeof(ObservableCollection<BottomTabItem>), typeof(BottomTabControl), new PropertyMetadata(null, OnItemsChanged));
+
+    private static void OnItemsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        var control = (BottomTabControl)d;
+        if (control._tabHeaderListView != null && e.NewValue is ObservableCollection<BottomTabItem> newItems)
         {
-            
-            this.DefaultStyleKey = typeof(BottomTabControl);
-            // Initialiser la collection Items pour que le XAML puisse y ajouter des éléments
-            Items = new ObservableCollection<BottomTabItem>();
+            control._tabHeaderListView.ItemsSource = newItems;
         }
 
-        // Collection de BottomTabItem définis par l'utilisateur en XAML
-        public ObservableCollection<BottomTabItem> Items
+        if (e.NewValue is ObservableCollection<BottomTabItem> currentItems && currentItems.Any())
         {
-            get { return (ObservableCollection<BottomTabItem>)GetValue(ItemsProperty); }
-            private set { SetValue(ItemsProperty, value); } // Setter privé, initialisé dans le constructeur
-        }
-        public static readonly DependencyProperty ItemsProperty =
-            DependencyProperty.Register(nameof(Items), typeof(ObservableCollection<BottomTabItem>), typeof(BottomTabControl), new PropertyMetadata(null, OnItemsChanged));
-
-        private static void OnItemsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var control = (BottomTabControl)d;
-            if (control._tabHeaderListView != null && e.NewValue is ObservableCollection<BottomTabItem> newItems)
+            if (control.SelectedItem == null || !currentItems.Contains(control.SelectedItem))
             {
-                control._tabHeaderListView.ItemsSource = newItems;
-            }
-
-            // Gérer la sélection initiale si nécessaire
-            if (e.NewValue is ObservableCollection<BottomTabItem> currentItems && currentItems.Any())
-            {
-                if (control.SelectedItem == null || !currentItems.Contains(control.SelectedItem))
-                {
-                    control.SelectedItem = currentItems.FirstOrDefault();
-                }
-            }
-            else if (e.NewValue == null) // Si la collection est vidée
-            {
-                control.SelectedItem = null;
+                control.SelectedItem = currentItems.FirstOrDefault();
             }
         }
-
-        // Le BottomTabItem actuellement sélectionné
-        public BottomTabItem SelectedItem
+        else if (e.NewValue == null)
         {
-            get { return (BottomTabItem)GetValue(SelectedItemProperty); }
-            set { SetValue(SelectedItemProperty, value); }
-        }
-        public static readonly DependencyProperty SelectedItemProperty =
-            DependencyProperty.Register(nameof(SelectedItem), typeof(BottomTabItem), typeof(BottomTabControl), new PropertyMetadata(null, OnSelectedItemChanged));
-
-        private static void OnSelectedItemChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var control = (BottomTabControl)d;
-            control.UpdateContent();
-
-            // Déclencher l'événement SelectionChanged standard
-            var oldItem = e.OldValue as BottomTabItem;
-            var newItem = e.NewValue as BottomTabItem;
-
-            List<object> removedItems = new List<object>();
-            if (oldItem != null) removedItems.Add(oldItem);
-
-            List<object> addedItems = new List<object>();
-            if (newItem != null) addedItems.Add(newItem);
-            
-            control.InternalSelectionChanged?.Invoke(control, new SelectionChangedEventArgs(removedItems, addedItems));
-        }
-
-        // Renommé pour éviter conflit si l'utilisateur nomme son événement "SelectionChanged"
-        public event SelectionChangedEventHandler InternalSelectionChanged;
-
-
-        protected override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-
-            _tabHeaderListView = GetTemplateChild("TabHeaderListView") as ListView;
-            _contentHostPresenter = GetTemplateChild("ContentHostPresenter") as ContentPresenter;
-
-            if (_tabHeaderListView != null)
-            {
-                // ItemsSource est lié aux 'Items' du contrôle dans le template XAML.
-                // SelectedItem est également lié en TwoWay dans le template.
-            }
-            
-            // Assurer que le contenu est affiché pour l'élément initialement sélectionné (si Items sont déjà là)
-            if (SelectedItem == null && Items != null && Items.Any())
-            {
-                SelectedItem = Items.FirstOrDefault();
-            }
-            UpdateContent(); // Met à jour le contenu initial
-        }
-        
-        private void UpdateContent()
-        {
-            if (_contentHostPresenter != null)
-            {
-                if (SelectedItem != null)
-                {
-                    // Affiche le PageContent du BottomTabItem sélectionné
-                    _contentHostPresenter.Content = SelectedItem.PageContent;
-                }
-                else
-                {
-                    _contentHostPresenter.Content = null; // Vide le contenu si aucun onglet n'est sélectionné
-                }
-            }
+            control.SelectedItem = null;
         }
     }
+
+    public BottomTabItem SelectedItem
+    {
+        get { return (BottomTabItem)GetValue(SelectedItemProperty); }
+        set { SetValue(SelectedItemProperty, value); }
+    }
+    public static readonly DependencyProperty SelectedItemProperty =
+        DependencyProperty.Register(nameof(SelectedItem), typeof(BottomTabItem), typeof(BottomTabControl), new PropertyMetadata(null, OnSelectedItemChanged));
+
+    private static void OnSelectedItemChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        var control = (BottomTabControl)d;
+        control.UpdateContent();
+
+        var oldItem = e.OldValue as BottomTabItem;
+        var newItem = e.NewValue as BottomTabItem;
+
+        List<object> removedItems = new List<object>();
+        if (oldItem != null) removedItems.Add(oldItem);
+
+        List<object> addedItems = new List<object>();
+        if (newItem != null) addedItems.Add(newItem);
+
+        control.InternalSelectionChanged?.Invoke(control, new SelectionChangedEventArgs(removedItems, addedItems));
+    }
+
+    public event SelectionChangedEventHandler InternalSelectionChanged;
+
+    protected override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+
+        _tabHeaderListView = GetTemplateChild("TabHeaderListView") as ListView;
+        _contentHostPresenter = GetTemplateChild("ContentHostPresenter") as ContentPresenter;
+        _baseborder = GetTemplateChild("BaseBorder") as Border;
+
+        if (SelectedItem == null && Items != null && Items.Any())
+        {
+            SelectedItem = Items.FirstOrDefault();
+        }
+        UpdateContent();
+    }
+
+    private void UpdateContent()
+    {
+        // Nettoyer l'ancien gestionnaire d'événements
+        if (_currentScrollViewer != null)
+        {
+            _currentScrollViewer.ViewChanged -= OnScrollViewerViewChanged;
+            _currentScrollViewer = null;
+        }
+
+        if (_contentHostPresenter != null)
+        {
+            if (SelectedItem != null)
+            {
+                _contentHostPresenter.Content = SelectedItem.PageContent;
+
+                // Chercher un ScrollViewer dans le contenu
+                _currentScrollViewer = FindScrollViewer(SelectedItem.PageContent);
+                if (_currentScrollViewer != null)
+                {
+                    _lastVerticalOffset = _currentScrollViewer.VerticalOffset;
+                    _currentScrollViewer.ViewChanged += OnScrollViewerViewChanged;
+                }
+            }
+            else
+            {
+                _contentHostPresenter.Content = null;
+            }
+        }
+
+        // S'assurer que le ListView est visible au départ
+        if (_tabHeaderListView != null)
+        {
+            _tabHeaderListView.Visibility = Microsoft.UI.Xaml.Visibility.Visible;
+        }
+    }
+
+    private ScrollViewer FindScrollViewer(object content)
+    {
+        if (content is ScrollViewer scrollViewer)
+        {
+            return scrollViewer;
+        }
+        else if (content is FrameworkElement element)
+        {
+            // Parcourir l'arbre visuel pour trouver un ScrollViewer
+            for (int i = 0; i < Microsoft.UI.Xaml.Media.VisualTreeHelper.GetChildrenCount(element); i++)
+            {
+                var child = Microsoft.UI.Xaml.Media.VisualTreeHelper.GetChild(element, i);
+                var result = FindScrollViewer(child);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+        }
+        return null;
+    }
+
+    private void OnScrollViewerViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
+    {
+        if (_currentScrollViewer == null || _tabHeaderListView == null)
+            return;
+
+        double currentOffset = _currentScrollViewer.VerticalOffset;
+
+        if (currentOffset == _lastVerticalOffset)
+            return;
+        
+        bool isScrollingDown = currentOffset > _lastVerticalOffset ;
+
+       
+
+        // Mettre à jour la visibilité du ListView
+        if (isScrollingDown)
+            HideAllLabels();
+        else 
+            ShowAllLabels();
+
+        _lastVerticalOffset = currentOffset;
+    }
+
+    private bool IsLabelShow = true;
+    
+    private void HideAllLabels()
+    {
+        if (IsLabelShow)
+        {
+            IsLabelShow = false;
+            _baseborder.AnimateTranslation("Y", 0, 15);
+            
+            var items =  _tabHeaderListView.Items;
+            foreach (BottomTabItem item in items)
+            {
+           
+            
+                if(item._TextBlockLabel.Opacity == 1)
+                    item._TextBlockLabel.AnimateDouble("Opacity", 1, 0);
+            }
+            
+        }
+    }
+
+    private void ShowAllLabels()
+    {
+
+        if (!IsLabelShow)
+        {
+            IsLabelShow = true;
+            _baseborder.AnimateTranslation("Y", 15, 0);
+            
+            var items =  _tabHeaderListView.Items;
+            foreach (BottomTabItem item in items)
+            {
+                if(item._TextBlockLabel.Opacity == 0)
+                    item._TextBlockLabel.AnimateDouble("Opacity", 0, 1);
+                //  item._TextBlockLabel.Visibility = Microsoft.UI.Xaml.Visibility.Visible;
+            }
+            
+        }
+    }
+}
 
     [ContentProperty(Name = "PageContent")] // Permet de mettre le contenu de la page directement en XAML
     public sealed class BottomTabItem : Control
@@ -125,6 +221,14 @@ namespace Cheryl.Uno.Controls;
         public BottomTabItem()
         {
             this.DefaultStyleKey = typeof(BottomTabItem);
+        }
+
+        public TextBlock _TextBlockLabel;
+
+        protected override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            _TextBlockLabel = GetTemplateChild("TL") as TextBlock;
         }
 
         public string Label

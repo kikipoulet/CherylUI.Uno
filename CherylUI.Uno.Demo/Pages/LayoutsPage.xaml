@@ -12,39 +12,7 @@
 
     <controls:SliverPage Header="Layouts">
         <StackPanel Spacing="8">
-            <TextBlock Text="BottomTab" Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandRegular}" Margin="0,70,0,0"></TextBlock>
-            <Border Margin="0,0" Height="550" BorderThickness="1.5" BorderBrush="Gray">
-                <Grid>
-                <controls:CherylBackgroundWinUI3></controls:CherylBackgroundWinUI3>
-                    <controls:BottomTabControl x:Name="MyTabs">
 
-                        <controls:BottomTabItem Label="Home" IconGlyph="&#xE80F;">
-                            <controls:BottomTabItem.PageContent>
-                                <uiExamples:LoremIpsum />
-                            </controls:BottomTabItem.PageContent>
-                        </controls:BottomTabItem>
-
-                        <controls:BottomTabItem Label="Favorites" IconGlyph="&#xEB51;">
-                            <controls:BottomTabItem.PageContent>
-                                <uiExamples:LoremIpsum />
-                            </controls:BottomTabItem.PageContent>
-                        </controls:BottomTabItem>
-
-                        <controls:BottomTabItem Label="Profile" IconGlyph="&#xE77B;">
-                            <controls:BottomTabItem.PageContent>
-                                <uiExamples:LoremIpsum />
-                            </controls:BottomTabItem.PageContent>
-                        </controls:BottomTabItem>
-
-                        <controls:BottomTabItem Label="Settings" IconGlyph="&#xE713;">
-                            <controls:BottomTabItem.PageContent>
-                                <uiExamples:LoremIpsum />
-                            </controls:BottomTabItem.PageContent>
-                        </controls:BottomTabItem>
-
-                    </controls:BottomTabControl>
-                    </Grid>
-            </Border>
 
 
             <TextBlock Text="Sliver Page" Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandRegular}" Margin="0,70,0,0"></TextBlock>
