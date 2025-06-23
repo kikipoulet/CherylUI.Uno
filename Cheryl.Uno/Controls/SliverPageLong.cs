@@ -108,7 +108,7 @@ public class OffsetToInvertOpacityConverterLong : IValueConverter
 
 public class OffsetToFontSizeConverterLong : IValueConverter
 {
-    public static readonly OffsetToInvertOpacityConverterLong Instance = new OffsetToInvertOpacityConverterLong();
+    public static readonly OffsetToFontSizeConverterLong Instance = new OffsetToFontSizeConverterLong();
 
     public object Convert(object value, Type targetType, object parameter, string language)
     {
