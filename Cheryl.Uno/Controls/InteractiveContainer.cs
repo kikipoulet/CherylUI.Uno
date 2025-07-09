@@ -80,6 +80,8 @@ namespace Cheryl.Uno.Controls;
             Instance.BottomPresenter.Content = control;
             control.UpdateLayout();
 
+            Instance.BottomPresenter.AnimateTranslation("Y", 30, 0 ,700);
+
             Instance.BorderBottom.IsHitTestVisible = true;
             Instance.BorderBottom.AnimateDouble("Opacity", 0, 1, 500);
             Instance.BorderBottom.AnimateTranslation("Y", control.ActualSize.Y + 30, 0, 500);
@@ -109,7 +111,6 @@ namespace Cheryl.Uno.Controls;
             _bottomSheetTcs?.TrySetResult(result);
             _bottomSheetTcs = null;
         }
-  
-
+        
         
     }

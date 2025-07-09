@@ -20,7 +20,7 @@
             <converters:BoolNegationConverter x:Key="InvertedBoolConverter" />
         </Grid.Resources>
 
-        <ScrollViewer Name="MySV" VerticalScrollBarVisibility="Hidden">
+        <ScrollViewer ViewChanged="MySV_OnViewChanged"  Name="MySV" VerticalScrollBarVisibility="Hidden">
         <StackPanel>
             <ItemsControl  ItemsSource="{x:Bind Messages}">
                 <ItemsControl.ItemTemplate>
@@ -53,11 +53,9 @@
         <controls:SimplePageHeader Header="Bob" />
 
         <Border VerticalAlignment="Bottom" >
-            <Border.Background>
-                <AcrylicBrush  TintColor="{ThemeResource GlassCardBackground}" TintOpacity="{ThemeResource GlassOpacity}" />
 
-            </Border.Background>
-            <Grid Margin="15,12,15,12">
+
+            <Grid Name="GridTransform" Margin="15,12,15,12">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -71,20 +69,27 @@
                         <GradientStop Color="#aab37feb" Offset="1.0" />
                     </LinearGradientBrush>
                     </Border.BorderBrush>
-                    <TextBox Margin="10,3,0,0" Name="TB" PlaceholderText="Type your message .." />
+                    <Border.Background>
+                        <AcrylicBrush  TintColor="{ThemeResource GlassCardBackground}" TintOpacity="{ThemeResource GlassOpacity}" />
+                    </Border.Background>
+                    <TextBox TextChanged="TB_OnTextChanged" Margin="10,3,0,0" Name="TB" PlaceholderText="Type your message .." />
                 </Border>
 
-                <Button Click="SendMessage" Grid.Column="1" Padding="0" Margin="15,0,0,0" Height="44" Width="44" CornerRadius="22"  >
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                            <GradientStop Color="{ThemeResource Accent}" Offset="0" />
+                <StackPanel Grid.Column="1" Name="StackSend" Width="0" Orientation="Horizontal">
+                    <Border Width="15"></Border>
+                    <Button Name="ButtonSend" Opacity="0" RenderTransformOrigin="0.5,0.5" Click="SendMessage"  Padding="0" Margin="0,0,0,0" Height="44" Width="44" CornerRadius="22"  >
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="{ThemeResource Accent}" Offset="0" />
 
-                            <GradientStop Color="#aab37feb" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                    <SymbolIcon Foreground="White" Margin="4,4,-1,4" HorizontalAlignment="Center"  Opacity="1" VerticalAlignment="Center"  Symbol="Send"></SymbolIcon>
+                                <GradientStop Color="#aab37feb" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <SymbolIcon Foreground="White" Margin="4,4,-1,4" HorizontalAlignment="Center"  Opacity="1" VerticalAlignment="Center"  Symbol="Send"></SymbolIcon>
 
-                </Button>
+                    </Button>
+                </StackPanel>
+
             </Grid>
         </Border>
     </Grid>

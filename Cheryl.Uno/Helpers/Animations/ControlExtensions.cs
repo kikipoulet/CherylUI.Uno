@@ -3,7 +3,7 @@ using Microsoft.UI.Xaml.Media.Animation;
 
 namespace Cheryl.Uno.Helpers.Animations;
 
-public static class ControlExtensions
+public static partial class ControlExtensions
 {
     public static CancellationTokenSource AnimateDouble(this UIElement element, string property, double from, double to, int durationMs = 500, IEasingFunction easing = null)
     {
@@ -15,7 +15,8 @@ public static class ControlExtensions
             From = from,
             To = to,
             Duration = new Duration(TimeSpan.FromMilliseconds(durationMs)),
-            EasingFunction = easing ?? new CubicEase { EasingMode = EasingMode.EaseInOut }
+            EasingFunction = easing ?? new CubicEase { EasingMode = EasingMode.EaseInOut }, 
+            EnableDependentAnimation = true
         };
 
         var storyboard = new Storyboard();
@@ -37,58 +38,7 @@ public static class ControlExtensions
         return tokenSource;
     }
     
-    public static CancellationTokenSource AnimateTranslation(
-        this UIElement element,
-        string axis, // "X" ou "Y"
-        double from,
-        double to,
-        int durationMs = 500,
-        IEasingFunction easing = null)
-    {
-        if (axis != "X" && axis != "Y")
-            throw new ArgumentException("L’axe doit être \"X\" ou \"Y\".", nameof(axis));
 
-        var tcs = new TaskCompletionSource<bool>();
-        var tokenSource = new CancellationTokenSource();
-
-        // S'assurer que le RenderTransform est bien un TranslateTransform
-        if (element.RenderTransform is not TranslateTransform translate)
-        {
-            translate = new TranslateTransform();
-            element.RenderTransform = translate;
-        }
-
-        var animation = new DoubleAnimation
-        {
-            From = from,
-            To = to,
-            Duration = new Duration(TimeSpan.FromMilliseconds(durationMs)),
-            EasingFunction = easing ?? new CubicEase { EasingMode = EasingMode.EaseInOut }
-        };
-
-        var storyboard = new Storyboard();
-        storyboard.Children.Add(animation);
-
-        // Définir la cible
-        Storyboard.SetTarget(animation, element);
-
-        // Utiliser le chemin vers la propriété du TranslateTransform
-        string propertyPath = $"RenderTransform.(TranslateTransform.{axis})";
-        Storyboard.SetTargetProperty(animation, propertyPath);
-
-        // Gestion annulation
-        tokenSource.Token.Register(() =>
-        {
-            storyboard.Stop();
-            tcs.TrySetCanceled();
-        });
-
-        storyboard.Completed += (s, e) => tcs.TrySetResult(true);
-
-        storyboard.Begin();
-
-        return tokenSource;
-    }
     
     public static CancellationTokenSource AnimateScale(this UIElement element, double from, double to, int durationMs = 500, IEasingFunction easing = null)
     {

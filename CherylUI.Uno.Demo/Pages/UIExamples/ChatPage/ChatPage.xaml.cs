@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Cheryl.Uno.Helpers.Animations;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -86,6 +87,71 @@ public sealed partial class ChatPage : Page
     new ChatMessage { Sent = true, Message = "I will! Maybe I’ll even go for that walk I skipped today 🚶‍♂️" },
     new ChatMessage { Sent = false, Message = "Sounds like a plan! 😄" },
 };
+
+    private double _lastVerticalOffset;
+    
+    private void MySV_OnViewChanged(object? sender, ScrollViewerViewChangedEventArgs e)
+    {
+        if (MySV == null )
+            return;
+
+        double currentOffset = MySV.VerticalOffset;
+
+        if (currentOffset == _lastVerticalOffset)
+            return;
+        
+        bool isScrollingDown = currentOffset > _lastVerticalOffset ;
+
+       
+
+        // Mettre à jour la visibilité du ListView
+        if (isScrollingDown)
+            ShowInput();
+        else 
+            HideInput();
+
+        _lastVerticalOffset = currentOffset;
+    }
+
+    private bool InputShown = true;
+    
+    private void ShowInput()
+    {
+        if (InputShown)
+            return;
+        
+        GridTransform.AnimateMorphingAppearing(0, 80, 700);
+        InputShown = true;
+    }
+
+    private void HideInput()
+    {
+        if (!InputShown)
+            return;
+        
+        GridTransform.AnimateMorphingDisappearing(0, 80, 700);
+        InputShown = false;
+    }
+
+    private bool sendopened = false;
+    private void TB_OnTextChanged(object sender, TextChangedEventArgs e)
+    {
+        if (((TextBox)sender).Text.Length > 0)
+        {
+            if (sendopened)
+                return;
+
+            sendopened = true;
+            StackSend.AnimateDouble("Width", 0, 59);
+            ButtonSend.AnimateMorphingAppearing(-20, 80, 1000);
+        }
+        else
+        {
+            sendopened = false;
+            StackSend.AnimateDouble("Width", 59, 0);
+            ButtonSend.AnimateMorphingDisappearing(0, 0, 700);
+        }
+    }
 }
 
 
