@@ -14,6 +14,7 @@
     xmlns:segmented="clr-namespace:Cheryl.Uno.Controls.Segmented;assembly=Cheryl.Uno"
     xmlns:mobilePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobilePicker;assembly=Cheryl.Uno"
     xmlns:datePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.DatePicker;assembly=Cheryl.Uno"
+    xmlns:mobileTimePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobileTimePicker;assembly=Cheryl.Uno"
     mc:Ignorable="d"
     Background="Transparent">
 
@@ -32,7 +33,12 @@
                             <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Birthday"></TextBlock>
                             <datePicker:MobileDatePicker Margin="-10,-10"  Date="{x:Bind SelectedDate, Mode=TwoWay}" HorizontalAlignment="Right"></datePicker:MobileDatePicker>
                         </Grid>
+                        <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
 
+                        <Grid>
+                            <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="Alarm"></TextBlock>
+                            <mobileTimePicker:MobileTimePicker Margin="-10,-10" Time="{x:Bind SelectedTime, Mode=TwoWay}" HorizontalAlignment="Right"></mobileTimePicker:MobileTimePicker>
+                        </Grid>
                     </StackPanel>
                 </controls1:GroupBox>
 

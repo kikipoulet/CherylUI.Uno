@@ -19,8 +19,6 @@
     <controls:SliverPage Header="Design Samples">
         <StackPanel Spacing="25">
 
-
-
             <Grid PointerReleased="GoToSettings">
                 <Border Margin="30,0,0,0" Style="{StaticResource GlassBorderStyle}">
                     <StackPanel Margin="15,0,0,0" Spacing="9">
@@ -42,6 +40,17 @@
                     </StackPanel>
                 </Border>
                 <Image HorizontalAlignment="Left" VerticalAlignment="Center" Height="48" Width="48" Source="/Assets/icons8-messagerie-48.png"></Image>
+
+            </Grid>
+            <Grid PointerReleased="GoToAlarm">
+                <Border Margin="30,0,0,0" Style="{StaticResource GlassBorderStyle}">
+                    <StackPanel Margin="15,0,0,0" Spacing="9">
+                        <TextBlock FontFamily="{StaticResource QuicksandBold}" FontSize="16"   Text="Alarm Page"></TextBlock>
+                        <TextBlock FontSize="13"  FontFamily="{StaticResource QuicksandRegular}" Foreground="{ThemeResource SecondaryText}" TextWrapping="Wrap" Text="Glass Border/Pickers/Tabs"></TextBlock>
+
+                    </StackPanel>
+                </Border>
+                <Image HorizontalAlignment="Left" VerticalAlignment="Center" Height="48" Width="48" Source="/Assets/icons8-horloge-48.png"></Image>
 
             </Grid>
         </StackPanel>

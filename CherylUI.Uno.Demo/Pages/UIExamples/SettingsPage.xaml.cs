@@ -31,7 +31,7 @@ public sealed partial class SettingsPage : Page
         this.InitializeComponent();
        
     }
-    
+    public TimeSpan SelectedTime { get; set; } = new TimeSpan(12, 0, 0);
     public ObservableCollection<string> Fonts { get; set; }=  new ObservableCollection<string>(){"Thin", "Regular",  "Bold"};
     public string SelectedFont { get; set; }=  "Bold";
     public DateTimeOffset SelectedDate { get; set; }=new DateTime(2000,1,1);

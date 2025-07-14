@@ -35,7 +35,7 @@
                                <Border Visibility="{ThemeResource IsDark}" Background="#bbb37feb" Opacity="0.2"  Margin="-30"></Border>
                                <Border Visibility="{ThemeResource IsLight}" Background="#22b37feb" Opacity="0.2"  Margin="-30"></Border>
                                </Grid>
-                                   <TextBlock Text="{x:Bind Message}"
+                                   <TextBlock Text="{x:Bind Message}" FontSize="16"
                                               FontFamily="{StaticResource QuicksandRegular}"
                                               TextWrapping="WrapWholeWords"
                                               MaxWidth="300"/>
@@ -72,7 +72,7 @@
                     <Border.Background>
                         <AcrylicBrush  TintColor="{ThemeResource GlassCardBackground}" TintOpacity="{ThemeResource GlassOpacity}" />
                     </Border.Background>
-                    <TextBox TextChanged="TB_OnTextChanged" Margin="10,3,0,0" Name="TB" PlaceholderText="Type your message .." />
+                    <TextBox FontSize="16" TextChanged="TB_OnTextChanged" Margin="10,3,0,0" Name="TB" PlaceholderText="Type your message .." />
                 </Border>
 
                 <StackPanel Grid.Column="1" Name="StackSend" Width="0" Orientation="Horizontal">

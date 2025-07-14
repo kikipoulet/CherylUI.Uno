@@ -8,7 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using CherylUI.Uno.Demo.Pages.UIExamples.ChatPage;
-
+using CherylUI.Uno.Demo.Pages.UIExamples.ClockPage;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -48,6 +48,10 @@ public sealed partial class HomePage : Page
         MainPage.GlobalContentFrame.Navigate(typeof(ChatPage));
     }
 
-   
+    private void GoToAlarm(object sender, PointerRoutedEventArgs e)
+    {
+        MainPage.GlobalContentFrame.Navigate(typeof(ClockPage));
+    }
+
 }
 

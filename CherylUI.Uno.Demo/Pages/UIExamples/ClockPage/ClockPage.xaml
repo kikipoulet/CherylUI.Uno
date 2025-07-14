@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="CherylUI.Uno.Demo.Pages.UIExamples.ClockPage.ClockPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CherylUI.Uno.Demo.Pages.UIExamples.ClockPage"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
+    mc:Ignorable="d">
+
+    <controls:BottomTabControl >
+
+        <controls:BottomTabItem Label="Alarms" IconGlyph="&#xE823;">
+            <controls:BottomTabItem.PageContent>
+                <Grid>
+                <controls:SliverPage Header="Alarms">
+<ScrollViewer VerticalScrollBarVisibility="Hidden">
+    <StackPanel Margin="0,0,0,0" Spacing="10">
+        <ItemsControl  ItemsSource="{x:Bind Alarms}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="local:Alarm">
+                    <Border Margin="0,7" Style="{StaticResource GlassBorderStyle}">
+                        <Grid>
+
+                            <ToggleSwitch IsOn="{Binding IsOn}" HorizontalAlignment="Right" VerticalAlignment="Center"></ToggleSwitch>
+                            <StackPanel HorizontalAlignment="Left" Spacing="5">
+                                <StackPanel Orientation="Horizontal" Spacing="0">
+                                    <TextBlock  FontSize="25" FontFamily="{StaticResource QuicksandBold}" Text="{Binding Time.Hours}"></TextBlock>
+                                    <TextBlock  FontSize="25" FontFamily="{StaticResource QuicksandBold}" Text=":"></TextBlock>
+                                    <TextBlock  FontSize="25" FontFamily="{StaticResource QuicksandBold}" Text="{Binding Time.Minutes}"></TextBlock>
+
+                                </StackPanel>
+                                <TextBlock Foreground="{ThemeResource SecondaryText}" FontSize="15" FontFamily="{StaticResource QuicksandRegular}" Text="{Binding Note}"></TextBlock>
+
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+</ScrollViewer>
+                </controls:SliverPage>
+                    <Button Style="{StaticResource DefaultButtonStyle}" Height="60" Width="60" CornerRadius="30" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15,90" >
+                        <SymbolIcon Symbol="Add" Foreground="White" Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center"  ></SymbolIcon>
+                    </Button>
+                    </Grid>
+            </controls:BottomTabItem.PageContent>
+        </controls:BottomTabItem>
+
+        <controls:BottomTabItem Label="Clock" IconGlyph="&#xE909;">
+            <controls:BottomTabItem.PageContent>
+                <controls:SliverPage Header="Clock">
+
+                </controls:SliverPage>
+            </controls:BottomTabItem.PageContent>
+        </controls:BottomTabItem>
+
+        <controls:BottomTabItem Label="Timer" IconGlyph="&#xE72C;">
+            <controls:BottomTabItem.PageContent>
+                <controls:SliverPage Header="Timer">
+
+                </controls:SliverPage>
+            </controls:BottomTabItem.PageContent>
+        </controls:BottomTabItem>
+
+        <controls:BottomTabItem Label="Calendar" IconGlyph="&#xE787;">
+            <controls:BottomTabItem.PageContent>
+                <controls:SliverPage Header="Calendar">
+
+                </controls:SliverPage>
+            </controls:BottomTabItem.PageContent>
+        </controls:BottomTabItem>
+
+       </controls:BottomTabControl>
+</Page>
+

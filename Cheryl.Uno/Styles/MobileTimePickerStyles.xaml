@@ -1,0 +1,82 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:timePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.TimePicker"
+    xmlns:mobileTimePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobileTimePicker">
+
+    <Style TargetType="mobileTimePicker:MobileTimePicker">
+        <Setter Property="Background" Value="{ThemeResource TextControlBackground}" />
+        <Setter Property="Foreground" Value="{ThemeResource SecondaryText}" />
+        <Setter Property="BorderBrush" Value="{ThemeResource TextControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{ThemeResource TextControlBorderThemeThickness}" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="36"/>
+        <Setter Property="UseSystemFocusVisuals" Value="True"/>
+        <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mobileTimePicker:MobileTimePicker">
+                    <Grid x:Name="LayoutRoot" Background="Transparent">
+                        <Grid Padding="{TemplateBinding Padding}" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="TimeTextPart"
+                                       Grid.Column="0" FontFamily="{StaticResource QuicksandBold}"
+                                       Text="{TemplateBinding PlaceholderText}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       Opacity="0.6"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center" />
+
+                            <FontIcon Glyph="&#xE823;" Grid.Column="1"
+                                      FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                                      Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                      HorizontalAlignment="Right" VerticalAlignment="Center"
+                                      Margin="10,0,0,0"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="mobileTimePicker:MobileTimePickerPanel">
+        <Setter Property="Background" Value="{ThemeResource LayerFillColorDefaultBrush}"/>
+        <Setter Property="Padding" Value="16"/>
+        <Setter Property="BorderThickness" Value="1,1,1,0"/>
+        <Setter Property="BorderBrush" Value="{ThemeResource CardStrokeColorDefaultBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mobileTimePicker:MobileTimePickerPanel">
+                    <StackPanel Margin="-10,0,-10,-10" Padding="{TemplateBinding Padding}" Spacing="12">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <ListView x:Name="HoursListViewPart"
+                                      SelectionMode="Single"
+                                      Grid.Column="0"
+                                      HorizontalAlignment="Stretch"
+                                      Height="150" />
+                            <ListView x:Name="MinutesListViewPart"
+                                      SelectionMode="Single"
+                                      Grid.Column="1"
+                                      HorizontalAlignment="Stretch"
+                                      Height="150" />
+                        </Grid>
+                        <Button x:Name="AcceptButtonPart" Margin="-4,10,-4,0"
+                                Content="Confirm"
+                                Style="{ThemeResource BigButtonStyle}"
+                                HorizontalAlignment="Stretch"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
