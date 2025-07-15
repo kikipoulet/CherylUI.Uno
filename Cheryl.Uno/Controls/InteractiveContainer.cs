@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Cheryl.Uno.Helpers.Animations;
 using Microsoft.UI.Xaml.Markup;
+using Uno.Toolkit.UI;
 
 namespace Cheryl.Uno.Controls;
 
@@ -25,6 +26,7 @@ namespace Cheryl.Uno.Controls;
         private Border BorderBottom;
         private Border BorderBottomDialog;
         private Grid BlackPanel;
+        private SafeArea SafeA;
 
         public static InteractiveContainer Instance;
         
@@ -47,6 +49,7 @@ namespace Cheryl.Uno.Controls;
             BorderBottomDialog = GetTemplateChild("BottomDialog") as Border;
             BlackPanel = GetTemplateChild("BlackPanel") as Grid;
             MainContent = GetTemplateChild("MainContent") as ContentPresenter;
+            SafeA = GetTemplateChild("SA") as SafeArea;
 
             BlackPanel.PointerPressed += (sender, args) =>
             {
@@ -84,11 +87,12 @@ namespace Cheryl.Uno.Controls;
         public static async Task<object> ShowBottomSheet(UIElement control)
         {
             _bottomSheetTcs = new TaskCompletionSource<object>();
-
+            Instance.BottomPresenter.Opacity = 0;
             Instance.BottomPresenter.Content = control;
             control.UpdateLayout();
 
             Instance.BottomPresenter.AnimateTranslation("Y", 30, 0 ,700);
+            Instance.BottomPresenter.AnimateDouble("Opacity", 0,1 ,800);
 
             Instance.BorderBottom.IsHitTestVisible = true;
             Instance.BorderBottom.AnimateDouble("Opacity", 0, 1, 500);
@@ -128,9 +132,10 @@ namespace Cheryl.Uno.Controls;
             control.UpdateLayout();
 
             Instance.BottomPresenterDialog.AnimateTranslation("Y", 30, 0 ,700);
-            Instance.BottomPresenterDialog.AnimateDouble("Opacity", 0.5, 1 ,700);
+            Instance.BottomPresenterDialog.AnimateDouble("Opacity", 0, 1 ,800);
 
             Instance.BorderBottomDialog.IsHitTestVisible = true;
+            Instance.SafeA.IsHitTestVisible = true;
 
             Instance.BorderBottomDialog.AnimateMorphingAppearing(0, control.ActualSize.Y + 30, 600, 0.2);
           //  Instance.BorderBottomDialog.AnimateDouble("Opacity", 0, 1, 500);
@@ -153,6 +158,7 @@ namespace Cheryl.Uno.Controls;
            
             
             Instance.BorderBottomDialog.IsHitTestVisible = false;
+            Instance.SafeA.IsHitTestVisible = false;
 
             Instance.MainContent.AnimateScale(0.95, 1, 400);
             Instance.MainContent.IsHitTestVisible = true;

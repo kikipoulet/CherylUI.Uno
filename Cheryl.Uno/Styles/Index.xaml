@@ -32,7 +32,7 @@
         <ResourceDictionary Source="NumberBoxStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="MobileDatePickerStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="MobileTimePickerStyles.xaml"></ResourceDictionary>
-
+        <ResourceDictionary Source="MobileTextBoxStyles.xaml"></ResourceDictionary>
 <ResourceDictionary Source="CalendarViewStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 

@@ -49,5 +49,11 @@
       <PackageReference Include="FluentIcons.WinUI" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="Uno.Toolkit.WinUI">
+        <HintPath>..\..\..\.nuget\packages\uno.toolkit.winui\7.0.0-dev.95\lib\net8.0\Uno.Toolkit.WinUI.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
    
 </Project>

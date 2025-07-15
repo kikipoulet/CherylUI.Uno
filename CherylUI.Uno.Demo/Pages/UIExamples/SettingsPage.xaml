@@ -15,6 +15,7 @@
     xmlns:mobilePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobilePicker;assembly=Cheryl.Uno"
     xmlns:datePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.DatePicker;assembly=Cheryl.Uno"
     xmlns:mobileTimePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobileTimePicker;assembly=Cheryl.Uno"
+    xmlns:mobileTextBox="clr-namespace:Cheryl.Uno.Controls.Pickers.MobileTextBox;assembly=Cheryl.Uno"
     mc:Ignorable="d"
     Background="Transparent">
 
@@ -26,7 +27,7 @@
                     <StackPanel Margin="2,1" Spacing="14">
                         <Grid>
                             <TextBlock FontSize="16" VerticalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" Text="First Name"></TextBlock>
-                            <TextBox MinWidth="100" HorizontalContentAlignment="Right" Foreground="{ThemeResource SecondaryText}" FontFamily="{StaticResource QuicksandBold}" Margin="-5,-10" Text="Billy" HorizontalAlignment="Right"></TextBox>
+                            <mobileTextBox:MobileTextBox Margin="-5,-10" HorizontalAlignment="Right" PlaceholderText="Enter name" PopupTitle="What is your First Name ?" Text="Billy"></mobileTextBox:MobileTextBox>
                         </Grid>
                         <Border  Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
                         <Grid>

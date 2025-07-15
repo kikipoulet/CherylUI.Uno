@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mobileTextBox="clr-namespace:Cheryl.Uno.Controls.Pickers.MobileTextBox">
+
+    <Style TargetType="mobileTextBox:MobileTextBox">
+        <Setter Property="Background" Value="{ThemeResource TextControlBackground}" />
+        <Setter Property="Foreground" Value="{ThemeResource SecondaryText}" />
+        <Setter Property="BorderBrush" Value="{ThemeResource TextControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{ThemeResource TextControlBorderThemeThickness}" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="36"/>
+        <Setter Property="UseSystemFocusVisuals" Value="True"/>
+        <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mobileTextBox:MobileTextBox">
+                    <Grid x:Name="LayoutRoot" Background="Transparent">
+                        <Grid Padding="{TemplateBinding Padding}" VerticalAlignment="Center">
+                            <TextBlock x:Name="TextPart"
+                                       FontFamily="{StaticResource QuicksandBold}"
+                                       Text="{TemplateBinding PlaceholderText}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       Opacity="0.6"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="mobileTextBox:MobileTextBoxDialog">
+        <Setter Property="Background" Value="{ThemeResource LayerFillColorDefaultBrush}"/>
+        <Setter Property="Padding" Value="16"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{ThemeResource CardStrokeColorDefaultBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mobileTextBox:MobileTextBoxDialog">
+                    <Border Margin="-10" HorizontalAlignment="Stretch"
+                           Padding="{TemplateBinding Padding}"
+                           CornerRadius="8">
+                        <StackPanel Spacing="12">
+                            <TextBlock HorizontalAlignment="Center" Text="{TemplateBinding Title}"
+                                       FontFamily="{StaticResource QuicksandRegular}"
+                                       FontSize="16"
+                                       Margin="0,5,0,10"/>
+                            <Border Margin="5,0" CornerRadius="12" BorderBrush="{ThemeResource Accent}" BorderThickness="1.5" Padding="4,4" Style="{StaticResource GlassSoftBorderStyle}">
+                            <TextBox x:Name="TextBoxPart"/>
+                            </Border>
+                            <Button x:Name="ConfirmButtonPart"
+                                    Content="Confirm"
+                                    Style="{ThemeResource BigButtonStyle}"
+                                    Margin="0,7,0,0"
+                                    HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
