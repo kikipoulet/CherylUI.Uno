@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Cheryl.Uno.Controls;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -60,6 +61,13 @@ public sealed partial class ClockPage : Page
             Note = "Medicine Alarm"
         }
     };
+
+    private void UIElement_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+    {
+        
+        
+        InteractiveContainer.ShowBottomSheet(new AlarmEditControl());
+    }
 }
 
 

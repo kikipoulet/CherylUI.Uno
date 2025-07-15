@@ -19,9 +19,11 @@ namespace Cheryl.Uno.Controls;
         
         private ContentPresenter DialogPresenter;
         public ContentPresenter BottomPresenter;
+        public ContentPresenter BottomPresenterDialog;
         private ContentPresenter MainContent;
         private Border BorderDialog;
         private Border BorderBottom;
+        private Border BorderBottomDialog;
         private Grid BlackPanel;
 
         public static InteractiveContainer Instance;
@@ -40,14 +42,19 @@ namespace Cheryl.Uno.Controls;
             DialogPresenter = GetTemplateChild("DialogContent") as ContentPresenter;
             BorderDialog = GetTemplateChild("DialogBorder") as Border;
             BottomPresenter = GetTemplateChild("BottomContent") as ContentPresenter;
+            BottomPresenterDialog = GetTemplateChild("BottomDialogContent") as ContentPresenter;
             BorderBottom = GetTemplateChild("BottomBorder") as Border;
+            BorderBottomDialog = GetTemplateChild("BottomDialog") as Border;
             BlackPanel = GetTemplateChild("BlackPanel") as Grid;
             MainContent = GetTemplateChild("MainContent") as ContentPresenter;
 
             BlackPanel.PointerPressed += (sender, args) =>
             {
-                CloseBottomSheet();
-               
+                if(_bottomSheetTcs != null)
+                    CloseBottomSheet();
+                
+                if(_bottomDialogTcs != null)
+                    CloseBottomDialog();
             };
         }
 
@@ -72,6 +79,7 @@ namespace Cheryl.Uno.Controls;
         }
         
         private static TaskCompletionSource<object> _bottomSheetTcs = new TaskCompletionSource<object>();
+        private static TaskCompletionSource<object> _bottomDialogTcs = new TaskCompletionSource<object>();
     
         public static async Task<object> ShowBottomSheet(UIElement control)
         {
@@ -112,5 +120,49 @@ namespace Cheryl.Uno.Controls;
             _bottomSheetTcs = null;
         }
         
+        public static async Task<object> ShowBottomDialog(UIElement control)
+        {
+            _bottomDialogTcs = new TaskCompletionSource<object>();
+            Instance.BottomPresenterDialog.Opacity = 0;
+            Instance.BottomPresenterDialog.Content = control;
+            control.UpdateLayout();
+
+            Instance.BottomPresenterDialog.AnimateTranslation("Y", 30, 0 ,700);
+            Instance.BottomPresenterDialog.AnimateDouble("Opacity", 0.5, 1 ,700);
+
+            Instance.BorderBottomDialog.IsHitTestVisible = true;
+
+            Instance.BorderBottomDialog.AnimateMorphingAppearing(0, control.ActualSize.Y + 30, 600, 0.2);
+          //  Instance.BorderBottomDialog.AnimateDouble("Opacity", 0, 1, 500);
+          //  Instance.BorderBottomDialog.AnimateTranslation("Y", control.ActualSize.Y + 30, 0, 500);
+
+            Instance.MainContent.AnimateScale(1, 0.95, 300);
+            Instance.MainContent.IsHitTestVisible = false;
+
+            Instance.BlackPanel.AnimateDouble("Opacity", 0, 0.5, 300);
+            Instance.BlackPanel.IsHitTestVisible = true;
+
+            return await _bottomDialogTcs.Task;
+        }
+        
+        
+        public static void CloseBottomDialog(object result = null)
+        { 
+            Instance.BorderBottomDialog.AnimateDouble("Opacity", 1, 0.5, 500);
+            Instance.BorderBottomDialog.AnimateTranslation("Y", 0, Instance.BorderBottomDialog.ActualHeight, 500);
+           
+            
+            Instance.BorderBottomDialog.IsHitTestVisible = false;
+
+            Instance.MainContent.AnimateScale(0.95, 1, 400);
+            Instance.MainContent.IsHitTestVisible = true;
+
+            Instance.BlackPanel.AnimateDouble("Opacity", 0.5, 0, 400);
+            Instance.BlackPanel.IsHitTestVisible = false;
+
+            _bottomDialogTcs?.TrySetResult(result);
+            _bottomDialogTcs = null;
+        }
+
         
     }

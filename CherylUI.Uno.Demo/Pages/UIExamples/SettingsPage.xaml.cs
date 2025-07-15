@@ -64,7 +64,7 @@ public sealed partial class SettingsPage : Page
         var g = new Grid();
         g.Children.Add(new TextBlock() { Text = "Hello from the Bottom Sheet !", FontFamily = (FontFamily)Application.Current.Resources["QuicksandBold"],FontSize = 18, FontWeight = FontWeights.DemiBold, HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center , Margin = new Thickness(0,100)} );
         //g.Children.Add(b);
-        InteractiveContainer.ShowBottomSheet(new ConfirmationControl());
+        InteractiveContainer.ShowBottomDialog(new ConfirmationControl());
     }
 
 

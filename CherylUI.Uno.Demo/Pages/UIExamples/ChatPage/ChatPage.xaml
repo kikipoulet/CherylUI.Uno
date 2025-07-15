@@ -10,7 +10,8 @@
     xmlns:controls="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
     xmlns:converters="clr-namespace:CommunityToolkit.WinUI.Converters;assembly=CommunityToolkit.WinUI.Converters"
     mc:Ignorable="d"
-    Background="Transparent">
+    Background="Transparent"
+    xmlns:utu="using:Uno.Toolkit.UI">
 
 
     <Grid>
@@ -50,10 +51,11 @@
         </StackPanel>
         </ScrollViewer>
 
+
         <controls:SimplePageHeader Header="Bob" />
 
         <Border VerticalAlignment="Bottom" >
-
+            <utu:SafeArea Insets="SoftInput">
 
             <Grid Name="GridTransform" Margin="15,12,15,12">
                 <Grid.ColumnDefinitions>
@@ -91,6 +93,9 @@
                 </StackPanel>
 
             </Grid>
+                </utu:SafeArea>
         </Border>
     </Grid>
+
+
 </Page>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Cheryl.Uno.Helpers.Animations;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -50,6 +51,8 @@ public sealed partial class ChatPage : Page
 
     private void SendMessage(object sender, RoutedEventArgs e)
     {
+        InputPane.GetForCurrentView().TryHide();
+        
         Messages.Add(new ChatMessage()
         {
             Sent = true,
@@ -58,6 +61,7 @@ public sealed partial class ChatPage : Page
         TB.Text = "";
             MySV.ChangeView(null, MySV.ScrollableHeight, null, false);
 
+           
     }
     
     public ObservableCollection<ChatMessage> Messages { get; } = new ObservableCollection<ChatMessage>()

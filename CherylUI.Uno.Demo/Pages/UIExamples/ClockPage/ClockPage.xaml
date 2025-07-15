@@ -19,7 +19,7 @@
         <ItemsControl  ItemsSource="{x:Bind Alarms}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate x:DataType="local:Alarm">
-                    <Border Margin="0,7" Style="{StaticResource GlassBorderStyle}">
+                    <Border PointerReleased="UIElement_OnPointerReleased" Margin="0,7" Style="{StaticResource GlassBorderStyle}">
                         <Grid>
 
                             <ToggleSwitch IsOn="{Binding IsOn}" HorizontalAlignment="Right" VerticalAlignment="Center"></ToggleSwitch>

@@ -75,6 +75,29 @@
 
                         </Border>
 
+                        <Border  Opacity="0"   HorizontalAlignment="Stretch" RenderTransformOrigin="0.5,0.5"
+                                 VerticalAlignment="Bottom"
+                                 IsHitTestVisible="False"  x:Name="BottomDialog">
+                            <Border.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </Border.RenderTransform>
+                            <Grid>
+                                <Border  CornerRadius="22" Margin="15"  >
+                                    <Border.Background>
+                                        <AcrylicBrush  TintColor="{ThemeResource GlassCardBackground}" TintOpacity="{ThemeResource GlassOpacity}" />
+                                    </Border.Background>
+                                </Border>
+
+                                <Border Background="White" Opacity="0.03"  CornerRadius="25,25,0,0"  >
+
+                                </Border>
+
+                                <ContentPresenter HorizontalAlignment="Stretch" Margin="25" x:Name="BottomDialogContent" />
+                                <Border Opacity="0.1" CornerRadius="3" Height="6" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Background="{ThemeResource SecondaryText}" />
+                            </Grid>
+
+                        </Border>
+
 
                     </Grid>
 

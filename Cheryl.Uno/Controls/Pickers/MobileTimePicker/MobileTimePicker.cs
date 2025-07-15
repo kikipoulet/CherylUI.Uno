@@ -122,7 +122,7 @@ public class MobileTimePickerPanel : Control
     private TextBlock? _minuteBelowOnePart;
     private TextBlock? _minuteBelowTwoPart;
 
-    private Button? _acceptButtonPart;
+    public Button? AcceptButtonPart;
 
     private int _selectedHour;
     private int _selectedMinute;
@@ -173,10 +173,10 @@ public class MobileTimePickerPanel : Control
         _minuteSelectedPart = GetTemplateChild("MinuteSelectedPart") as TextBlock;
         _minuteBelowOnePart = GetTemplateChild("MinuteBelowOnePart") as TextBlock;
         _minuteBelowTwoPart = GetTemplateChild("MinuteBelowTwoPart") as TextBlock;
-        _acceptButtonPart = GetTemplateChild("AcceptButtonPart") as Button;
+        AcceptButtonPart = GetTemplateChild("AcceptButtonPart") as Button;
 
-        if (_acceptButtonPart != null)
-            _acceptButtonPart.Click += OnAcceptClick;
+        if (AcceptButtonPart != null)
+            AcceptButtonPart.Click += OnAcceptClick;
 
         if (_hoursPanelPart != null)
         {

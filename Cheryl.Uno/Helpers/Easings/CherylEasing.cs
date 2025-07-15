@@ -8,7 +8,7 @@ public class CherylEasing
     {
         private double _mass = 1.0;
         private double _stiffness = 50.0;
-        private double _damping = 10.0;
+        private double _damping = 11.0;
         private double _normalizationFactor = 1.0;
 
         public double Mass
