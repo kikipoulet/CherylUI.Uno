@@ -2,7 +2,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:timePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.TimePicker"
-    xmlns:mobileTimePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobileTimePicker">
+    xmlns:mobileTimePicker="clr-namespace:Cheryl.Uno.Controls.Pickers.MobileTimePicker"
+    xmlns:interactivity="clr-namespace:Microsoft.Xaml.Interactivity;assembly=Microsoft.Xaml.Interactivity"
+    xmlns:global="clr-namespace:">
 
     <Style TargetType="mobileTimePicker:MobileTimePicker">
         <Setter Property="Background" Value="{ThemeResource TextControlBackground}" />
@@ -54,21 +56,34 @@
             <Setter.Value>
                 <ControlTemplate TargetType="mobileTimePicker:MobileTimePickerPanel">
                     <StackPanel Margin="-10,0,-10,-10" Padding="{TemplateBinding Padding}" Spacing="12">
-                        <Grid>
+                        <Grid Margin="0,5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="10" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <ListView x:Name="HoursListViewPart"
-                                      SelectionMode="Single"
-                                      Grid.Column="0"
-                                      HorizontalAlignment="Stretch"
-                                      Height="150" />
-                            <ListView x:Name="MinutesListViewPart"
-                                      SelectionMode="Single"
-                                      Grid.Column="1"
-                                      HorizontalAlignment="Stretch"
-                                      Height="150" />
+                            <StackPanel Spacing="3" x:Name="HoursPanelPart" Grid.Column="0" VerticalAlignment="Center">
+                                <interactivity:Interaction.Behaviors>
+                                    <global:SquishyDragBehavior EnableX="False" ScaleBasedOnAxisDisplacement="False" Intensity="0.3"  />
+                                </interactivity:Interaction.Behaviors>
+                                <TextBlock x:Name="HourAboveTwoPart" Opacity="0.2" FontSize="20" FontFamily="{StaticResource QuicksandRegular}"  HorizontalAlignment="Center" />
+                                <TextBlock x:Name="HourAboveOnePart" Opacity="0.4" FontSize="26" FontFamily="{StaticResource QuicksandRegular}"  HorizontalAlignment="Center" />
+                                <TextBlock x:Name="HourSelectedPart" FontSize="32"  HorizontalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" />
+                                <TextBlock x:Name="HourBelowOnePart" Opacity="0.4" FontSize="26" FontFamily="{StaticResource QuicksandRegular}"  HorizontalAlignment="Center" />
+                                <TextBlock x:Name="HourBelowTwoPart" Opacity="0.2" FontSize="20" FontFamily="{StaticResource QuicksandRegular}"  HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <TextBlock Grid.Column="1" Margin="0,0,0,5" VerticalAlignment="Center" Text=":" FontSize="32"  HorizontalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" />
+
+                            <StackPanel Spacing="3" x:Name="MinutesPanelPart" Grid.Column="2" VerticalAlignment="Center">
+                                <interactivity:Interaction.Behaviors>
+                                    <global:SquishyDragBehavior EnableX="False" ScaleBasedOnAxisDisplacement="False" Intensity="0.3"  />
+                                </interactivity:Interaction.Behaviors>
+                                <TextBlock x:Name="MinuteAboveTwoPart" Opacity="0.2" FontSize="20" FontFamily="{StaticResource QuicksandRegular}" HorizontalAlignment="Center" />
+                                <TextBlock x:Name="MinuteAboveOnePart" Opacity="0.4" FontSize="26" FontFamily="{StaticResource QuicksandRegular}" HorizontalAlignment="Center" />
+                                <TextBlock x:Name="MinuteSelectedPart" FontSize="32" HorizontalAlignment="Center" FontFamily="{StaticResource QuicksandBold}" />
+                                <TextBlock x:Name="MinuteBelowOnePart" Opacity="0.4" FontSize="26" HorizontalAlignment="Center" />
+                                <TextBlock x:Name="MinuteBelowTwoPart" Opacity="0.2" FontSize="20" HorizontalAlignment="Center" />
+                            </StackPanel>
                         </Grid>
                         <Button x:Name="AcceptButtonPart" Margin="-4,10,-4,0"
                                 Content="Confirm"

@@ -108,9 +108,27 @@ public class MobileTimePicker : Control
 
 public class MobileTimePickerPanel : Control
 {
-    private ListView? _hoursListViewPart;
-    private ListView? _minutesListViewPart;
+    private StackPanel? _hoursPanelPart;
+    private StackPanel? _minutesPanelPart;
+    private TextBlock? _hourAboveTwoPart;
+    private TextBlock? _hourAboveOnePart;
+    private TextBlock? _hourSelectedPart;
+    private TextBlock? _hourBelowOnePart;
+    private TextBlock? _hourBelowTwoPart;
+
+    private TextBlock? _minuteAboveTwoPart;
+    private TextBlock? _minuteAboveOnePart;
+    private TextBlock? _minuteSelectedPart;
+    private TextBlock? _minuteBelowOnePart;
+    private TextBlock? _minuteBelowTwoPart;
+
     private Button? _acceptButtonPart;
+
+    private int _selectedHour;
+    private int _selectedMinute;
+
+    private double _hourManipulationDelta;
+    private double _minuteManipulationDelta;
 
     public MobileTimePickerPanel()
     {
@@ -143,55 +161,146 @@ public class MobileTimePickerPanel : Control
     protected override void OnApplyTemplate()
     {
         base.OnApplyTemplate();
-
-        _hoursListViewPart = GetTemplateChild("HoursListViewPart") as ListView;
-        _minutesListViewPart = GetTemplateChild("MinutesListViewPart") as ListView;
+        _hoursPanelPart = GetTemplateChild("HoursPanelPart") as StackPanel;
+        _minutesPanelPart = GetTemplateChild("MinutesPanelPart") as StackPanel;
+        _hourAboveTwoPart = GetTemplateChild("HourAboveTwoPart") as TextBlock;
+        _hourAboveOnePart = GetTemplateChild("HourAboveOnePart") as TextBlock;
+        _hourSelectedPart = GetTemplateChild("HourSelectedPart") as TextBlock;
+        _hourBelowOnePart = GetTemplateChild("HourBelowOnePart") as TextBlock;
+        _hourBelowTwoPart = GetTemplateChild("HourBelowTwoPart") as TextBlock;
+        _minuteAboveTwoPart = GetTemplateChild("MinuteAboveTwoPart") as TextBlock;
+        _minuteAboveOnePart = GetTemplateChild("MinuteAboveOnePart") as TextBlock;
+        _minuteSelectedPart = GetTemplateChild("MinuteSelectedPart") as TextBlock;
+        _minuteBelowOnePart = GetTemplateChild("MinuteBelowOnePart") as TextBlock;
+        _minuteBelowTwoPart = GetTemplateChild("MinuteBelowTwoPart") as TextBlock;
         _acceptButtonPart = GetTemplateChild("AcceptButtonPart") as Button;
 
         if (_acceptButtonPart != null)
             _acceptButtonPart.Click += OnAcceptClick;
 
-        PopulateLists();
+        if (_hoursPanelPart != null)
+        {
+            _hoursPanelPart.PointerWheelChanged += HoursWheelChanged;
+            _hoursPanelPart.ManipulationMode = ManipulationModes.TranslateY;
+            _hoursPanelPart.ManipulationDelta += HoursManipulationDelta;
+        }
+
+        if (_minutesPanelPart != null)
+        {
+            _minutesPanelPart.PointerWheelChanged += MinutesWheelChanged;
+            _minutesPanelPart.ManipulationMode = ManipulationModes.TranslateY;
+            _minutesPanelPart.ManipulationDelta += MinutesManipulationDelta;
+        }
+
+        UpdateHourTexts();
+        UpdateMinuteTexts();
     }
 
+    private void MinutesWheelChanged(object sender, PointerRoutedEventArgs e)
+    {
+        var delta = e.GetCurrentPoint((UIElement)sender).Properties.MouseWheelDelta;
+        if (delta > 0) DecrementMinute();
+        else if (delta < 0) IncrementMinute();
+        e.Handled = true;
+    }
+
+    private void HoursManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
+    {
+        _hourManipulationDelta += e.Delta.Translation.Y;
+        if (Math.Abs(_hourManipulationDelta) > 30)
+        {
+ 
+            if (_hourManipulationDelta > 0) DecrementHour();
+            else IncrementHour();
+            _hourManipulationDelta = 0;
+        }
+       
+    }
+    
+    private void MinutesManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
+    {
+        _minuteManipulationDelta += e.Delta.Translation.Y;
+        if (Math.Abs(_minuteManipulationDelta) > 30)
+        {
+            if (_minuteManipulationDelta > 0) 
+                DecrementMinute();
+            else 
+                IncrementMinute();
+            
+            _minuteManipulationDelta = 0;
+        }
+    }
+    
     private void OnPanelLoaded(object sender, RoutedEventArgs e)
     {
         if (InitialTime.HasValue)
         {
-            int h = InitialTime.Value.Hours;
-            int m = InitialTime.Value.Minutes;
-            _hoursListViewPart?.ScrollIntoView(h);
-            _minutesListViewPart?.ScrollIntoView(m.ToString("D2"));
-            if (_hoursListViewPart != null) _hoursListViewPart.SelectedItem = h;
-            if (_minutesListViewPart != null) _minutesListViewPart.SelectedItem = m.ToString("D2");
+            _selectedHour = InitialTime.Value.Hours;
+            _selectedMinute = InitialTime.Value.Minutes;
         }
+        
+        UpdateHourTexts();
+        UpdateMinuteTexts();
     }
 
-    private void PopulateLists()
-    {
-        if (_hoursListViewPart != null)
-        {
-            _hoursListViewPart.ItemsSource = Enumerable.Range(0, 24).ToList();
-        }
-
-        if (_minutesListViewPart != null)
-        {
-            _minutesListViewPart.ItemsSource = Enumerable.Range(0, 60).Select(i => i.ToString("D2")).ToList();
-        }
-    }
 
     private void OnAcceptClick(object sender, RoutedEventArgs e)
     {
-        if (_hoursListViewPart?.SelectedItem is int hour &&
-            _minutesListViewPart?.SelectedItem is string minuteStr &&
-            int.TryParse(minuteStr, out var minute))
-        {
-            var time = new TimeSpan(hour, minute, 0);
-            InteractiveContainer.CloseBottomSheet(time);
-        }
-        else
-        {
-            InteractiveContainer.CloseBottomSheet(null);
-        }
+        var time = new TimeSpan(_selectedHour, _selectedMinute, 0);
+        InteractiveContainer.CloseBottomSheet(time);
+    }
+    
+    private void HoursWheelChanged(object sender, PointerRoutedEventArgs e)
+    {
+        var delta = e.GetCurrentPoint((UIElement)sender).Properties.MouseWheelDelta;
+        if (delta > 0) DecrementHour();
+        else if (delta < 0) IncrementHour();
+        e.Handled = true;
+    }
+    
+    private void IncrementHour()
+    {
+        _selectedHour = (_selectedHour + 1) % 24;
+        UpdateHourTexts();
+    }
+
+    private void DecrementHour()
+    {
+        _selectedHour = (_selectedHour + 23) % 24;
+        UpdateHourTexts();
+    }
+
+    private void IncrementMinute()
+    {
+        _selectedMinute = (_selectedMinute + 1) % 60;
+        UpdateMinuteTexts();
+    }
+
+    private void DecrementMinute()
+    {
+        _selectedMinute = (_selectedMinute + 59) % 60;
+        UpdateMinuteTexts();
+    }
+
+    private void UpdateHourTexts()
+    {
+        if (_hourSelectedPart == null) return;
+
+        _hourSelectedPart.Text = _selectedHour.ToString("D2");
+        if (_hourAboveOnePart != null) _hourAboveOnePart.Text = ((_selectedHour + 23) % 24).ToString("D2");
+        if (_hourAboveTwoPart != null) _hourAboveTwoPart.Text = ((_selectedHour + 22) % 24).ToString("D2");
+        if (_hourBelowOnePart != null) _hourBelowOnePart.Text = ((_selectedHour + 1) % 24).ToString("D2");
+        if (_hourBelowTwoPart != null) _hourBelowTwoPart.Text = ((_selectedHour + 2) % 24).ToString("D2");
+    }
+
+    private void UpdateMinuteTexts()
+    {
+        if (_minuteSelectedPart == null) return;
+
+        _minuteSelectedPart.Text = _selectedMinute.ToString("D2");
+        if (_minuteAboveOnePart != null) _minuteAboveOnePart.Text = ((_selectedMinute + 59) % 60).ToString("D2");
+        if (_minuteAboveTwoPart != null) _minuteAboveTwoPart.Text = ((_selectedMinute + 58) % 60).ToString("D2");
+        if (_minuteBelowOnePart != null) _minuteBelowOnePart.Text = ((_selectedMinute + 1) % 60).ToString("D2");
+        if (_minuteBelowTwoPart != null) _minuteBelowTwoPart.Text = ((_selectedMinute + 2) % 60).ToString("D2");
     }
 }
