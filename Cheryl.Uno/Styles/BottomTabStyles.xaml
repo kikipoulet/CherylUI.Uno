@@ -107,10 +107,10 @@
                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
 
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel x:Name="ST" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <FontIcon FontFamily="Segoe Fluent Icons"
                                       Glyph="{TemplateBinding IconGlyph}"
-                                      FontSize="22"
+                                      FontSize="22" x:Name="FI"
                                       HorizontalAlignment="Center"/>
                             <TextBlock Text="{TemplateBinding Label}" x:Name="TL"
                                        FontSize="13" Height="14" FontFamily="{StaticResource QuickSandRegular}"

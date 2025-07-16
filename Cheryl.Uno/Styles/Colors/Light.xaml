@@ -13,6 +13,7 @@
     <Color x:Key="GridDialogBackground">#88000000</Color>
 
     <Color x:Key="Accent">#1677ff</Color>
+    <Color x:Key="Accent150">#1677ff</Color>
     <Color x:Key="LowerAccent">#aa1677ff</Color>
     <Color x:Key="ContraryAccent">#317AF7</Color>
     <Color x:Key="SelectedAccent">#317AF7</Color>

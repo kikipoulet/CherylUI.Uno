@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Capture;
 using Windows.UI.ViewManagement;
 using Cheryl.Uno.Helpers.Animations;
 using Microsoft.UI.Xaml;
@@ -60,8 +61,7 @@ public sealed partial class ChatPage : Page
         });
         TB.Text = "";
             MySV.ChangeView(null, MySV.ScrollableHeight, null, false);
-
-           
+            
     }
     
     public ObservableCollection<ChatMessage> Messages { get; } = new ObservableCollection<ChatMessage>()

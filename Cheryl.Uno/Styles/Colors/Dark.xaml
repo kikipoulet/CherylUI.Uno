@@ -14,6 +14,7 @@
 
 
     <Color x:Key="Accent">#2f54eb</Color>
+    <Color x:Key="Accent150">#85a5ff</Color>
     <Color x:Key="LowerAccent">#aa2f54eb</Color>
     <Color x:Key="ContraryAccent">#552f54eb</Color>
     <Color x:Key="SelectedAccent">#552f54eb</Color>

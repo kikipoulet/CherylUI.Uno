@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.ObjectModel;
+using Windows.Media.Core;
+using Windows.UI;
 using Cheryl.Uno.Helpers.Animations;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Markup;
@@ -66,6 +68,29 @@ public sealed class BottomTabControl : Control
 
         var oldItem = e.OldValue as BottomTabItem;
         var newItem = e.NewValue as BottomTabItem;
+
+        if (newItem.IsLoaded)
+        {
+            (newItem.GetTemplateChild("TL") as TextBlock)!.Foreground = ResourceResolver.ResolveResourceStatic<Color>("Accent150");
+            (newItem.GetTemplateChild("FI") as FontIcon)!.Foreground = ResourceResolver.ResolveResourceStatic<Color>("Accent150");
+            (newItem.GetTemplateChild("ST") as StackPanel)!.AnimateScale(1, 1.08);
+            
+            (oldItem.GetTemplateChild("TL") as TextBlock)!.Foreground = ResourceResolver.ResolveResourceStatic<Color>("Foreground");
+            (oldItem.GetTemplateChild("FI") as FontIcon)!.Foreground = ResourceResolver.ResolveResourceStatic<Color>("Foreground");
+            (oldItem.GetTemplateChild("ST") as StackPanel)!.AnimateScale(1.08, 1);
+        }
+        else
+        {
+            newItem.Loaded += (sender, args) =>
+            {
+                (newItem.GetTemplateChild("TL") as TextBlock)!.Foreground = ResourceResolver.ResolveResourceStatic<Color>("Accent150");
+                (newItem.GetTemplateChild("FI") as FontIcon)!.Foreground = ResourceResolver.ResolveResourceStatic<Color>("Accent150");
+                (newItem.GetTemplateChild("ST") as StackPanel)!.AnimateScale(1, 1.08);
+            };
+        }
+       
+
+       
 
         List<object> removedItems = new List<object>();
         if (oldItem != null) removedItems.Add(oldItem);
