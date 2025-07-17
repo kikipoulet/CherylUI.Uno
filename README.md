@@ -1,8 +1,7 @@
 <div id="header" align="center">
  <kbd>
 
-
-<img width="250" height="250" alt="This logo is creepy af" src="https://github.com/user-attachments/assets/828f0e33-025a-4251-b8e5-01cfc460274d" />
+<img width="250" height="250" alt="This logo is creepy af"  src="https://github.com/user-attachments/assets/559f0cad-18a0-44d9-b0d1-b720d5b5bd01" />
 
 
   </kbd>
@@ -158,121 +157,152 @@ The library exposes the following controls. Each control has a default style def
 ## Layout & Containers
 
 ### BusyArea
+
+![busyarea](https://github.com/user-attachments/assets/12307641-1f46-402b-95d6-6b8af5ccf594)
+
 ```xml
 <controls:BusyArea IsBusy="True">
-    <Grid><!-- content --></Grid>
+    <!-- content -->
 </controls:BusyArea>
 ```
 <br/>
 
 ### GroupBox
+
+<img width="334" height="211" alt="{4C47DAAE-7D85-4931-A5A1-3DC41AB46BE9}" src="https://github.com/user-attachments/assets/2305c5a7-6900-48a7-8fee-6da865a02f73" />
+
+
 ```xml
 <controls:GroupBox Header="Title">
-    <TextBlock Text="Content" />
+    <!-- content -->
 </controls:GroupBox>
 ```
 <br/>
 
-### InteractiveContainer
-```xml
-<controls:InteractiveContainer>
-    <!-- dialogs and sheets appear here -->
-</controls:InteractiveContainer>
-```
-<br/>
 
 ### Border
 - **GlassBorderStyle**
+
+<img width="336" height="122" alt="{3224DC18-4478-4FF4-B148-262CD80C4358}" src="https://github.com/user-attachments/assets/3267a1c1-1189-4e8d-ab6e-6508a297477b" />
+
+Basically the border you see everywhere in that library.
+
 ```xml
 <Border Style="{StaticResource GlassBorderStyle}">
-    <TextBlock Text="Inside" />
 </Border>
 ```
 
+<br/>
+
+
+
 - **GlassSoftBorderStyle**
+
+<img width="327" height="258" alt="{DE6148F5-E411-45BF-9156-64E103655F7C}" src="https://github.com/user-attachments/assets/e2f22b0e-c241-40b9-8d44-4f8aee19dbeb" />
+
+Like GlassBorderStyle but softer, perfect to be used on a GlassBorder because of a dialog or a bottomsheet for example.
+  
 ```xml
 <Border Style="{StaticResource GlassSoftBorderStyle}">
     <TextBlock Text="Inside" />
 </Border>
 ```
+<br/>
+
 
 - **GlassFrostedBorderStyle**
+
+<img width="335" height="394" alt="{04CD0B96-E407-4721-B396-ABE685EE4B59}" src="https://github.com/user-attachments/assets/f3dbd9be-2851-4906-a41e-75c44f61d716" />
+
+
+Normal GlassBorder but frosted behind. To use if you need to overlay something.
+
 ```xml
 <Border Style="{StaticResource GlassFrostedBorderStyle}">
-    <TextBlock Text="Inside" />
 </Border>
 ```
-<img />
+<br/>
+
 
 ## Input controls
 
 ### MobileDatePicker
+
+![datepicker](https://github.com/user-attachments/assets/ccdaf821-83d7-4aa9-b454-5e964256ed19)
+
+
 ```xml
-<pickers:MobileDatePicker />
+<pickers:MobileDatePicker  Date="{x:Bind SelectedDate}" />
 ```
-<img />
+<br/>
 
 ### MobilePicker
+
+![pikcer](https://github.com/user-attachments/assets/97732f4a-14b3-4ef2-b5a4-73ec42b78bdf)
+
+
 ```xml
-<pickers:MobilePicker ItemsSource="{Binding Options}" />
+<pickers:MobilePicker ItemsSource="{Binding Options}"  SelectedItem="{Binding SelectedOption}"/>
 ```
-<img />
+<br/>
 
 ### MobileTextBox
+
+![mobileTB](https://github.com/user-attachments/assets/45e4d410-1520-4bef-afd8-7323e2517a38)
+
+
 ```xml
-<pickers:MobileTextBox PlaceholderText="Type here" />
+<pickers:MobileTextBox  PlaceholderText="Enter name" PopupTitle="What is your First Name ?" Text="Billy" />
 ```
-<img />
+<br/>
 
 ### MobileTimePicker
-```xml
-<pickers:MobileTimePicker />
-```
-<img />
 
-### CalendarView
+![mobileTimepicker](https://github.com/user-attachments/assets/30599e5e-519f-43a8-a6c6-f79d62b1d55b)
+
+
 ```xml
-<CalendarView />
+<pickers:MobileTimePicker Time="{x:Bind SelectedTime}" />
 ```
-<img />
+<br/>
 
 
 ### CheckBox
 ```xml
 <CheckBox Content="Accept" />
 ```
-<img />
+<br/>
 
 ### NumberBox
 ```xml
 <NumberBox PlaceholderText="0" />
 ```
-<img />
+<br/>
 
 ### RadioButton
 ```xml
 <RadioButton Content="Option" />
 ```
-<img />
+<br/>
 
 ### Slider
 ```xml
 <Slider Minimum="0" Maximum="100" />
 ```
-<img />
+<br/>
 
 ### ToggleSwitch
 ```xml
 <ToggleSwitch />
 ```
-<img />
+<br/>
 
 
 ### TextBlock
 ```xml
 <TextBlock Text="Styled text" />
 ```
-<img />
+<br/>
 
 ### Buttons
 
@@ -334,4 +364,4 @@ The library exposes the following controls. Each control has a default style def
     </Button.Flyout>
 </Button>
 ```
-<img />
+<br/>
