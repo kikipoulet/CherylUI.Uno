@@ -268,88 +268,107 @@ Normal GlassBorder but frosted behind. To use if you need to overlay something.
 
 
 ### CheckBox
-```xml
-<CheckBox Content="Accept" />
-```
+
+<img width="302" height="117" alt="{E7B9996B-6A3A-421A-856B-CAF0FB787208}" src="https://github.com/user-attachments/assets/951add8c-d2a1-4820-aaa5-5a15750d1792" />
+
 <br/>
 
-### NumberBox
-```xml
-<NumberBox PlaceholderText="0" />
-```
-<br/>
 
 ### RadioButton
-```xml
-<RadioButton Content="Option" />
-```
+<img width="301" height="223" alt="{7291E24F-5F86-436D-BBA3-9B0B91CA1077}" src="https://github.com/user-attachments/assets/01c8365b-2944-4bb5-8f02-dbd29c70aa7f" />
+
 <br/>
 
 ### Slider
+
+<img width="303" height="249" alt="{5C1C57BE-6E07-4403-87F1-A9AF4E5FC78A}" src="https://github.com/user-attachments/assets/840538df-4680-4f14-bcef-05b2d94b9e7e" />
+
 ```xml
-<Slider Minimum="0" Maximum="100" />
+<Slider  />
+
+<Slider Style="{StaticResource BigSliderStyle}" />          
 ```
 <br/>
 
 ### ToggleSwitch
-```xml
-<ToggleSwitch />
-```
+
+<img width="305" height="128" alt="{C43DB612-5639-42B4-B0D6-2E8D89B4F216}" src="https://github.com/user-attachments/assets/5218e2a5-959e-4283-b4ee-b92c2cec6322" />
+
 <br/>
 
 
 ### TextBlock
 ```xml
-<TextBlock Text="Styled text" />
+  <TextBlock  FontFamily="{StaticResource QuicksandBold}" ></TextBlock>
+  <TextBlock  FontFamily="{StaticResource QuicksandRegular}" ></TextBlock>
 ```
 <br/>
 
 ### Buttons
 
+- **Normal Button**
+
+<img width="300" height="133" alt="image" src="https://github.com/user-attachments/assets/dbf8befb-f631-47b0-b935-d28e577af6c1" />
+
+
+```xml
+<Button Content="Button" />
+```
+<br/>
+
 - **DefaultButtonStyle**
 ```xml
 <Button Content="Default" Style="{StaticResource DefaultButtonStyle}" />
 ```
+<br/>
 
 - **SecondaryButtonStyle**
 ```xml
 <Button Content="Secondary" Style="{StaticResource SecondaryButtonStyle}" />
 ```
+<br/>
 
 - **MiniButtonStyle**
 ```xml
 <Button Content="Mini" Style="{StaticResource MiniButtonStyle}" />
 ```
+<br/>
 
 - **SmallButtonStyle**
 ```xml
 <Button Content="Small" Style="{StaticResource SmallButtonStyle}" />
 ```
+<br/>
 
 - **BigButtonStyle**
 ```xml
 <Button Content="Big" Style="{StaticResource BigButtonStyle}" />
 ```
+<br/>
 
 - **BigNormalButtonStyle**
 ```xml
 <Button Content="Big normal" Style="{StaticResource BigNormalButtonStyle}" />
 ```
+<br/>
 
 - **LargeButtonStyle**
 ```xml
 <Button Content="Large" Style="{StaticResource LargeButtonStyle}" />
 ```
+<br/>
 
 - **TextButtonStyle**
 ```xml
 <Button Content="Text" Style="{StaticResource TextButtonStyle}" />
 ```
+<br/>
 
 - **VoidButtonStyle**
 ```xml
 <Button Content="Void" Style="{StaticResource VoidButtonStyle}" />
 ```
+<br/>
 
 
 ## Menus
