@@ -1,22 +1,42 @@
-# CherylUI.Uno
+<div id="header" align="center">
+ <kbd>
+
+<img width="250" height="250" alt="This logo is creepy af"  src="https://github.com/user-attachments/assets/559f0cad-18a0-44d9-b0d1-b720d5b5bd01" />
+
+
+  </kbd>
+<br/>
+
+</div>
+<br/>
+
+
+# ✨ CherylUI.Uno
 
 CherylUI.Uno is a collection of UI controls, helpers and styles built for the [Uno Platform](https://platform.uno/). The library contains custom WinUI controls and resource dictionaries that provide a cohesive look and feel across platforms. A demo application (`CherylUI.Uno.Demo`) is included to showcase the controls.
 
-## Repository layout
+<br/>
 
-```
-Cheryl.Uno/            Library project containing controls, helpers and styles
- ├── Controls/         Custom controls used by applications
- ├── Helpers/          Utility classes such as animation helpers and easings
- ├── Styles/           XAML resource dictionaries with control styles and colors
-CherylUI.Uno.Demo/     Sample application demonstrating the library
-```
+# 📱 UI Demo
 
-The `Styles/Index.xaml` file merges all provided style dictionaries. Apps typically merge this single dictionary into `Application.Resources`.
+
+https://github.com/user-attachments/assets/04cf44dd-e075-41f7-a664-e78650e0970b
+
+
+
+https://github.com/user-attachments/assets/067a6a66-cf39-46c7-8d78-0a6750e17b06
+
+
+https://github.com/user-attachments/assets/434dbcab-9d31-4aeb-a758-baa73dfca636
+
+
+<br/>
+
+# Temporary Documentation
 
 ## Using the library
 
-1. Reference the `Cheryl.Uno` project or NuGet package in your Uno Platform solution.
+1. Reference the `CherylUI.Uno` project or NuGet package in your Uno Platform solution.
 2. Merge the style dictionary in `App.xaml`:
 
 ```xml
@@ -46,7 +66,6 @@ The library exposes the following controls. Each control has a default style def
 
 | Control | Description |
 |---------|-------------|
-| **CherylBackgroundWinUI3** | Animated noise background used by `InteractiveContainer` |
 | **BottomTabControl** & **BottomTabItem** | Tab navigation control placed at the bottom of the screen |
 | **BusyArea** | Container that shows a `ProgressRing` overlay when `IsBusy` is true |
 | **GroupBox** | Simple content container with a header |
@@ -59,248 +78,300 @@ The library exposes the following controls. Each control has a default style def
 | **MobileTextBox** / **MobileTextBoxDialog** | Text input that opens a bottom dialog for editing |
 | **MobileTimePicker** / **MobileTimePickerPanel** | Bottom-sheet style time picker |
 
-## Controls and styles by category
 
-Below each example you'll find an `<img />` placeholder where a screenshot should be inserted.
+## Navigation
 
-### Navigation
+### BottomTabControl & BottomTabItem
 
-#### BottomTabControl & BottomTabItem
+
+<img width="337" height="137" alt="{BA2D3CBF-BC92-41C1-B3B8-238E09506880}" src="https://github.com/user-attachments/assets/c369cf95-9199-47cb-901c-e12876b0d17f" />
+
+
 ```xml
 <controls:BottomTabControl>
-    <controls:BottomTabItem Icon="Home" Label="Home" />
-    <controls:BottomTabItem Icon="Setting" Label="Settings" />
+    <controls:BottomTabItem IconGlyph="&#xE80F;" Label="Home" />
+    <controls:BottomTabItem IconGlyph="&#xE80F;" Label="Settings" />
 </controls:BottomTabControl>
 ```
-<img />
 
-#### NavigationView
+<br/>
+
+### NavigationView
+
+<img width="332" height="554" alt="{6F64CF61-F0B5-4438-8C3F-F51BD97E7A94}" src="https://github.com/user-attachments/assets/a350f798-3e6b-4480-83e7-5e85cc99d095" />
+
+
 ```xml
-<NavigationView>
-    <!-- items -->
-</NavigationView>
+    <!-- Supposed to work like a standard WinUI NavigationView -->
 ```
-<img />
 
-#### SegmentedControl
+<br/>
+
+### SegmentedControl
+
+<img width="170" height="69" alt="{A7C8D04D-D936-4D4F-A0BA-E4B5A36E1088}" src="https://github.com/user-attachments/assets/8e71bf84-e2d2-4bd3-8f16-c77da52a4b88" />
+
+
 ```xml
 <ui:Segmented>
-    <ui:SegmentedItem Text="One" />
-    <ui:SegmentedItem Text="Two" />
+    <ui:SegmentedItem Content="60hz" />
+    <ui:SegmentedItem Content="120hz" />
 </ui:Segmented>
 ```
-<img />
+<br/>
 
-#### SimplePageHeader
+### SimplePageHeader
+
+<img width="335" height="119" alt="{6FC61356-4B87-494F-B3E7-7A6D1C26CFD3}" src="https://github.com/user-attachments/assets/4964da15-10b4-466f-80b3-aada64979559" />
+
+
 ```xml
-<controls:SimplePageHeader Title="My page" />
+<controls:SimplePageHeader Header="Bob" />
 ```
-<img />
+<br/>
 
-#### SliverPage / SliverPageLong
+### SliverPage 
+
+![sliverpage](https://github.com/user-attachments/assets/682bb6af-344b-49c4-bbce-3e36eff85ea4)
+
+
 ```xml
-<controls:SliverPage Header="My Header">
+<controls:SliverPage Header="Buttons">
     <!-- page content -->
 </controls:SliverPage>
 ```
-<img />
+<br/>
 
-### Layout & Containers
+### SliverPageLong 
 
-#### BusyArea
+![sliverpagelong](https://github.com/user-attachments/assets/077229ed-dad4-4277-9715-2cd4edd7c7cd)
+
+
+```xml
+<controls:SliverPageLong Header="Settings">
+    <!-- page content -->
+</controls:SliverPageLong>
+```
+<br/>
+
+## Layout & Containers
+
+### BusyArea
+
+![busyarea](https://github.com/user-attachments/assets/12307641-1f46-402b-95d6-6b8af5ccf594)
+
 ```xml
 <controls:BusyArea IsBusy="True">
-    <Grid><!-- content --></Grid>
+    <!-- content -->
 </controls:BusyArea>
 ```
-<img />
+<br/>
 
-#### GroupBox
+### GroupBox
+
+<img width="334" height="211" alt="{4C47DAAE-7D85-4931-A5A1-3DC41AB46BE9}" src="https://github.com/user-attachments/assets/2305c5a7-6900-48a7-8fee-6da865a02f73" />
+
+
 ```xml
 <controls:GroupBox Header="Title">
-    <TextBlock Text="Content" />
+    <!-- content -->
 </controls:GroupBox>
 ```
-<img />
+<br/>
 
-#### InteractiveContainer
-```xml
-<controls:InteractiveContainer>
-    <!-- dialogs and sheets appear here -->
-</controls:InteractiveContainer>
-```
-<img />
 
-#### SplitView
-```xml
-<SplitView>
-    <!-- content -->
-</SplitView>
-```
-<img />
-
-#### CherylBackgroundWinUI3
-```xml
-<controls:CherylBackgroundWinUI3 />
-```
-<img />
-
-#### Glass border styles
+### Border
 - **GlassBorderStyle**
+
+<img width="336" height="122" alt="{3224DC18-4478-4FF4-B148-262CD80C4358}" src="https://github.com/user-attachments/assets/3267a1c1-1189-4e8d-ab6e-6508a297477b" />
+
+Basically the border you see everywhere in that library.
+
 ```xml
 <Border Style="{StaticResource GlassBorderStyle}">
-    <TextBlock Text="Inside" />
 </Border>
 ```
-<img />
+
+<br/>
+
+
+
 - **GlassSoftBorderStyle**
+
+<img width="327" height="258" alt="{DE6148F5-E411-45BF-9156-64E103655F7C}" src="https://github.com/user-attachments/assets/e2f22b0e-c241-40b9-8d44-4f8aee19dbeb" />
+
+Like GlassBorderStyle but softer, perfect to be used on a GlassBorder because of a dialog or a bottomsheet for example.
+  
 ```xml
 <Border Style="{StaticResource GlassSoftBorderStyle}">
     <TextBlock Text="Inside" />
 </Border>
 ```
-<img />
+<br/>
+
+
 - **GlassFrostedBorderStyle**
+
+<img width="335" height="394" alt="{04CD0B96-E407-4721-B396-ABE685EE4B59}" src="https://github.com/user-attachments/assets/f3dbd9be-2851-4906-a41e-75c44f61d716" />
+
+
+Normal GlassBorder but frosted behind. To use if you need to overlay something.
+
 ```xml
 <Border Style="{StaticResource GlassFrostedBorderStyle}">
-    <TextBlock Text="Inside" />
 </Border>
 ```
-<img />
+<br/>
 
-### Input controls
 
-#### MobileDatePicker
+## Input controls
+
+### MobileDatePicker
+
+![datepicker](https://github.com/user-attachments/assets/ccdaf821-83d7-4aa9-b454-5e964256ed19)
+
+
 ```xml
-<pickers:MobileDatePicker />
+<pickers:MobileDatePicker  Date="{x:Bind SelectedDate}" />
 ```
-<img />
+<br/>
 
-#### MobilePicker
-```xml
-<pickers:MobilePicker ItemsSource="{Binding Options}" />
-```
-<img />
+### MobilePicker
 
-#### MobileTextBox
-```xml
-<pickers:MobileTextBox PlaceholderText="Type here" />
-```
-<img />
+![pikcer](https://github.com/user-attachments/assets/97732f4a-14b3-4ef2-b5a4-73ec42b78bdf)
 
-#### MobileTimePicker
-```xml
-<pickers:MobileTimePicker />
-```
-<img />
 
-#### CalendarView
 ```xml
-<CalendarView />
+<pickers:MobilePicker ItemsSource="{Binding Options}"  SelectedItem="{Binding SelectedOption}"/>
 ```
-<img />
+<br/>
 
-#### ComboBox
-```xml
-<ComboBox ItemsSource="{Binding Items}" />
-```
-<img />
+### MobileTextBox
 
-#### CheckBox
-```xml
-<CheckBox Content="Accept" />
-```
-<img />
+![mobileTB](https://github.com/user-attachments/assets/45e4d410-1520-4bef-afd8-7323e2517a38)
 
-#### NumberBox
-```xml
-<NumberBox PlaceholderText="0" />
-```
-<img />
 
-#### RadioButton
 ```xml
-<RadioButton Content="Option" />
+<pickers:MobileTextBox  PlaceholderText="Enter name" PopupTitle="What is your First Name ?" Text="Billy" />
 ```
-<img />
+<br/>
 
-#### Slider
-```xml
-<Slider Minimum="0" Maximum="100" />
-```
-<img />
+### MobileTimePicker
 
-#### ToggleSwitch
-```xml
-<ToggleSwitch />
-```
-<img />
+![mobileTimepicker](https://github.com/user-attachments/assets/30599e5e-519f-43a8-a6c6-f79d62b1d55b)
 
-#### ListViewItem
-```xml
-<ListView>
-    <ListViewItem Content="Item" />
-</ListView>
-```
-<img />
 
-#### TextBlock
 ```xml
-<TextBlock Text="Styled text" />
+<pickers:MobileTimePicker Time="{x:Bind SelectedTime}" />
 ```
-<img />
+<br/>
+
+
+### CheckBox
+
+<img width="302" height="117" alt="{E7B9996B-6A3A-421A-856B-CAF0FB787208}" src="https://github.com/user-attachments/assets/951add8c-d2a1-4820-aaa5-5a15750d1792" />
+
+<br/>
+
+
+### RadioButton
+<img width="301" height="223" alt="{7291E24F-5F86-436D-BBA3-9B0B91CA1077}" src="https://github.com/user-attachments/assets/01c8365b-2944-4bb5-8f02-dbd29c70aa7f" />
+
+<br/>
+
+### Slider
+
+<img width="303" height="249" alt="{5C1C57BE-6E07-4403-87F1-A9AF4E5FC78A}" src="https://github.com/user-attachments/assets/840538df-4680-4f14-bcef-05b2d94b9e7e" />
+
+```xml
+<Slider  />
+
+<Slider Style="{StaticResource BigSliderStyle}" />          
+```
+<br/>
+
+### ToggleSwitch
+
+<img width="305" height="128" alt="{C43DB612-5639-42B4-B0D6-2E8D89B4F216}" src="https://github.com/user-attachments/assets/5218e2a5-959e-4283-b4ee-b92c2cec6322" />
+
+<br/>
+
+
+### TextBlock
+```xml
+  <TextBlock  FontFamily="{StaticResource QuicksandBold}" ></TextBlock>
+  <TextBlock  FontFamily="{StaticResource QuicksandRegular}" ></TextBlock>
+```
+<br/>
 
 ### Buttons
 
+- **Normal Button**
+
+<img width="300" height="133" alt="image" src="https://github.com/user-attachments/assets/dbf8befb-f631-47b0-b935-d28e577af6c1" />
+
+
+```xml
+<Button Content="Button" />
+```
+<br/>
+
 - **DefaultButtonStyle**
+
+<img width="327" height="132" alt="{4CC30EED-4FDF-47DE-9708-1F3478D56730}" src="https://github.com/user-attachments/assets/b6be9c91-8ee2-4b4b-96fc-bb35c7baf573" />
+
+
 ```xml
 <Button Content="Default" Style="{StaticResource DefaultButtonStyle}" />
 ```
-<img />
-- **SecondaryButtonStyle**
-```xml
-<Button Content="Secondary" Style="{StaticResource SecondaryButtonStyle}" />
-```
-<img />
-- **MiniButtonStyle**
-```xml
-<Button Content="Mini" Style="{StaticResource MiniButtonStyle}" />
-```
-<img />
-- **SmallButtonStyle**
-```xml
-<Button Content="Small" Style="{StaticResource SmallButtonStyle}" />
-```
-<img />
-- **BigButtonStyle**
-```xml
-<Button Content="Big" Style="{StaticResource BigButtonStyle}" />
-```
-<img />
-- **BigNormalButtonStyle**
-```xml
-<Button Content="Big normal" Style="{StaticResource BigNormalButtonStyle}" />
-```
-<img />
-- **LargeButtonStyle**
-```xml
-<Button Content="Large" Style="{StaticResource LargeButtonStyle}" />
-```
-<img />
-- **TextButtonStyle**
-```xml
-<Button Content="Text" Style="{StaticResource TextButtonStyle}" />
-```
-<img />
-- **VoidButtonStyle**
-```xml
-<Button Content="Void" Style="{StaticResource VoidButtonStyle}" />
-```
-<img />
+<br/>
 
-### Menus
+- **Big Normal**
+<img width="332" height="134" alt="{D6BF3705-59FD-4129-B561-722193403996}" src="https://github.com/user-attachments/assets/6c7af859-44cf-460b-9048-8e9f2619e945" />
 
-#### MenuFlyoutPresenter
+```xml
+<Button Content="Secondary" Style="{StaticResource BigNormalButtonStyle}" />
+```
+<br/>
+
+- **Big Default**
+  <img width="337" height="140" alt="{4D591E12-8628-4332-AC94-9D8BDC6747D6}" src="https://github.com/user-attachments/assets/a6e81ef3-0089-4c57-bb3a-8c46eba6d149" />
+
+```xml
+<Button Content="Mini" Style="{StaticResource BigButtonStyle}" />
+```
+<br/>
+
+- **Large**
+<img width="333" height="155" alt="{515B4E8B-ADD9-40E8-92F2-4A6F0352C682}" src="https://github.com/user-attachments/assets/1c0d5b44-8931-4669-83cb-46d4bd00939d" />
+
+```xml
+<Button Content="Small" Style="{StaticResource LargeButtonStyle}" />
+```
+<br/>
+
+- **Secondary**
+  
+  <img width="310" height="142" alt="{66D80599-06F2-42E5-B03E-ED092E2136D4}" src="https://github.com/user-attachments/assets/f1c0d3c1-cb83-4462-a620-057c06b2a494" />
+
+```xml
+<Button Content="Big" Style="{StaticResource SecondaryButtonStyle}" />
+```
+<br/>
+
+- **Text**
+
+<img width="302" height="134" alt="{44E4A067-87D4-4548-9A3D-28BFCD6CFF5E}" src="https://github.com/user-attachments/assets/9161cf18-85a0-4527-afd3-1198e7d8b765" />
+
+
+```xml
+<Button Content="Big normal" Style="{StaticResource TextButtonStyle}" />
+```
+<br/>
+
+## Menus
+
+### MenuFlyoutPresenter
 ```xml
 <Button Content="Open">
     <Button.Flyout>
@@ -310,11 +381,4 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
     </Button.Flyout>
 </Button>
 ```
-<img />
-
-## Running the demo
-
-The `CherylUI.Uno.Demo` project demonstrates the controls. Open `CherylUI.Uno.Demo.sln` with Visual Studio and run the platform-specific head (e.g. Windows) to see the styles and controls in action.
-
----
-This README provides a high-level overview of the repository. Explore the source files in `Cheryl.Uno` and the demo project for additional details and examples.
+<br/>
