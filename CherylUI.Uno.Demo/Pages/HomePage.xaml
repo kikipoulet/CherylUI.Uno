@@ -35,7 +35,7 @@
                 <Border Margin="30,0,0,0" Style="{StaticResource GlassBorderStyle}">
                     <StackPanel Margin="15,0,0,0" Spacing="9">
                         <TextBlock FontFamily="{StaticResource QuicksandBold}" FontSize="16"   Text="Chat Page"></TextBlock>
-                        <TextBlock FontSize="13"  FontFamily="{StaticResource QuicksandRegular}" Foreground="{ThemeResource SecondaryText}" TextWrapping="Wrap" Text="Glass Border/TextBox"></TextBlock>
+                        <TextBlock FontSize="13"  FontFamily="{StaticResource QuicksandRegular}" Foreground="{ThemeResource SecondaryText}" TextWrapping="Wrap" Text="Glass Border / TextBox"></TextBlock>
 
                     </StackPanel>
                 </Border>
@@ -46,13 +46,26 @@
                 <Border Margin="30,0,0,0" Style="{StaticResource GlassBorderStyle}">
                     <StackPanel Margin="15,0,0,0" Spacing="9">
                         <TextBlock FontFamily="{StaticResource QuicksandBold}" FontSize="16"   Text="Alarm Page"></TextBlock>
-                        <TextBlock FontSize="13"  FontFamily="{StaticResource QuicksandRegular}" Foreground="{ThemeResource SecondaryText}" TextWrapping="Wrap" Text="Glass Border/Pickers/Tabs"></TextBlock>
+                        <TextBlock FontSize="13"  FontFamily="{StaticResource QuicksandRegular}" Foreground="{ThemeResource SecondaryText}" TextWrapping="Wrap" Text="Glass Border / Pickers / Tabs"></TextBlock>
 
                     </StackPanel>
                 </Border>
                 <Image HorizontalAlignment="Left" VerticalAlignment="Center" Height="48" Width="48" Source="/Assets/icons8-horloge-48.png"></Image>
 
             </Grid>
+
+            <Grid PointerReleased="GoToBrowser">
+                <Border Margin="30,0,0,0" Style="{StaticResource GlassBorderStyle}">
+                    <StackPanel Margin="15,0,0,0" Spacing="9">
+                        <TextBlock FontFamily="{StaticResource QuicksandBold}" FontSize="16"   Text="Web Browser"></TextBlock>
+                        <TextBlock FontSize="13"  FontFamily="{StaticResource QuicksandRegular}" Foreground="{ThemeResource SecondaryText}" TextWrapping="Wrap" Text="Glass Border"></TextBlock>
+
+                    </StackPanel>
+                </Border>
+                <Image HorizontalAlignment="Left" VerticalAlignment="Center" Height="48" Width="48" Source="/Assets/icons8-internet-48.png"></Image>
+
+            </Grid>
+
         </StackPanel>
         </controls:SliverPage>
 

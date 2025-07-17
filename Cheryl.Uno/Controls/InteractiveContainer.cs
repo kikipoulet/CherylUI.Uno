@@ -86,11 +86,16 @@ namespace Cheryl.Uno.Controls;
     
         public static async Task<object> ShowBottomSheet(UIElement control)
         {
+            Instance.BorderBottom.RenderTransform = new TranslateTransform() { Y = 3000 };
+            
+            Instance.BottomPresenter.RenderTransform = new TranslateTransform() { Y = 3000 };
+
             _bottomSheetTcs = new TaskCompletionSource<object>();
             Instance.BottomPresenter.Opacity = 0;
             Instance.BottomPresenter.Content = control;
             control.UpdateLayout();
-
+            
+            
             Instance.BottomPresenter.AnimateTranslation("Y", 30, 0 ,700);
             Instance.BottomPresenter.AnimateDouble("Opacity", 0,1 ,800);
 
@@ -126,20 +131,22 @@ namespace Cheryl.Uno.Controls;
         
         public static async Task<object> ShowBottomDialog(UIElement control)
         {
+            Instance.BorderBottomDialog.RenderTransform = new TranslateTransform() { Y = 3000 };
+            
+            
             _bottomDialogTcs = new TaskCompletionSource<object>();
             Instance.BottomPresenterDialog.Opacity = 0;
             Instance.BottomPresenterDialog.Content = control;
             control.UpdateLayout();
 
-            Instance.BottomPresenterDialog.AnimateTranslation("Y", 30, 0 ,700);
+            
             Instance.BottomPresenterDialog.AnimateDouble("Opacity", 0, 1 ,800);
 
             Instance.BorderBottomDialog.IsHitTestVisible = true;
             Instance.SafeA.IsHitTestVisible = true;
 
-            Instance.BorderBottomDialog.AnimateMorphingAppearing(0, control.ActualSize.Y + 30, 600, 0.2);
-          //  Instance.BorderBottomDialog.AnimateDouble("Opacity", 0, 1, 500);
-          //  Instance.BorderBottomDialog.AnimateTranslation("Y", control.ActualSize.Y + 30, 0, 500);
+             Instance.BorderBottomDialog.AnimateDouble("Opacity", 0, 1, 500);
+            Instance.BorderBottomDialog.AnimateTranslation("Y", control.ActualSize.Y + 30, 0, 500);
 
             Instance.MainContent.AnimateScale(1, 0.95, 300);
             Instance.MainContent.IsHitTestVisible = false;

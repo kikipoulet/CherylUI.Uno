@@ -23,6 +23,7 @@
         -->
         <UnoFeatures>
             SkiaRenderer;
+            WebView;
         </UnoFeatures>
     </PropertyGroup>
     <ItemGroup>

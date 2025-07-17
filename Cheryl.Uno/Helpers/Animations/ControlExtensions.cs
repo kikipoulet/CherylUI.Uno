@@ -5,7 +5,7 @@ namespace Cheryl.Uno.Helpers.Animations;
 
 public static partial class ControlExtensions
 {
-    public static CancellationTokenSource AnimateDouble(this UIElement element, string property, double from, double to, int durationMs = 500, IEasingFunction easing = null)
+    public static CancellationTokenSource AnimateDouble(this UIElement element, string property, double from, double to, int durationMs = 500, double delay = 0,IEasingFunction easing = null)
     {
         var tcs = new TaskCompletionSource<bool>();
         var tokenSource = new CancellationTokenSource();
@@ -16,7 +16,8 @@ public static partial class ControlExtensions
             To = to,
             Duration = new Duration(TimeSpan.FromMilliseconds(durationMs)),
             EasingFunction = easing ?? new CubicEase { EasingMode = EasingMode.EaseInOut }, 
-            EnableDependentAnimation = true
+            EnableDependentAnimation = true, 
+            BeginTime = TimeSpan.FromMilliseconds(delay),
         };
 
         var storyboard = new Storyboard();

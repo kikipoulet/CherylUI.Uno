@@ -14,6 +14,7 @@
         <ResourceDictionary Source="GroupBoxStyles.xaml"></ResourceDictionary>
          <ResourceDictionary Source="InteractiveContainerStyles.xaml"></ResourceDictionary>
          <ResourceDictionary Source="TextBlockStyles.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="TextBoxStyles.xaml"></ResourceDictionary>
          <ResourceDictionary Source="BorderStyles.xaml"></ResourceDictionary>
         <ResourceDictionary Source="SplitViewStyles.xaml"></ResourceDictionary>
          <ResourceDictionary Source="NavigationViewStyles.xaml"></ResourceDictionary>

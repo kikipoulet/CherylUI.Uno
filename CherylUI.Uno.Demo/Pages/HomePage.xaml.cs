@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using CherylUI.Uno.Demo.Pages.UIExamples.Browser;
 using CherylUI.Uno.Demo.Pages.UIExamples.ChatPage;
 using CherylUI.Uno.Demo.Pages.UIExamples.ClockPage;
 using Microsoft.UI.Xaml;
@@ -51,6 +52,11 @@ public sealed partial class HomePage : Page
     private void GoToAlarm(object sender, PointerRoutedEventArgs e)
     {
         MainPage.GlobalContentFrame.Navigate(typeof(ClockPage));
+    }
+    
+    private void GoToBrowser(object sender, PointerRoutedEventArgs e)
+    {
+        MainPage.GlobalContentFrame.Navigate(typeof(WebBrowser));
     }
 
 }

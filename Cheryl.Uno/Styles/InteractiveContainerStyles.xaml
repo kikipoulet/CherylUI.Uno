@@ -95,8 +95,7 @@
                                 </Border>
 
                                 <ContentPresenter HorizontalAlignment="Stretch" Margin="25" x:Name="BottomDialogContent" />
-                                <Border Opacity="0.1" CornerRadius="3" Height="6" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Background="{ThemeResource SecondaryText}" />
-                            </Grid>
+                                      </Grid>
 
                         </Border>
                             </ui:SafeArea>
