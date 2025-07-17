@@ -317,59 +317,57 @@ Normal GlassBorder but frosted behind. To use if you need to overlay something.
 <br/>
 
 - **DefaultButtonStyle**
+
+<img width="327" height="132" alt="{4CC30EED-4FDF-47DE-9708-1F3478D56730}" src="https://github.com/user-attachments/assets/b6be9c91-8ee2-4b4b-96fc-bb35c7baf573" />
+
+
 ```xml
 <Button Content="Default" Style="{StaticResource DefaultButtonStyle}" />
 ```
 <br/>
 
-- **SecondaryButtonStyle**
+- **Big Normal**
+<img width="332" height="134" alt="{D6BF3705-59FD-4129-B561-722193403996}" src="https://github.com/user-attachments/assets/6c7af859-44cf-460b-9048-8e9f2619e945" />
+
 ```xml
-<Button Content="Secondary" Style="{StaticResource SecondaryButtonStyle}" />
+<Button Content="Secondary" Style="{StaticResource BigNormalButtonStyle}" />
 ```
 <br/>
 
-- **MiniButtonStyle**
+- **Big Default**
+  <img width="337" height="140" alt="{4D591E12-8628-4332-AC94-9D8BDC6747D6}" src="https://github.com/user-attachments/assets/a6e81ef3-0089-4c57-bb3a-8c46eba6d149" />
+
 ```xml
-<Button Content="Mini" Style="{StaticResource MiniButtonStyle}" />
+<Button Content="Mini" Style="{StaticResource BigButtonStyle}" />
 ```
 <br/>
 
-- **SmallButtonStyle**
+- **Large**
+<img width="333" height="155" alt="{515B4E8B-ADD9-40E8-92F2-4A6F0352C682}" src="https://github.com/user-attachments/assets/1c0d5b44-8931-4669-83cb-46d4bd00939d" />
+
 ```xml
-<Button Content="Small" Style="{StaticResource SmallButtonStyle}" />
+<Button Content="Small" Style="{StaticResource LargeButtonStyle}" />
 ```
 <br/>
 
-- **BigButtonStyle**
+- **Secondary**
+  
+  <img width="310" height="142" alt="{66D80599-06F2-42E5-B03E-ED092E2136D4}" src="https://github.com/user-attachments/assets/f1c0d3c1-cb83-4462-a620-057c06b2a494" />
+
 ```xml
-<Button Content="Big" Style="{StaticResource BigButtonStyle}" />
+<Button Content="Big" Style="{StaticResource SecondaryButtonStyle}" />
 ```
 <br/>
 
-- **BigNormalButtonStyle**
+- **Text**
+
+<img width="302" height="134" alt="{44E4A067-87D4-4548-9A3D-28BFCD6CFF5E}" src="https://github.com/user-attachments/assets/9161cf18-85a0-4527-afd3-1198e7d8b765" />
+
+
 ```xml
-<Button Content="Big normal" Style="{StaticResource BigNormalButtonStyle}" />
+<Button Content="Big normal" Style="{StaticResource TextButtonStyle}" />
 ```
 <br/>
-
-- **LargeButtonStyle**
-```xml
-<Button Content="Large" Style="{StaticResource LargeButtonStyle}" />
-```
-<br/>
-
-- **TextButtonStyle**
-```xml
-<Button Content="Text" Style="{StaticResource TextButtonStyle}" />
-```
-<br/>
-
-- **VoidButtonStyle**
-```xml
-<Button Content="Void" Style="{StaticResource VoidButtonStyle}" />
-```
-<br/>
-
 
 ## Menus
 
