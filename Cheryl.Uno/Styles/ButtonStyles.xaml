@@ -136,7 +136,7 @@
     <!-- Secondary Button Style -->
     <Style TargetType="Button" x:Key="SecondaryButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
         <Setter Property="Background" Value="{ThemeResource LightAccent}" />
-        <Setter Property="Foreground" Value="{ThemeResource Accent}" />
+        <Setter Property="Foreground" Value="{ThemeResource Accent150}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -201,7 +201,7 @@
     <!-- Text Button Style -->
     <Style TargetType="Button" x:Key="TextButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{ThemeResource Accent}" />
+        <Setter Property="Foreground" Value="{ThemeResource Accent150}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
