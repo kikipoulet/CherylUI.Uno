@@ -1,10 +1,39 @@
-# CherylUI.Uno
+<div id="header" align="center">
+ <kbd>
+<img src="https://zupimages.net/up/23/46/jjt8.jpeg" width="250" height="200"></img> 
+  </kbd>
+<br/>
+
+</div>
+<br/>
+
+
+# ✨ CherylUI.Uno
 
 CherylUI.Uno is a collection of UI controls, helpers and styles built for the [Uno Platform](https://platform.uno/). The library contains custom WinUI controls and resource dictionaries that provide a cohesive look and feel across platforms. A demo application (`CherylUI.Uno.Demo`) is included to showcase the controls.
 
+<br/>
+
+# 📱 UI Demo
+
+
+https://github.com/user-attachments/assets/04cf44dd-e075-41f7-a664-e78650e0970b
+
+
+
+https://github.com/user-attachments/assets/067a6a66-cf39-46c7-8d78-0a6750e17b06
+
+
+https://github.com/user-attachments/assets/434dbcab-9d31-4aeb-a758-baa73dfca636
+
+
+<br/>
+
+# Temporary Documentation
+
 ## Using the library
 
-1. Reference the `Cheryl.Uno` project or NuGet package in your Uno Platform solution.
+1. Reference the `CherylUI.Uno` project or NuGet package in your Uno Platform solution.
 2. Merge the style dictionary in `App.xaml`:
 
 ```xml
