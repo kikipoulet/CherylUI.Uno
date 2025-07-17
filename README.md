@@ -1,6 +1,10 @@
 <div id="header" align="center">
  <kbd>
-<img src="https://zupimages.net/up/23/46/jjt8.jpeg" width="250" height="200"></img> 
+
+
+<img width="250" height="250" alt="This logo is creepy af" src="https://github.com/user-attachments/assets/828f0e33-025a-4251-b8e5-01cfc460274d" />
+
+
   </kbd>
 <br/>
 
@@ -75,49 +79,81 @@ The library exposes the following controls. Each control has a default style def
 | **MobileTextBox** / **MobileTextBoxDialog** | Text input that opens a bottom dialog for editing |
 | **MobileTimePicker** / **MobileTimePickerPanel** | Bottom-sheet style time picker |
 
-# Controls documentation
 
 ## Navigation
 
 ### BottomTabControl & BottomTabItem
+
+
+<img width="337" height="137" alt="{BA2D3CBF-BC92-41C1-B3B8-238E09506880}" src="https://github.com/user-attachments/assets/c369cf95-9199-47cb-901c-e12876b0d17f" />
+
+
 ```xml
 <controls:BottomTabControl>
-    <controls:BottomTabItem Icon="Home" Label="Home" />
-    <controls:BottomTabItem Icon="Setting" Label="Settings" />
+    <controls:BottomTabItem IconGlyph="&#xE80F;" Label="Home" />
+    <controls:BottomTabItem IconGlyph="&#xE80F;" Label="Settings" />
 </controls:BottomTabControl>
 ```
-<img />
+
+<br/>
 
 ### NavigationView
+
+<img width="332" height="554" alt="{6F64CF61-F0B5-4438-8C3F-F51BD97E7A94}" src="https://github.com/user-attachments/assets/a350f798-3e6b-4480-83e7-5e85cc99d095" />
+
+
 ```xml
-<NavigationView>
-    <!-- items -->
-</NavigationView>
+    <!-- Supposed to work like a standard WinUI NavigationView -->
 ```
-<img />
+
+<br/>
 
 ### SegmentedControl
+
+<img width="170" height="69" alt="{A7C8D04D-D936-4D4F-A0BA-E4B5A36E1088}" src="https://github.com/user-attachments/assets/8e71bf84-e2d2-4bd3-8f16-c77da52a4b88" />
+
+
 ```xml
 <ui:Segmented>
-    <ui:SegmentedItem Text="One" />
-    <ui:SegmentedItem Text="Two" />
+    <ui:SegmentedItem Content="60hz" />
+    <ui:SegmentedItem Content="120hz" />
 </ui:Segmented>
 ```
-<img />
+<br/>
 
 ### SimplePageHeader
-```xml
-<controls:SimplePageHeader Title="My page" />
-```
-<img />
 
-### SliverPage / SliverPageLong
+<img width="335" height="119" alt="{6FC61356-4B87-494F-B3E7-7A6D1C26CFD3}" src="https://github.com/user-attachments/assets/4964da15-10b4-466f-80b3-aada64979559" />
+
+
 ```xml
-<controls:SliverPage Header="My Header">
+<controls:SimplePageHeader Header="Bob" />
+```
+<br/>
+
+### SliverPage 
+
+![sliverpage](https://github.com/user-attachments/assets/682bb6af-344b-49c4-bbce-3e36eff85ea4)
+
+
+```xml
+<controls:SliverPage Header="Buttons">
     <!-- page content -->
 </controls:SliverPage>
 ```
-<img />
+<br/>
+
+### SliverPageLong 
+
+![sliverpagelong](https://github.com/user-attachments/assets/077229ed-dad4-4277-9715-2cd4edd7c7cd)
+
+
+```xml
+<controls:SliverPageLong Header="Settings">
+    <!-- page content -->
+</controls:SliverPageLong>
+```
+<br/>
 
 ## Layout & Containers
 
@@ -127,7 +163,7 @@ The library exposes the following controls. Each control has a default style def
     <Grid><!-- content --></Grid>
 </controls:BusyArea>
 ```
-<img />
+<br/>
 
 ### GroupBox
 ```xml
@@ -135,7 +171,7 @@ The library exposes the following controls. Each control has a default style def
     <TextBlock Text="Content" />
 </controls:GroupBox>
 ```
-<img />
+<br/>
 
 ### InteractiveContainer
 ```xml
@@ -143,8 +179,7 @@ The library exposes the following controls. Each control has a default style def
     <!-- dialogs and sheets appear here -->
 </controls:InteractiveContainer>
 ```
-<img />
-
+<br/>
 
 ### Border
 - **GlassBorderStyle**
