@@ -2,18 +2,6 @@
 
 CherylUI.Uno is a collection of UI controls, helpers and styles built for the [Uno Platform](https://platform.uno/). The library contains custom WinUI controls and resource dictionaries that provide a cohesive look and feel across platforms. A demo application (`CherylUI.Uno.Demo`) is included to showcase the controls.
 
-## Repository layout
-
-```
-Cheryl.Uno/            Library project containing controls, helpers and styles
- ├── Controls/         Custom controls used by applications
- ├── Helpers/          Utility classes such as animation helpers and easings
- ├── Styles/           XAML resource dictionaries with control styles and colors
-CherylUI.Uno.Demo/     Sample application demonstrating the library
-```
-
-The `Styles/Index.xaml` file merges all provided style dictionaries. Apps typically merge this single dictionary into `Application.Resources`.
-
 ## Using the library
 
 1. Reference the `Cheryl.Uno` project or NuGet package in your Uno Platform solution.
@@ -46,7 +34,6 @@ The library exposes the following controls. Each control has a default style def
 
 | Control | Description |
 |---------|-------------|
-| **CherylBackgroundWinUI3** | Animated noise background used by `InteractiveContainer` |
 | **BottomTabControl** & **BottomTabItem** | Tab navigation control placed at the bottom of the screen |
 | **BusyArea** | Container that shows a `ProgressRing` overlay when `IsBusy` is true |
 | **GroupBox** | Simple content container with a header |
@@ -59,13 +46,11 @@ The library exposes the following controls. Each control has a default style def
 | **MobileTextBox** / **MobileTextBoxDialog** | Text input that opens a bottom dialog for editing |
 | **MobileTimePicker** / **MobileTimePickerPanel** | Bottom-sheet style time picker |
 
-## Controls and styles by category
+# Controls documentation
 
-Below each example you'll find an `<img />` placeholder where a screenshot should be inserted.
+## Navigation
 
-### Navigation
-
-#### BottomTabControl & BottomTabItem
+### BottomTabControl & BottomTabItem
 ```xml
 <controls:BottomTabControl>
     <controls:BottomTabItem Icon="Home" Label="Home" />
@@ -74,7 +59,7 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 ```
 <img />
 
-#### NavigationView
+### NavigationView
 ```xml
 <NavigationView>
     <!-- items -->
@@ -82,7 +67,7 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 ```
 <img />
 
-#### SegmentedControl
+### SegmentedControl
 ```xml
 <ui:Segmented>
     <ui:SegmentedItem Text="One" />
@@ -91,13 +76,13 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 ```
 <img />
 
-#### SimplePageHeader
+### SimplePageHeader
 ```xml
 <controls:SimplePageHeader Title="My page" />
 ```
 <img />
 
-#### SliverPage / SliverPageLong
+### SliverPage / SliverPageLong
 ```xml
 <controls:SliverPage Header="My Header">
     <!-- page content -->
@@ -105,9 +90,9 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 ```
 <img />
 
-### Layout & Containers
+## Layout & Containers
 
-#### BusyArea
+### BusyArea
 ```xml
 <controls:BusyArea IsBusy="True">
     <Grid><!-- content --></Grid>
@@ -115,7 +100,7 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 ```
 <img />
 
-#### GroupBox
+### GroupBox
 ```xml
 <controls:GroupBox Header="Title">
     <TextBlock Text="Content" />
@@ -123,7 +108,7 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 ```
 <img />
 
-#### InteractiveContainer
+### InteractiveContainer
 ```xml
 <controls:InteractiveContainer>
     <!-- dialogs and sheets appear here -->
@@ -131,35 +116,22 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 ```
 <img />
 
-#### SplitView
-```xml
-<SplitView>
-    <!-- content -->
-</SplitView>
-```
-<img />
 
-#### CherylBackgroundWinUI3
-```xml
-<controls:CherylBackgroundWinUI3 />
-```
-<img />
-
-#### Glass border styles
+### Border
 - **GlassBorderStyle**
 ```xml
 <Border Style="{StaticResource GlassBorderStyle}">
     <TextBlock Text="Inside" />
 </Border>
 ```
-<img />
+
 - **GlassSoftBorderStyle**
 ```xml
 <Border Style="{StaticResource GlassSoftBorderStyle}">
     <TextBlock Text="Inside" />
 </Border>
 ```
-<img />
+
 - **GlassFrostedBorderStyle**
 ```xml
 <Border Style="{StaticResource GlassFrostedBorderStyle}">
@@ -168,83 +140,71 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 ```
 <img />
 
-### Input controls
+## Input controls
 
-#### MobileDatePicker
+### MobileDatePicker
 ```xml
 <pickers:MobileDatePicker />
 ```
 <img />
 
-#### MobilePicker
+### MobilePicker
 ```xml
 <pickers:MobilePicker ItemsSource="{Binding Options}" />
 ```
 <img />
 
-#### MobileTextBox
+### MobileTextBox
 ```xml
 <pickers:MobileTextBox PlaceholderText="Type here" />
 ```
 <img />
 
-#### MobileTimePicker
+### MobileTimePicker
 ```xml
 <pickers:MobileTimePicker />
 ```
 <img />
 
-#### CalendarView
+### CalendarView
 ```xml
 <CalendarView />
 ```
 <img />
 
-#### ComboBox
-```xml
-<ComboBox ItemsSource="{Binding Items}" />
-```
-<img />
 
-#### CheckBox
+### CheckBox
 ```xml
 <CheckBox Content="Accept" />
 ```
 <img />
 
-#### NumberBox
+### NumberBox
 ```xml
 <NumberBox PlaceholderText="0" />
 ```
 <img />
 
-#### RadioButton
+### RadioButton
 ```xml
 <RadioButton Content="Option" />
 ```
 <img />
 
-#### Slider
+### Slider
 ```xml
 <Slider Minimum="0" Maximum="100" />
 ```
 <img />
 
-#### ToggleSwitch
+### ToggleSwitch
 ```xml
 <ToggleSwitch />
 ```
 <img />
 
-#### ListViewItem
-```xml
-<ListView>
-    <ListViewItem Content="Item" />
-</ListView>
-```
-<img />
 
-#### TextBlock
+### TextBlock
 ```xml
 <TextBlock Text="Styled text" />
 ```
@@ -256,51 +216,51 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 ```xml
 <Button Content="Default" Style="{StaticResource DefaultButtonStyle}" />
 ```
-<img />
+
 - **SecondaryButtonStyle**
 ```xml
 <Button Content="Secondary" Style="{StaticResource SecondaryButtonStyle}" />
 ```
-<img />
+
 - **MiniButtonStyle**
 ```xml
 <Button Content="Mini" Style="{StaticResource MiniButtonStyle}" />
 ```
-<img />
+
 - **SmallButtonStyle**
 ```xml
 <Button Content="Small" Style="{StaticResource SmallButtonStyle}" />
 ```
-<img />
+
 - **BigButtonStyle**
 ```xml
 <Button Content="Big" Style="{StaticResource BigButtonStyle}" />
 ```
-<img />
+
 - **BigNormalButtonStyle**
 ```xml
 <Button Content="Big normal" Style="{StaticResource BigNormalButtonStyle}" />
 ```
-<img />
+
 - **LargeButtonStyle**
 ```xml
 <Button Content="Large" Style="{StaticResource LargeButtonStyle}" />
 ```
-<img />
+
 - **TextButtonStyle**
 ```xml
 <Button Content="Text" Style="{StaticResource TextButtonStyle}" />
 ```
-<img />
+
 - **VoidButtonStyle**
 ```xml
 <Button Content="Void" Style="{StaticResource VoidButtonStyle}" />
 ```
-<img />
 
-### Menus
 
-#### MenuFlyoutPresenter
+## Menus
+
+### MenuFlyoutPresenter
 ```xml
 <Button Content="Open">
     <Button.Flyout>
@@ -311,10 +271,3 @@ Below each example you'll find an `<img />` placeholder where a screenshot shoul
 </Button>
 ```
 <img />
-
-## Running the demo
-
-The `CherylUI.Uno.Demo` project demonstrates the controls. Open `CherylUI.Uno.Demo.sln` with Visual Studio and run the platform-specific head (e.g. Windows) to see the styles and controls in action.
-
----
-This README provides a high-level overview of the repository. Explore the source files in `Cheryl.Uno` and the demo project for additional details and examples.
