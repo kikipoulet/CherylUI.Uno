@@ -155,6 +155,33 @@ The library exposes the following controls. Each control has a default style def
 ```
 <br/>
 
+## Dialogs & Sheets
+
+### InteractiveContainer
+
+Use `InteractiveContainer` to host dialogs and bottom sheets. Wrap it around the main content of your app so overlays can appear above everything.
+
+```xml
+<Page
+    xmlns:controls="using:Cheryl.Uno.Controls">
+    <controls:InteractiveContainer>
+        <!-- App Content -->
+    </controls:InteractiveContainer>
+</Page>
+```
+
+Once in the visual tree, call its static methods to show or hide content:
+
+```csharp
+InteractiveContainer.ShowDialog(new ConfirmationControl());
+await InteractiveContainer.ShowBottomSheet(new MyBottomSheet());
+
+InteractiveContainer.CloseDialog();
+InteractiveContainer.CloseBottomSheet();
+```
+
+
+
 ## Layout & Containers
 
 ### BusyArea
