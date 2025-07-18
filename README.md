@@ -181,6 +181,30 @@ InteractiveContainer.CloseBottomSheet();
 ```
 
 
+To retrieve a value from a dialog or sheet, await the task returned by
+`ShowBottomSheet` or `ShowBottomDialog`. When closing your custom control,
+call `InteractiveContainer.CloseBottomSheet(result)` or
+`InteractiveContainer.CloseBottomDialog(result)` with the value to return.
+
+```csharp
+// Host page
+var selectedColor = (Color)await InteractiveContainer.ShowBottomSheet(new ColorPickerSheet());
+
+// Bottom sheet control
+public sealed partial class ColorPickerSheet : UserControl
+{
+    public ColorPickerSheet()
+    {
+        this.InitializeComponent();
+    }
+
+    private void OnDone(object sender, RoutedEventArgs e)
+    {
+        InteractiveContainer.CloseBottomSheet(colorPicker.SelectedColor);
+    }
+}
+```
+
 
 ## Layout & Containers
 
