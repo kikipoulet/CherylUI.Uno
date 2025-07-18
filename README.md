@@ -1,7 +1,8 @@
 <div id="header" align="center">
  <kbd>
 
-<img width="250" height="250" alt="This logo is creepy af"  src="https://github.com/user-attachments/assets/559f0cad-18a0-44d9-b0d1-b720d5b5bd01" />
+
+<img width="250" height="250" alt="This logo is creepy af" src="https://github.com/user-attachments/assets/c1619b32-0885-4c19-af2d-23382b95fd10" />
 
 
   </kbd>
@@ -13,7 +14,7 @@
 
 # ✨ CherylUI.Uno
 
-CherylUI.Uno is a collection of UI controls, helpers and styles built for the [Uno Platform](https://platform.uno/). The library contains custom WinUI controls and resource dictionaries that provide a cohesive look and feel across platforms. A demo application (`CherylUI.Uno.Demo`) is included to showcase the controls.
+CherylUI.Uno is a collection of UI controls and styles built for [Uno Platform](https://platform.uno/). 
 
 <br/>
 
@@ -73,10 +74,10 @@ The library exposes the following controls. Each control has a default style def
 | **SimplePageHeader** | Basic page header with a centered title |
 | **SliverPage** | Page layout with a collapsing header when scrolled |
 | **SliverPageLong** | Variant of `SliverPage` with a larger header |
-| **MobileDatePicker** / **MobileDatePickerPanel** | Bottom-sheet style date picker |
-| **MobilePicker** / **MobilePickerPopup** | Generic list picker presented in a bottom sheet |
-| **MobileTextBox** / **MobileTextBoxDialog** | Text input that opens a bottom dialog for editing |
-| **MobileTimePicker** / **MobileTimePickerPanel** | Bottom-sheet style time picker |
+| **MobileDatePicker** | Bottom-sheet style date picker |
+| **MobilePicker** | Generic list picker presented in a bottom sheet |
+| **MobileTextBox** | Text input that opens a bottom dialog for editing |
+| **MobileTimePicker** | Bottom-sheet style time picker |
 
 
 ## Navigation
@@ -372,13 +373,13 @@ Normal GlassBorder but frosted behind. To use if you need to overlay something.
 ## Menus
 
 ### MenuFlyoutPresenter
+
+<img width="372" height="332" alt="{72B90D07-2B9C-485A-B5F2-DD0D72B57288}" src="https://github.com/user-attachments/assets/5f92479a-b947-4e0f-bbd7-3bb825b10072" />
+
+
 ```xml
-<Button Content="Open">
-    <Button.Flyout>
         <MenuFlyout>
             <MenuFlyoutItem Text="Action" />
         </MenuFlyout>
-    </Button.Flyout>
-</Button>
 ```
 <br/>
