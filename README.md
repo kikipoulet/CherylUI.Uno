@@ -50,7 +50,18 @@ https://github.com/user-attachments/assets/434dbcab-9d31-4aeb-a758-baa73dfca636
 </Application.Resources>
 ```
 
-3. Use the controls by declaring the namespace and dropping them into your XAML:
+3. Set up the `InteractiveContainer` to host dialogs and display the background. You must wrap it around the main content of your app, only one time.
+
+```xml
+<Page
+    xmlns:controls="using:Cheryl.Uno.Controls">
+    <controls:InteractiveContainer>
+        <!-- App Content -->
+    </controls:InteractiveContainer>
+</Page>
+```
+
+4. Use the controls by declaring the namespace and dropping them into your XAML:
 
 ```xml
 <Page
