@@ -7,6 +7,13 @@
         <GenerateLibraryLayout>true</GenerateLibraryLayout>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>CherylUI.Uno</PackageId>
+        <Authors>Clément Sepulchre</Authors>
+        <Description>UI Library for Uno Platform.</Description>
+        <PackageProjectUrl>https://github.com/kikipoulet/CherylUI.Uno</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/kikipoulet/CherylUI.Uno</RepositoryUrl>
 
         <!--
           UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.

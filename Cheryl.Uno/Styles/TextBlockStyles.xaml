@@ -2,8 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <FontFamily x:Key="QuicksandRegular">ms-appx:///Assets/Quicksand-Regular.ttf#Quicksand Regular</FontFamily>
-    <FontFamily x:Key="QuicksandBold">ms-appx:///Assets/Quicksand-SemiBold.ttf#Quicksand SemiBold</FontFamily>
+    <FontFamily x:Key="QuicksandRegular">ms-appx:///Cheryl.Uno/Assets/Quicksand-Regular.ttf#Quicksand Regular</FontFamily>
+    <FontFamily x:Key="QuicksandBold">ms-appx:///Cheryl.Uno/Assets/Quicksand-SemiBold.ttf#Quicksand SemiBold</FontFamily>
 
 
 </ResourceDictionary>
