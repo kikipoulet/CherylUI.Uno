@@ -102,7 +102,7 @@ public class MobileTextBox : Control
     }
 }
 
-public class MobileTextBoxDialog : Control
+internal class MobileTextBoxDialog : Control
 {
     private TextBox? _textBoxPart;
     private Button? _confirmButtonPart;

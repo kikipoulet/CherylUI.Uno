@@ -141,7 +141,7 @@ namespace Cheryl.Uno.Controls.Pickers.DatePicker;
         }
     }
 
-    public class MobileDatePickerPanel : Control
+    internal class MobileDatePickerPanel : Control
     {
         private CalendarView _calendarViewPart;
         private Button _acceptButtonPart;

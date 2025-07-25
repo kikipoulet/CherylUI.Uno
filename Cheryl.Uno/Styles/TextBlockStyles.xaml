@@ -5,6 +5,8 @@
     <FontFamily x:Key="QuicksandRegular">ms-appx:///Cheryl.Uno/Assets/Quicksand-Regular.ttf#Quicksand Regular</FontFamily>
     <FontFamily x:Key="QuicksandBold">ms-appx:///Cheryl.Uno/Assets/Quicksand-SemiBold.ttf#Quicksand SemiBold</FontFamily>
 
-
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource QuicksandRegular}" />
+    </Style>
 </ResourceDictionary>
 

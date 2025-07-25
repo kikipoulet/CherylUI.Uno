@@ -121,8 +121,6 @@
                     </StackPanel>
                 </controls1:GroupBox>
 
-
-
                 <controls1:GroupBox Header="Volume">
                     <Grid Margin="0,10,0,5">
                         <Grid.ColumnDefinitions>

@@ -13,7 +13,7 @@
     <StackPanel Margin="5,0" Spacing="10">
         <TextBlock  FontSize="21" FontFamily="{StaticResource QuicksandBold}"
                     Text="Edit Alarm"  Margin="0,20,0,10"></TextBlock>
-        <mobileTimePicker:MobileTimePickerPanel Name="MTP" />
+      <!--  <mobileTimePicker:MobileTimePickerPanel Name="MTP" /> -->
 
         <Border Style="{StaticResource GlassSoftBorderStyle}">
             <StackPanel Margin="2,1" Spacing="14">

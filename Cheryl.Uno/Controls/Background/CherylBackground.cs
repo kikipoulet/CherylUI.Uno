@@ -11,7 +11,7 @@ using Cheryl.Uno.Controls.Background;
 
 
 namespace Cheryl.Uno.Controls;
-public class CherylBackgroundWinUI3 : Image, IDisposable
+internal class CherylBackgroundWinUI3 : Image, IDisposable
     {
         private const int ImageWidth = 100; // Largeur du bitmap interne
         private const int ImageHeight = 100; // Hauteur du bitmap interne

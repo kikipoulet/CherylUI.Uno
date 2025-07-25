@@ -2,7 +2,7 @@
 
 namespace Cheryl.Uno.Controls.Pickers.MobilePicker;
 
-public class MobilePickerPopup : Control
+internal class MobilePickerPopup : Control
 {
     public static readonly object Dismissed = new object(); 
 

@@ -15,7 +15,6 @@
     mc:Ignorable="d"
     Background="Transparent">
 
-
     <controls:SliverPage Header="Design Samples">
         <StackPanel Spacing="25">
 
@@ -68,8 +67,6 @@
 
         </StackPanel>
         </controls:SliverPage>
-
-
 
 
 </Page>

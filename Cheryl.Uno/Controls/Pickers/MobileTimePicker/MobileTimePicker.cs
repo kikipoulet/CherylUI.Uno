@@ -106,7 +106,7 @@ public class MobileTimePicker : Control
     private static string FormatTime(TimeSpan time) => time.ToString(@"hh\:mm");
 }
 
-public class MobileTimePickerPanel : Control
+internal class MobileTimePickerPanel : Control
 {
     private StackPanel? _hoursPanelPart;
     private StackPanel? _minutesPanelPart;

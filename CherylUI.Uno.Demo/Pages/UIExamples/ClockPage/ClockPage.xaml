@@ -13,7 +13,7 @@
         <controls:BottomTabItem Label="Alarms" IconGlyph="&#xE823;">
             <controls:BottomTabItem.PageContent>
                 <Grid>
-                <controls:SliverPage Header="Alarms">
+                <controls:SliverPage Header="Alarmserer">
 <ScrollViewer VerticalScrollBarVisibility="Hidden">
     <StackPanel Margin="0,0,0,0" Spacing="10">
         <ItemsControl  ItemsSource="{x:Bind Alarms}">

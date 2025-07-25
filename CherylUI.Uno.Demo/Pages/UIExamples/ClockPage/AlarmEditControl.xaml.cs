@@ -29,7 +29,7 @@ public sealed partial class AlarmEditControl : UserControl
     {
         base.OnApplyTemplate();
         
-        MTP.AcceptButtonPart.Visibility = Visibility.Collapsed;
+       // MTP.AcceptButtonPart.Visibility = Visibility.Collapsed;
     }
 
     private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
