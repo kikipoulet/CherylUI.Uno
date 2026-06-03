@@ -4,7 +4,6 @@
       xmlns:local="using:CherylUI.Uno.Demo"
       xmlns:controls="clr-namespace:CherylUI.Uno.Demo.Controls"
       xmlns:converters="clr-namespace:CherylUI.Uno.Demo.Converters"
-      xmlns:uno="clr-namespace:Material.Icons.UNO;assembly=Material.Icons.UNO"
       xmlns:winUi="clr-namespace:FluentIcons.WinUI;assembly=FluentIcons.WinUI"
       xmlns:animations="clr-namespace:CherylUI.Uno.Demo.Helpers.Animations"
       xmlns:controls1="clr-namespace:Cheryl.Uno.Controls;assembly=Cheryl.Uno"
@@ -23,51 +22,51 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem PointerReleased="gotohome" IsSelected="True" Content="Home">
                     <NavigationViewItem.Icon>
-                        <winUi:FluentIcon IconSize="Size48" Icon="Home" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                        <winUi:FluentIcon IconSize="Size48" Icon="Home"  />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
                 <NavigationViewItem PointerReleased="GoToButtons" Content="Buttons">
                     <NavigationViewItem.Icon>
-                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
                 <NavigationViewItem PointerReleased="gotosliders" Content="Sliders">
                     <NavigationViewItem.Icon>
-                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
                 <NavigationViewItem PointerReleased="GoToToggles" Content="Toggles">
                     <NavigationViewItem.Icon>
-                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle"  />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
                 <NavigationViewItem Content="Dialogs" PointerReleased="GoToDialogs">
                     <NavigationViewItem.Icon>
-                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle"  />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem Content="Layouts" PointerReleased="GoToLayouts">
                     <NavigationViewItem.Icon>
-                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle"  />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem Content="Squishy Behavior" PointerReleased="GoToSquishy">
                     <NavigationViewItem.Icon>
-                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle"  />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem Content="Custom Easing" PointerReleased="GoToEasing">
                     <NavigationViewItem.Icon>
-                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle"  />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem Content="Others" PointerReleased="GoToOthers">
                     <NavigationViewItem.Icon>
-                        <winUi:FluentIcon IconSize="Size48" Icon="Circle" HorizontalAlignment="Center"  Opacity="1" Margin="24,0,12,0" />
+                        <winUi:FluentIcon IconSize="Size48" Icon="Circle"  />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.MenuItems>

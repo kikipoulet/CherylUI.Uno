@@ -28,7 +28,7 @@
             <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
             <Grid>
                 <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
-                <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                <winUi:FluentIcon Icon="ChevronRight"  Foreground="{ThemeResource SecondaryText}" />
             </Grid>
         </StackPanel>
 
@@ -48,7 +48,7 @@
                 <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
                 <Grid>
                     <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
-                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                    <winUi:FluentIcon Icon="ChevronRight"  Foreground="{ThemeResource SecondaryText}" />
                 </Grid>
             </StackPanel>
 
@@ -68,7 +68,7 @@
                 <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
                 <Grid>
                     <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
-                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                    <winUi:FluentIcon Icon="ChevronRight" Foreground="{ThemeResource SecondaryText}" />
                 </Grid>
             </StackPanel>
 
@@ -88,7 +88,7 @@
                 <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
                 <Grid>
                     <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
-                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                    <winUi:FluentIcon Icon="ChevronRight"  Foreground="{ThemeResource SecondaryText}" />
                 </Grid>
             </StackPanel>
 
@@ -108,7 +108,7 @@
                 <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
                 <Grid>
                     <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
-                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                    <winUi:FluentIcon Icon="ChevronRight"  Foreground="{ThemeResource SecondaryText}" />
                 </Grid>
             </StackPanel>
 
@@ -128,7 +128,7 @@
                 <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
                 <Grid>
                     <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
-                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                    <winUi:FluentIcon Icon="ChevronRight"  Foreground="{ThemeResource SecondaryText}" />
                 </Grid>
             </StackPanel>
 
@@ -148,7 +148,7 @@
             <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
             <Grid>
                 <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
-                <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                <winUi:FluentIcon Icon="ChevronRight"  Foreground="{ThemeResource SecondaryText}" />
             </Grid>
         </StackPanel>
 
@@ -168,7 +168,7 @@
                 <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
                 <Grid>
                     <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Lorem Ipsum"></TextBlock>
-                    <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                    <winUi:FluentIcon Icon="ChevronRight" Foreground="{ThemeResource SecondaryText}" />
                 </Grid>
             </StackPanel>
 

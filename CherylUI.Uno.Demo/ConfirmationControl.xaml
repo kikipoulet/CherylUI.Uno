@@ -13,7 +13,7 @@
     <Grid>
 <StackPanel Spacing="21">
     <Viewbox Margin="10,25,0,10" Height="80" Width="80">
-        <winUi:FluentIcon IconSize="Size48" Icon="Warning" HorizontalAlignment="Center"  Opacity="0.7" Foreground="Orange" />
+        <winUi:FluentIcon IconSize="Size48" Icon="Warning"  Foreground="Orange" />
     </Viewbox>
 
     <TextBlock Margin="15,0" FontSize="16" FontFamily="{StaticResource QuicksandRegular}" Foreground="{ThemeResource SecondaryText}" TextWrapping="Wrap" HorizontalTextAlignment="Center"  Text="This is a simple example of a control shown with a bottom sheet."></TextBlock>

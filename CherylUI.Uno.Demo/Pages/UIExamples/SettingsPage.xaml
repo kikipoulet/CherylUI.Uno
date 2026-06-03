@@ -63,7 +63,10 @@
                     <Border Opacity="0.12" Height="1" Background="{ThemeResource SecondaryText}" />
                     <Grid>
                         <TextBlock FontSize="16" FontFamily="{StaticResource QuicksandBold}" Text="Advanced Settings"></TextBlock>
-                        <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+<Panel HorizontalAlignment="Right">
+    <winUi:FluentIcon Icon="ChevronRight" Foreground="{ThemeResource SecondaryText}" />
+</Panel>
+
                     </Grid>
                     </StackPanel>
 
@@ -80,7 +83,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Viewbox  Height="20" Width="20">
-                                <winUi:FluentIcon Margin="2" Icon="BrightnessLow" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource SecondaryText}" />
+                                <winUi:FluentIcon  Icon="BrightnessLow"  VerticalAlignment="Center" Foreground="{ThemeResource SecondaryText}" />
                             </Viewbox>
                             <Slider Margin="12,0" Grid.Column="1" Minimum="0" Maximum="100" Value="40"  Style="{StaticResource BigSliderStyle}" >
                                 <interactivity:Interaction.Behaviors>
@@ -88,7 +91,7 @@
                                 </interactivity:Interaction.Behaviors>
                             </Slider>
                             <Viewbox Grid.Column="2" Height="20" Width="20">
-                                <winUi:FluentIcon Icon="BrightnessHigh"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource SecondaryText}" />
+                                <winUi:FluentIcon Icon="BrightnessHigh"   VerticalAlignment="Center" Foreground="{ThemeResource SecondaryText}" />
                             </Viewbox>
                         </Grid>
                         <Grid>
@@ -135,7 +138,7 @@
                             </interactivity:Interaction.Behaviors>
                         </Slider>
                             <Viewbox Height="22" Width="22" HorizontalAlignment="Center">
-                            <winUi:FluentIcon Icon="Headphones" HorizontalAlignment="Center" IconSize="Size48" Foreground="{ThemeResource SecondaryText}" />
+                            <winUi:FluentIcon Icon="Headphones" IconSize="Size48" Foreground="{ThemeResource SecondaryText}" />
                             </Viewbox>
                         </StackPanel>
 
@@ -158,7 +161,7 @@
                                 </interactivity:Interaction.Behaviors>
                             </Slider>
                             <Viewbox Height="22" Width="22" HorizontalAlignment="Center">
-                            <winUi:FluentIcon Icon="Clock" HorizontalAlignment="Center" IconSize="Size48" Foreground="{ThemeResource SecondaryText}" />
+                            <winUi:FluentIcon Icon="Clock"  IconSize="Size48" Foreground="{ThemeResource SecondaryText}" />
                             </Viewbox>
                         </StackPanel>
                     </Grid>
@@ -180,7 +183,7 @@
                                 </Viewbox>
                             <Slider Margin="12,0" Grid.Column="1" Minimum="0" Maximum="4" Value="1" StepFrequency="1" TickFrequency="1" SnapsTo="Ticks" TickPlacement="BottomRight"></Slider>
                                 <Viewbox Grid.Column="2" Height="20" Width="20">
-                                <winUi:FluentIcon Icon="SoundWaveCircle"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource SecondaryText}" />
+                                <winUi:FluentIcon Icon="SoundWaveCircle"   VerticalAlignment="Center" Foreground="{ThemeResource SecondaryText}" />
                                 </Viewbox>
                             </Grid>
                         </StackPanel>
@@ -197,7 +200,7 @@
 
                             <TextBlock FontSize="16"  FontFamily="{StaticResource QuicksandBold}" Text="Open Bottom Sheet"></TextBlock>
 
-                        <winUi:FluentIcon Icon="ChevronRight" HorizontalAlignment="Right" Foreground="{ThemeResource SecondaryText}" />
+                        <winUi:FluentIcon Icon="ChevronRight"  Foreground="{ThemeResource SecondaryText}" />
 
                     </Grid>
                         </StackPanel>

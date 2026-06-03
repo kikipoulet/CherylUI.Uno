@@ -1,6 +1,6 @@
 <Project Sdk="Uno.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net9.0</TargetFrameworks>
+        <TargetFrameworks>net10.0</TargetFrameworks>
         <UnoSingleProject>true</UnoSingleProject>
         <OutputType>Library</OutputType>
         <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
@@ -53,14 +53,12 @@
     <ItemGroup>
       <PackageReference Include="CommunityToolkit.WinUI.Behaviors" />
       <PackageReference Include="CommunityToolkit.WinUI.Controls.Segmented" />
+      <PackageReference Include="FluentIcons.Common" />
+      <PackageReference Include="FluentIcons.Uno" />
       <PackageReference Include="FluentIcons.WinUI" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Reference Include="Uno.Toolkit.WinUI">
-        <HintPath>..\..\..\.nuget\packages\uno.toolkit.winui\7.0.0-dev.95\lib\net8.0\Uno.Toolkit.WinUI.dll</HintPath>
-      </Reference>
+      <PackageReference Include="Uno.Toolkit.WinUI" />
     </ItemGroup>
 
    
+
 </Project>
